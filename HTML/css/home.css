@@ -154,6 +154,7 @@ h1{
     bottom: 20px;
     right: 20px;
     font-size: 200%;
+    z-index: 100;
 }
 #scrollToTop {
 	position: fixed;
@@ -168,7 +169,58 @@ h1{
 	opacity: 1;
 	transition: opacity 0.5s;
 }
-
+.why{
+  max-width: 300px;
+}
+.lrbgimg{
+  position: relative;
+}
+.lbgimg{
+  position:absolute; 
+  left:0; 
+  bottom:-3rem; 
+  z-index: 0;
+}
+.rbgimg{
+  position:absolute; 
+  right:0; 
+  bottom:-3rem; 
+  z-index: -1;
+}
+.say{
+  background-color:#f4f5f8; 
+  position: relative;
+}
+.ccmsg{
+  top:1rem; 
+  right: 1rem; 
+  z-index: 10;
+}
+.ccs{
+  border-left: 3px solid #1d7a8c;
+}
+.mailinp{
+  border: 1px solid gray;
+}
+.subbtn{
+  background-color: #ff7b6d; 
+  padding-top: 3px; 
+  padding-bottom: 3px;  
+  color: #ffffff;
+}
+.footer{
+  background-color: #111111;
+}
+.pp{
+  position:relative; 
+  color:white; 
+  background-color: #292929;
+}
+#ppb{
+  background-color: yellow; 
+  position: absolute; 
+  right: 15px;
+}
 @media screen and (max-width: 1184px) {
   .nav-item a{
       padding: 0 15px;
