@@ -1,0 +1,681 @@
+#faqnav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color:#525252;
+    padding: 0!important;
+    /* font-size: 0.7rem!important; */
+}
+#faqnav .nav-item{
+    margin: auto 0;
+}
+.navcol{
+    color: white;
+}
+.navcol:hover{
+    color: white;
+}
+
+
+#logo-faq{
+    height: 54px;
+    margin: 6px 0 4px 15px;
+}
+
+.num{
+    position: absolute;
+	  right: -25px;
+	  top: -5px;
+	  width: 20px;
+	  text-align: center;
+	  padding-bottom: 2px;
+	  height: 22px;
+	  background-color: red;
+	  border-radius: 180px;
+	  color: #fff;
+}
+.navcol-2 img{
+
+    padding-left: 15px;
+    border-left: 1px solid white;
+    
+
+}
+.navcol-2{
+    position: relative;
+		display: block;
+	  width: 36px;
+		height: 48px;
+}
+
+.navcol-3 img{
+		
+    border-left: 1px  solid white;
+    padding-left: 15px;	
+
+    
+}
+
+.navcol-3{
+    margin-left: 25px;
+    width: 36px;
+    height: 48px;
+}
+.dropstart{
+    padding-left: 30px;
+    padding-right: 20px;
+}
+.name{
+	padding-top: 64px;
+	text-align: center;
+	width: 100%;
+	height: 183px;
+	background-color: #f9f9f9;
+	border-bottom: 1px solid	#e1e1e1;
+	}
+    .name p{
+		font-family: 'Roboto';
+	  font-size: 30px;
+	  font-weight: normal;
+	  font-stretch: normal;
+	  font-style: normal;
+	  line-height: 0.8;
+	  letter-spacing: normal;
+	  color: #4f4f4f;
+	  padding-top: 44px;
+	  padding-bottom: 46px;
+	}
+	.name p span{
+		font-family: 'Roboto',bold;
+	  font-size: 30px;
+	  font-weight: bold;
+	  font-stretch: normal;
+	  font-style: normal;
+	  line-height: 0.8;
+	  letter-spacing: normal;
+	  color: #4f4f4f;
+
+	}
+    .top-side{
+		display:flex;
+		justify-content: center;
+	}
+
+
+	.wrapper .sidebar{
+		background-color: #1D7A8C;
+		width: 262px;
+		height: 700px;
+		margin-bottom: 30px;
+		margin-top: 31px;
+
+		
+	}
+	.wrapper .sidebar ul{
+		padding: 0;
+		margin: 0;
+	}
+	.wrapper .sidebar ul li{
+		list-style: none;
+		border-bottom: 1px solid rgba(255,255,255, 0.2) ;
+		padding-left: 15px;
+	}
+	.wrapper .sidebar ul li:hover{
+		background-color: #146371;
+	}
+	.wrapper .sidebar ul .active{
+		background-color: #146371;
+	}
+
+
+	.wrapper .sidebar ul li a{
+		text-decoration: none;
+		color: #FFFFFF;
+		font-family: Roboto;
+	  font-size: 18px;
+	  font-weight: normal;
+	  font-stretch: normal;
+	  font-style: normal;
+	  line-height: 3.06;
+	  letter-spacing: normal;
+	  text-align: left;
+	}
+
+	.top-side{
+		display: flex;
+		padding: 0px;
+	}
+	.table_upcoming_service{
+
+		margin-top: 31px;
+		margin-left: 31px;
+		
+	}
+	.table_upcoming_service table{
+		border: 1px solid #e1e1e1;
+		
+	}
+	.table_upcoming_service tr th{
+		background-color: #e1e1e1;
+		font-family: 'Roboto';
+	  font-size: 16px;
+	  font-weight: bold;
+	  font-stretch: normal;
+	  font-style: normal;
+	  line-height: 1.63;
+	  letter-spacing: normal;
+	  text-align: left;
+	  color: #646464;
+	  height: 49px;
+	  text-align: left;
+	  padding-left: 2px;
+	}
+	.table_upcoming_service tr th button{
+		border: none;
+		background: transparent;
+	}
+	.table_th{
+		width: 845px;
+	}
+	.table_upcoming_service tr td{
+		padding-right: 50px;
+		vertical-align: middle;
+		height: 65px;
+		border-bottom: 1px solid #e1e1e1;;
+		text-align: left;
+	  padding-left: 2px;
+	  color: #646464;
+	}
+	.table_upcoming_service tr td button{
+		width: 80px;
+	  height: 34px;
+	  border-radius: 17px;
+	  background-color: #ff6b6b;
+	  border: 0px;
+	  color: white;
+	  font-family: 'Roboto';
+	  font-size: 16px;
+	  font-weight: normal;
+	  font-stretch: normal;
+	  font-style: normal;
+	  
+	  letter-spacing: normal;
+	  text-align: center;
+
+	  
+	}
+    .Customer_service-history-table{
+        margin-top: 31px;
+        margin-left: 16px;
+        width: 861px;
+    }
+    .Customer_service-history-table .top1{
+        display: flex;
+    }
+    .Customer_service-history-table .top1 h2{
+    font-family: 'Roboto';
+      font-size: 22px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #646464;
+    }
+
+    .Customer_service-history-table .top1 button{
+    float: right;
+    border-radius: 17px;
+      background-color: #146371;
+    font-family: Roboto;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      margin-left:640px;
+      letter-spacing: normal;
+      text-align:center;
+      border: 0px;
+      color: white;
+      width: 70px;
+      height: 34px;
+    }
+    .Customer_service-history-table table{
+        border: 1px solid #e1e1e1;
+        width: 861px;
+        margin-top: 6px;
+        
+    }
+    .Customer_service-history-table tr th{
+        background-color: #e1e1e1;
+        font-family: 'Roboto';
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.63;
+      letter-spacing: normal;
+      text-align: left;
+      color: #646464;
+      height: 49px;
+      text-align: center;
+      padding-left: 2px;
+    }
+    .Customer_service-history-table tr th button{
+        border: none;
+        background: transparent;
+    }
+    .Customer_service-history-table tr td{
+        text-align: center;
+    }
+
+
+    .imgtd{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+.ratingtd{
+    display:flex;
+    align-items: center;
+}
+.imgcap{
+    border: 1px solid #aaaaaa;
+    border-radius:50%;
+
+}
+.imgcap img{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+.tdp,.tddate{
+    font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: #646464;
+
+}
+
+
+.pricetd{
+    font-family: Roboto;
+  font-size: 24px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #1d7a8c;
+}
+.statustd button{
+      background-color: #67b644;
+      width: 82px;
+  height: 22px;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  color: white;
+  border: 0px;
+  letter-spacing: normal;
+  vertical-align: middle;
+
+}
+
+.ratesp button{
+    width: 70px;
+  height: 34px;
+  border-radius: 17px;
+  background-color: #6da9b5;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  border: 0px;
+  color: white;
+}
+
+
+.datatable tr td{
+
+    border-bottom: 1px solid #e1e1e1;
+    height: 85px;
+    
+}
+.ratename{
+    display: table-column;
+
+}
+.statuscancletd button{
+
+    background-color: #ff6b6b;
+    width: 82px;
+  height: 22px;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  color: white;
+  border: 0px;
+  letter-spacing: normal;
+  vertical-align: middle;
+  
+}
+
+
+table.dataTable thead .sorting {
+  background-image: url("../img/forma-1(1).png");
+}
+table.dataTable thead .sorting_asc {
+background-image: none;
+}
+table.dataTable thead .sorting_desc {
+    background-image: url("../img/forma-1(1).png");
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: 0px solid #111;
+}
+
+.checked {
+  color: #ecb91c;
+}
+.fa-star {
+    letter-spacing: 2px;
+    width: 17px;
+height: 18px;
+}
+.unchecked{
+    color: #d4d4d4;
+}
+
+
+
+table.dataTable.no-footer {
+    border-bottom: 0px solid #111;
+    margin-bottom: 21px;
+}
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    padding: 0px;
+}
+
+
+.dataTables_paginate .first{
+    width: auto;
+    content: none;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color: #ffff !important; 
+    background: #1D7A8C !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 14px;
+    border-radius: 50%;
+    border: 0px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: #777777 !important; 
+    background: none !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 14px;
+    border-radius: 50%;
+    border: 1px solid #E1E1E1;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: #ffff !important; 
+    background: #1D7A8C !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 14px;
+    border-radius: 50%;
+    border: 0px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+    color: #ffff !important; 
+    background: #1D7A8C !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 14px;
+    border-radius: 50%;
+    border: 0px;
+}
+
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+    color: #777777 !important; 
+    background: none !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 14px;
+    border-radius: 50%;
+    border: 1px solid #E1E1E1;
+}
+footer {
+    margin-top: 53px;
+    padding: 20px 123px 26px 115px;
+    background: #111111;
+}
+
+footer hr {
+    display: block;
+    height: 1px;
+    background: #424242;
+    margin: 19px 0 25px 0;
+    width: 100%;
+}
+
+.ftn{
+    color: white;
+    display: block;
+    text-decoration: none;
+  }
+  .ftn:hover{
+    color: white;
+  }
+  .tnc{
+      color: #9ba0a3;
+  }
+  .tnc:hover{
+    color: #9ba0a3;
+    }
+
+    @media(max-width: 1309px){
+        .Customer_service-history-table{
+        width: auto;
+    }
+     .Customer_service-history-table{
+        margin-top: 31px;
+        margin-left: 0px;
+        
+    }
+
+    .Customer_service-history-table .top1{
+        
+        flex-direction: column;
+        align-items: center;
+    }
+    .Customer_service-history-table .top1 h2{
+    font-family: 'Roboto';
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #646464;
+    }
+
+    .Customer_service-history-table .top1 button{
+    float: right;
+    border-radius: 17px;
+      background-color: #146371;
+    font-family: Roboto;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      margin-left:0px;
+      letter-spacing: normal;
+      text-align:center;
+      border: 0px;
+      color: white;
+      height: 34px;
+    }
+    .Customer_service-history-table table{
+        border: 1px solid #e1e1e1;
+        width: auto;
+        margin-top: 6px;
+        
+    }
+    .Customer_service-history-table tr th{
+        background-color: #e1e1e1;
+        font-family: 'Roboto';
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.63;
+      letter-spacing: normal;
+      text-align: left;
+      color: #646464;
+      height: 49px;
+      text-align: center;
+      padding-left: auto;
+    }
+    .Customer_service-history-table tr th button{
+        border: none;
+        background: transparent;
+    }
+    .Customer_service-history-table tr td{
+        text-align: center;
+    }
+
+
+    .imgtd{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+.ratingtd{
+    display:flex;   
+    align-items: center;
+}
+.imgcap{
+    border: 1px solid #aaaaaa;
+    border-radius:50%;
+
+}
+.imgcap img{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+.tdp,.tddate{
+    font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: #646464;
+
+}
+
+
+.pricetd{
+    font-family: Roboto;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #1d7a8c;
+}
+.statustd button{
+      background-color: #67b644;
+      width: auto;
+  height: 22px;
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  color: white;
+  border: 0px;
+  letter-spacing: normal;
+  vertical-align: middle;
+
+}
+
+.ratesp button{
+    width: auto;
+  height: 34px;
+  border-radius: 17px;
+  background-color: #6da9b5;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  border: 0px;
+  color: white;
+}
+
+
+.datatable tr td{
+
+    border-bottom: 1px solid #e1e1e1;
+    height: 85px;
+    
+}
+.ratename{
+    display: table-column;
+
+}
+.statuscancletd button{
+
+    background-color: #ff6b6b;
+    width: auto;
+  height: 22px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  color: white;
+  border: 0px;
+  letter-spacing: normal;
+  vertical-align: middle;
+  
+}
+
+    }
