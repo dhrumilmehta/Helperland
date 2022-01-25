@@ -1,0 +1,381 @@
+#banner{
+    width: 100%;
+}
+#faqnav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #757575;
+    padding: 0!important;
+    /* font-size: 0.7rem!important; */
+}
+#faqnav .nav-item{
+    margin: auto 0;
+}
+
+#faqnav .nav-item .rounded-pill{
+    border: 1px solid #FFFFFF80;
+    font-size: 17px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin: auto 5px;
+    color: white;
+
+}
+.navcol{
+    color: white;
+}
+.navcol:hover{
+    color: white;
+}
+
+
+#logo-faq{
+    height: 54px;
+    margin: 6px 0 4px 15px;
+}
+
+.greenlink{
+    background-color:#29626D;
+    color: white;
+}
+.tit{
+    color: #4f4f4f;
+}
+hr{
+    display: inline-block;
+    width: 62px;
+    height: 1px!important;
+    color: #CCCCCC!important;
+}
+#one-time{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    
+    border: 1px solid #B0C9CE;
+    width: 555px;
+    height: 304px;
+    margin: 42px auto 50px;
+}
+#one-time{
+    color: #646464;
+}
+
+
+#one-time-title{
+    width: 100%;
+}
+
+#one-time-title h2{
+    font-size: 28px;
+    line-height: 60px;
+    color: #FFFFFF!important;
+    background-color: #1D7A8C;
+    margin: 0;
+    padding: 0;    
+    text-align: center;
+}
+
+#hr-price{
+    margin: 18px 0 27px;
+}
+
+.onetime-desc{
+    margin-left: 9px;
+    font-size: 16px;
+}
+
+#extra{
+    border-top:1px solid #DCDCDC;
+    width: 1140px;
+    margin: 0 auto;
+}
+
+#extra-services{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 0 56px;
+}
+.extra-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 20px;    
+}
+
+.extra-box p{
+    font-size: 16px;
+    color: #646464;
+    margin: 15px 0 6px;
+}
+
+.extra-box h5{
+    font-size: 18px;
+    color: #1D7A8C;
+    margin: 0;
+    padding: 0;
+}
+
+.extra-img{
+    width: 108px;
+    height: 108px;
+    border: 1px solid #B0C9CE;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 50px;
+}
+
+/* -------------------------- What include section --------------------------- */
+#what-include{
+    padding-top: 73px;
+    background-color: #F6F6F6;
+}
+#what-include-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.what-boxes{
+    margin: 42px 15px 81px;
+    color: #4F4F4F;
+}
+.what-boxes h3{
+    font-size: 20px;
+    line-height: 24px;
+    margin: 20px 0 10px;
+}
+.box-desc{
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.box-desc div{
+    margin: 7px 0;
+}
+
+/* ---------------------------- why helperland --------------------------- */
+#why-hl-main{
+    margin: 42px auto 70px;
+}
+
+#why-hl-main #left-side{
+    text-align: end;
+}
+
+#left-side p{
+    margin: 0 0 0 auto;
+}
+
+
+#why-hl-main h3{
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 9.5px;
+    color: #646464;
+    width: 340px;
+    
+}
+
+#why-hl-main p{    
+    font-size: 14px;
+    color: #646464;
+    height: 84.67px;
+    width: 280.7px;
+    margin-bottom: 0;
+}
+
+#why-hl-main img{
+    margin: 0 auto;
+    width: 375px;
+    height: 241px;
+}
+
+#why-hl-main #why-img{
+    order: 2;
+}
+#why-hl-main #left-side{
+    order: 1;
+    margin:0 25px 0 15px;
+}
+#why-hl-main #right-side{
+    order: 3;
+    margin:0 15px 0 25px;
+}
+#news{
+    margin: 25px 0 55px;
+ 
+}
+
+#news h4{
+    font-size: 18px!important;
+    margin-bottom: 16px !important;
+}
+
+#news input{
+    font-size: 14px!important;
+}
+
+#news .email{
+    background-color: #F4F5F8!important;
+    border: 1px solid #565656!important;
+    padding-left: 22px!important;
+    line-height: 40px;
+    width: 233px;
+    margin-right: 11px;
+}
+
+#news .submit-btn{
+    background-color: #ff7b6d; 
+    color: #ffffff;
+    padding: 0 22px;
+    line-height: 40px;
+    border:0;
+}
+
+footer {
+	margin-top: 53px;
+	padding: 20px 123px 26px 115px;
+	background: #111111;
+}
+
+footer hr {
+	display: block;
+	height: 1px;
+	background: #424242;
+	margin: 19px 0 25px 0;
+    width: 100%;
+}
+
+.ftn{
+    color: white;
+    display: block;
+    text-decoration: none;
+  }
+  .ftn:hover{
+    color: white;
+  }
+  .tnc{
+      color: #9ba0a3;
+  }
+  .tnc:hover{
+    color: #9ba0a3;
+    }
+    #scrollToTop {
+        position: fixed;
+        bottom: 150px;
+        left: 70px;
+        height: 48px;
+        width: 48px;
+        background: #525252;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+    .layer{
+        position: absolute;
+          
+          right: 20px;
+          font-size: 200%;
+          z-index: 100;
+      }
+      @media screen and (max-width:1145px) {
+        #why-hl-main #why-img{
+            order: 1;
+            width: 100%;
+            text-align: center;
+        }
+        #why-hl-main #left-side{
+            order: 2;
+            margin:0 12px 0 15px;
+        }
+        #why-hl-main #right-side{
+            order: 3;
+            margin:0 15px 0 12px;
+        }
+        #extra{
+            width: 80%;
+        }
+        #what-include-box{
+            margin: 30px 0;
+        }
+        .what-boxes{
+            margin:10px 15px 40px;
+        }
+    }
+    
+    
+    @media screen and (max-width:734px) {
+    
+        #extra{
+            width: 90%;
+        }
+        #why-hl-main #left-side{
+            margin:0 15px 0 15px;
+            text-align: center;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #why-hl-main #right-side{
+            margin:0 15px 0 15px;
+            text-align: center;
+            width: 80%;
+        }
+        
+        #why-hl-main p{    
+            text-align: center;
+            width: 100%;
+            margin-bottom: 0;
+        }
+        #why-hl-main h3{
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 9.5px;
+            color: #646464;
+            width: 100%;
+            
+        }
+        
+    }
+    
+    @media screen and (max-width:650px) {
+    
+        #one-time{
+            width: 90%;
+        }
+        
+    }
+    
+    @media screen and (max-width:420px) {
+        .what-boxes{
+            width: 90%;
+        }
+        .what-boxes>img{
+            width: 100%;
+        }
+        
+        #why-hl-main img{
+            width: 90%;
+     
+        }
+    }
+    
+    @media screen and (max-width:340px) {
+        .submit-btn{
+            width: 233px;
+            margin-top: 10px;
+        }
+        #news .email{
+            margin: 0;
+        }
+    }
+    
