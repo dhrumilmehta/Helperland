@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Helperland
+@model Helperland.Models.ContactU
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -76,33 +78,31 @@
     <hr class="sep"/>
     <div class="container text-center mt-4 confo">
       <h2>Get in touch with us</h2>
-      <form class="contact-form">
+      <form class="contact-form" method="post" asp-action="Contact">
         <div class="row">
           <div class="col-lg-6 col-sm-12 ">
               
-            <input type="text" class="form-control" placeholder="First name" required>
+            <input asp-for="Name" type="text" class="form-control" placeholder="Name" required>
           </div>
-          <div class="col-lg-6 col-sm-12">
-            <input type="text" class="form-control" placeholder="Last name" required>
-          </div>
+          
         </div>
         <div class="row">
           <div class="col-lg-6 col-sm-12 phone-num ">
             <span class="country-code">+49</span>
-            <input type="text" class="form-control codenum" placeholder="Mobile number" required>
+            <input asp-for="PhoneNumber" type="text" class="form-control codenum" placeholder="Mobile number" required>
           </div>
           <div class="col-lg-6 col-sm-12">
-            <input type="text" class="form-control" placeholder="Email address" required>
+            <input asp-for="Email" type="text" class="form-control" placeholder="Email address" required>
           </div>
         </div>
-        <select class="form-select form-control " aria-label="Default select example" required>
+        <select asp-for="SubjectType" class="form-select form-control " aria-label="Default select example" required>
             <option selected>Subject</option>
             <option value="1">subject 1</option>
             <option value="2">subject 2</option>
             <option value="3">subject 3</option>
           </select>
         <div class="form-group txtarea">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message" required></textarea>
+            <textarea asp-for="Message" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary ">Submit</button>
       </form>

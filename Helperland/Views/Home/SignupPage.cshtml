@@ -1,0 +1,162 @@
+﻿@using Helperland
+@model Helperland.Models.User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helperland | Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-xl navbar-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="~/img/white-logo-transparent-background.png" alt=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav na">
+                  <li class="nav-item Rounded-Rectangle-5-copy-4">
+                    <a class="nav-link" href="#">Book a cleaner</a>
+                  </li>
+                  <li class="nav-item ni">
+                    <a class="nav-link" asp-action="prices">Prices</a>
+                  </li>
+                  <li class="nav-item ni">
+                    <a class="nav-link" href="#">Our Guarantee</a>
+                  </li>
+                  <li class="nav-item ni">
+                    <a class="nav-link" href="#">Blog</a>
+                  </li>  
+                  <li class="nav-item ni">
+                    <a class="nav-link" asp-action="contact">Contact us</a>
+                  </li>
+                  <li class="nav-item Rounded-Rectangle-5">
+                    <a class="nav-link" href="#">Login</a>
+                  </li>
+                  <li class="nav-item Rounded-Rectangle-5-copy">
+                    <a class="nav-link" asp-action="become_Helper">Become a Helper</a>
+                  </li>
+                  <li class="nav-item flg">
+                    <a class="nav-link" href="#"><img src="img/flag.png" alt=""></a>
+                  </li>
+                  <li class="nav-item drop">
+                    <a class="nav-link" href="#"><img src="img/keyboard-right-arrow-button.png" alt=""></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <main>
+
+        <section class="my-4">
+            <p class="text-center mb-1" style="font-size: 36px; color: #4F4F4F;"><b>Create an account</b></p>
+            <div class="d-flex justify-content-center mb-2">
+                <div class="me-1">
+                    <hr style="width: 50px;">
+                </div>
+                <div class="text-center ms-2;" style="margin-top: 4px;">
+                    <img src="~/img/forma-1-copy-5.png" alt="">
+                </div>
+                <div class="ms-1">
+                    <hr style="width: 50px;">
+                </div>
+            </div>
+        </section>
+
+        <div class="container mt-4">
+            <form method="post" asp-action="SignupPage">
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <input asp-for="FirstName" type="text" class="form-control" id="firstName" placeholder="First name" style="height:46px;margin-bottom: 15px;">
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <input asp-for="LastName" type="text" class="form-control" id="lastName" placeholder="Last name" style="height:46px;margin-bottom: 15px;">
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <input asp-for="Email" type="email" class="form-control" id="email" placeholder="Email" style="height:46px;margin-bottom: 15px;">
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group" style="height:46px;margin-bottom: 15px;">
+                            <span class="input-group-text" style="height:46px;" id="basic-addon1">+49</span>
+                            <input asp-for="Mobile" type="phone" class="form-control" id="phone" placeholder="Mobile number"><br>
+                            <span class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <input asp-for="Password" type="password" class="form-control" id="password" placeholder="Password" style="height:46px;margin-bottom: 15px;">
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group" style="height:46px;margin-bottom: 15px;">
+                            <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password"><br>
+                            <span class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form_btn w-100 mt-3 d-flex align-items-center justify-content-center mb-3">
+                    <button type="submit" class="btn submit_btn rounded-pill text-white mb-4 mb-4">
+                        Register
+                    </button>
+                </div>
+            </form>
+            <div class="d-flex justify-content-center">
+                <span class="mt-1"> Already registered? <a asp-action="Index" style="text-decoration:none" > Login now </a></span>
+            </div>
+            
+        </div>
+
+    </main>
+    <footer>
+      <div class="container d-flex justify-content-between align-items-center py-3">
+          <!-- logo starts -->
+          <div>
+            <img width="100px" src="~/img/white-logo-transparent-background.png" alt="">
+          </div>
+          <!-- logo ends -->
+  
+          <!-- links starts -->
+          <div class="d-flex flex-wrap text-center justify-content-center">
+           <a class="px-3 ftn" asp-action="Index">HOME</a>
+            <a class="px-3 ftn" asp-action="about">ABOUT</a>
+            <a class="px-3 ftn" href="#">TESTIMONIALS</a>
+            <a class="px-3 ftn" asp-action="faq">FAQS</a>
+            <a class="px-3 ftn" href="#">INSURRANCE POLICY</a>
+            <a class="px-3 ftn" href="#">IMPRESSUM</a>
+          </div>
+          <!-- links ends -->
+  
+          <!-- fb insta starts -->
+          <div>
+            <a class="px-2" href="#"><img src="~/img/forma-3.png" alt=""></a>
+  
+            <a class="px-2" href="#"><img src="~/img/forma-2.png" alt=""></a>
+          </div>
+          <!-- fb insta ends -->
+        </div>
+      <hr />
+      <div class="terms text-center tnc">
+          ©2018 Helperland. All rights reserved. <a class="tnc" href="#">Terms and Conditions</a> | <a class="tnc" href="#">Privacy Policy</a>
+      </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+</body>
+</html>
