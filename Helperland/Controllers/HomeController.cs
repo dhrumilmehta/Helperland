@@ -46,7 +46,8 @@ namespace Helperland.Controllers
         }
         public IActionResult contact()
         {
-            return View();
+            ContactUs contactU = new ContactUs();
+            return View(contactU);
         }
 
         public IActionResult become_Helper()
@@ -156,12 +157,14 @@ namespace Helperland.Controllers
 
         }
         [HttpPost]
-        public IActionResult Contact(ContactU contactU)
+        public IActionResult Contact(ContactUs contactU)
         {
 
             if (ModelState.IsValid)
             {
                 contactU.IsDeleted = false;
+                _db.ContactUs.Add(contactU);
+                _db.SaveChanges();
                 return RedirectToAction("contact");
             }
             return View();

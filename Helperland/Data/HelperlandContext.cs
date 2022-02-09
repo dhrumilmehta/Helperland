@@ -19,7 +19,7 @@ namespace Helperland.Data
         }
 
         public virtual DbSet<City> Cities { get; set; }
-        public virtual DbSet<ContactU> ContactUs { get; set; }
+        public virtual DbSet<ContactUs> ContactUs { get; set; }
         public virtual DbSet<ContactUsAttachment> ContactUsAttachments { get; set; }
         public virtual DbSet<FavoriteAndBlocked> FavoriteAndBlockeds { get; set; }
         public virtual DbSet<Rating> Ratings { get; set; }
@@ -60,7 +60,7 @@ namespace Helperland.Data
                     .HasConstraintName("FK_City_State");
             });
 
-            modelBuilder.Entity<ContactU>(entity =>
+            modelBuilder.Entity<ContactUs>(entity =>
             {
                 entity.HasKey(e => e.ContactUsId);
 
