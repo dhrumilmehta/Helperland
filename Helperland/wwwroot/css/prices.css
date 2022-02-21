@@ -1,381 +1,731 @@
-#banner{
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family:'Roboto', sans-serif;
+  }
+
+
+
+
+.navbar{
+    background-color: #646464;
+    padding: 6px 10px;
+}
+.navbar-brand img{
+    width: auto;
+    max-height: 50px;
+    padding-left: +5px;
+}
+.nav-link{
+    color: #fff ;
+}
+.nav-link:hover{
+    color:#81b6c1;
+    border: transparent;
+}
+.nav-item{
+    font-size: 15px;
+}
+.nav-btn{
+    color: white;
+    background-color: #29626D;
+    border: solid 1px white;
+}
+.price-btn{
+    background-color: transparent;
+    border: solid 1px white;
+}
+.nav-btn:hover{
+    color: #29626D !important;
+    border: solid 1px #29626D;
+    background-color: white;
+}
+.nav-btn-itmes{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.nav-link-items{
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+
+
+
+
+
+.header_banner img{    
     width: 100%;
-}
-#faqnav{
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #757575;
-    padding: 0!important;
-    /* font-size: 0.7rem!important; */
-}
-#faqnav .nav-item{
-    margin: auto 0;
-}
-
-#faqnav .nav-item .rounded-pill{
-    border: 1px solid #FFFFFF80;
-    font-size: 17px;
-    line-height: 40px;
-    padding: 0 20px;
-    margin: auto 5px;
-    color: white;
-
-}
-.navcol{
-    color: white;
-}
-.navcol:hover{
-    color: white;
+    height: 370px;      
+    background-size: cover;
+    margin: 0;         
 }
 
 
-#logo-faq{
-    height: 54px;
-    margin: 6px 0 4px 15px;
-}
-
-.greenlink{
-    background-color:#29626D;
-    color: white;
-}
-.tit{
-    color: #4f4f4f;
-}
-hr{
-    display: inline-block;
-    width: 62px;
-    height: 1px!important;
-    color: #CCCCCC!important;
-}
-#one-time{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-items: center;
-    
-    border: 1px solid #B0C9CE;
-    width: 555px;
-    height: 304px;
-    margin: 42px auto 50px;
-}
-#one-time{
-    color: #646464;
-}
 
 
-#one-time-title{
-    width: 100%;
-}
 
-#one-time-title h2{
-    font-size: 28px;
-    line-height: 60px;
-    color: #FFFFFF!important;
-    background-color: #1D7A8C;
-    margin: 0;
-    padding: 0;    
+
+
+.faq_heading{
     text-align: center;
+    padding-top: 32px;
+}
+.faq_heading p{
+    font-weight: 700;
+    color: #4F4F4F;
+    font-size: 36px;
 }
 
-#hr-price{
-    margin: 18px 0 27px;
-}
 
-.onetime-desc{
-    margin-left: 9px;
-    font-size: 16px;
-}
 
-#extra{
-    border-top:1px solid #DCDCDC;
-    width: 1140px;
-    margin: 0 auto;
-}
-
-#extra-services{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 40px 0 56px;
-}
-.extra-box{
-    display: flex;
-    flex-direction: column;
+.sep_contain{
+    display: inline-flex;
     align-items: center;
-    margin: 0 0 20px;    
+    justify-content: center;
+    padding-top: 9px;
+}
+.separator{
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
-.extra-box p{
+.sep_state{
+    color: #4F4F4F;
+    text-align: center;
+    padding-top: 34px;
+    font-size: 18px;
+}
+
+.main-card{
+    margin-top: 42px !important;
+    width:35%;
+    height: auto;
+    border: solid 1px #B0C9CE;
+    margin: auto;
+}
+.main-card-title{
+    padding-bottom: 13px;
+    padding-top: 12px;
+    background-color: #1D7A8C;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+.card-price{
+    color: #646464;
+    margin-top: 18px;
+}
+.rate{
+    font-size: 48px;
+    font-weight: bold;
+}
+.price-unit{
+    font-size: 30px;
+}
+.feat-list{
+    padding-top: 30px;
+    margin: auto;
+}
+.feat-list ul{
+    list-style: none;
     font-size: 16px;
     color: #646464;
-    margin: 15px 0 6px;
+    text-align: left !important;
+}
+.feat-list li{
+    padding-bottom: 25px;
+}
+.feat-list img{
+    width: 12%;
+    height: auto;
+    padding-right: 5px;
 }
 
-.extra-box h5{
-    font-size: 18px;
-    color: #1D7A8C;
-    margin: 0;
-    padding: 0;
+
+
+.sep-hr2{
+    width: 65%;
+    margin-top: 50px !important;
+    margin: auto;
 }
 
-.extra-img{
-    width: 108px;
-    height: 108px;
-    border: 1px solid #B0C9CE;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 50px;
-}
 
-/* -------------------------- What include section --------------------------- */
-#what-include{
-    padding-top: 73px;
-    background-color: #F6F6F6;
+.xt-service_heading{
+    text-align: center;
+    padding-top: 41px;
 }
-#what-include-box{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.what-boxes{
-    margin: 42px 15px 81px;
+.xt-service_heading p{
+    font-size: 36px;
+    font-weight: 700;
     color: #4F4F4F;
 }
-.what-boxes h3{
+
+
+
+
+.services{
+    margin-top: 40px;
+    margin-left: +30px;
+}
+.service {
+	margin-left: 60px;
+    margin-right: 50px;
+}
+
+.serviceImage {
+	border: 1px solid #b0c9ce;
+	width: 108px;
+	height: 108px;
+	margin: auto;
+}
+
+.serviceText {
+	font-size: 16px;
+	margin: 17px 0 9px;
+	color: #646464;
+}
+
+.serviceTime {
+	font-size: 18px;
+	color: #1d7a8c;
+	font-weight: bold;
+}
+
+
+
+.cleaning-service{
+    margin-top: 56px;
+    background-color: #F6F6F6;
+    padding-bottom: 80px;
+}
+.cleaning-heading{
+    text-align: center;
+    padding-top: 75px;
+}
+.cleaning-heading p{
+    font-weight: 700;
+    color: #4F4F4F;
+    font-size: 36px;
+}
+
+
+
+.cleaning-card{
+    margin-top: 45px;
+}
+.card{
+    background-color: #F6F6F6;
+    border: none;
+}
+.card-img-top{
+    width: auto;
+}
+.clean-card-list{
+    margin-left: 0%;
+    padding-left: 0%;
+    list-style: none;
+    color: #4F4F4F;
+    font-weight: 16px;
+}
+.clean-card-title{
+    color: #4F4F4F;
     font-size: 20px;
-    line-height: 24px;
-    margin: 20px 0 10px;
+    font-weight: bold;
 }
-.box-desc{
-    font-size: 16px;
-    line-height: 22px;
+.clean-card-list li{
+    padding-bottom: 15px;
 }
-
-.box-desc div{
-    margin: 7px 0;
-}
-
-/* ---------------------------- why helperland --------------------------- */
-#why-hl-main{
-    margin: 42px auto 70px;
-}
-
-#why-hl-main #left-side{
-    text-align: end;
-}
-
-#left-side p{
-    margin: 0 0 0 auto;
+.clean-card-list li img{
+    width: 28px;
+    padding-right: 9px;
 }
 
 
-#why-hl-main h3{
-    font-size: 20px;
-    line-height: 24px;
-    margin-bottom: 9.5px;
-    color: #646464;
-    width: 340px;
+
+
+.helperland-heading{
+    text-align: center;
+    padding-top: 71px;
+}
+.helperland-heading p{
+    font-weight: 700;
+    color: #4F4F4F;
+    font-size: 36px;
+}
+
+
+
+.whyDescription{
+    margin-top: 42px ;
+}
+.whyDescriptionItem {
+	max-width: 337px;
+}
+.whyDescriptionItemHeader {
+	font-size: 20px;
+	font-weight: bold;
+	color: #646464;
+	margin-bottom: 9px;
+}
+
+.whyDescriptionItemText {
+	font-size: 14px;
+	color: #646464;
+	margin-bottom: 47px;
+}
+
+
+
+
+
+.news_letter{
+    margin-top: 70px;
+    text-align: center;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 0px 70px;
+}
+
+.head_newsletter{
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #353548;
     
 }
-
-#why-hl-main p{    
-    font-size: 14px;
-    color: #646464;
-    height: 84.67px;
-    width: 280.7px;
-    margin-bottom: 0;
+.newsetter{
+    border-radius: 55px;
+    border:solid .3px #565656;
+    height:40px;
+    width:235px;
+    padding:13px;
+    font-size: 13px;
+}
+.btn-submit{
+    background-color:#FF7B6D;
+    border-radius: 50px;
+    border:none;
+    color:white;
+    font-weight: normal;
+    font-size: 15px;
+    width:80px;
+    height:40px;
+    margin-left:5px;}
+.btn-submit:hover{
+    background-color:white;
+    color:#FF7B6D;
+    font-weight: bold;
+    border: solid 2px #FF7B6D;
+}
+.chat{
+    padding-top: +10px;
+}
+.up-arrow{
+    padding-top: +20px;
+}
+.up-arrow img{
+    width: 48px;
+    height: 50px;
 }
 
-#why-hl-main img{
-    margin: 0 auto;
-    width: 375px;
-    height: 241px;
-}
 
-#why-hl-main #why-img{
-    order: 2;
-}
-#why-hl-main #left-side{
-    order: 1;
-    margin:0 25px 0 15px;
-}
-#why-hl-main #right-side{
-    order: 3;
-    margin:0 15px 0 25px;
-}
-#news{
-    margin: 25px 0 55px;
- 
-}
 
-#news h4{
-    font-size: 18px!important;
-    margin-bottom: 16px !important;
-}
 
-#news input{
-    font-size: 14px!important;
-}
 
-#news .email{
-    background-color: #F4F5F8!important;
-    border: 1px solid #565656!important;
-    padding-left: 22px!important;
-    line-height: 40px;
-    width: 233px;
-    margin-right: 11px;
-}
 
-#news .submit-btn{
-    background-color: #ff7b6d; 
-    color: #ffffff;
-    padding: 0 22px;
-    line-height: 40px;
-    border:0;
-}
 
-footer {
-	margin-top: 53px;
-	padding: 20px 123px 26px 115px;
-	background: #111111;
-}
 
-footer hr {
-	display: block;
-	height: 1px;
-	background: #424242;
-	margin: 19px 0 25px 0;
+footer{
+    background-color: #111111;
     width: 100%;
+    color: white;
+    min-height: 195px;
+    margin-top: 55px;
+  }
+  .footer-logo{
+      width: 120px;
+      height: 92px;
+  }
+footer .container a {
+    text-decoration: none;
+    color: #F1F1F1;
+    font-size: 14px;
+  }
+.foot_menu{
+    padding-top: 20px;
+    max-width: 1350px;
+  }
+.icons{
+padding-top: +15px;
+}
+.fimg1 {
+    width: 9px;
+    height: 18px;
+    margin-right: 20px;
+  }
+.fimg2 {
+    width: 20px;
+    height: 20px;
+  }
+  
+.term_c{
+    color: #9BA0A3;
+    font-size: 14px;
+  }
+.term_c a{
+      text-decoration: none;
+      color: #9BA0A3;
+  }
+.foot_menulink{
+padding-top: +20px;
+margin-left: -25px;
 }
 
-.ftn{
-    color: white;
-    display: block;
-    text-decoration: none;
-  }
-  .ftn:hover{
-    color: white;
-  }
-  .tnc{
-      color: #9ba0a3;
-  }
-  .tnc:hover{
-    color: #9ba0a3;
+
+
+
+
+@media screen and (max-width: 426px){
+    .navbar{
+        background-color: #646464;
+        padding: 5px 2px;
     }
-    #scrollToTop {
-        position: fixed;
-        bottom: 150px;
-        left: 70px;
-        height: 48px;
-        width: 48px;
-        background: #525252;
-        outline: none;
-        border: none;
-        cursor: pointer;
-        opacity: 1;
-        transition: opacity 0.5s;
+    .nav-btn-itmes{
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
-    .layer{
-        position: absolute;
-          
-          right: 20px;
-          font-size: 200%;
-          z-index: 100;
-      }
-      @media screen and (max-width:1145px) {
-        #why-hl-main #why-img{
-            order: 1;
-            width: 100%;
-            text-align: center;
-        }
-        #why-hl-main #left-side{
-            order: 2;
-            margin:0 12px 0 15px;
-        }
-        #why-hl-main #right-side{
-            order: 3;
-            margin:0 15px 0 12px;
-        }
-        #extra{
-            width: 80%;
-        }
-        #what-include-box{
-            margin: 30px 0;
-        }
-        .what-boxes{
-            margin:10px 15px 40px;
-        }
+    .header_banner img{    
+        height: auto; 
+    }
+    .faq_heading{
+        padding-top: 20px;
+    }
+    .sep_contain{
+        padding-top: 5px;
+    }
+    .sep_state{
+        padding-top: 20px;
+        font-size: 14px;
     }
     
+    .main-card{
+    width:80%;
+    height: auto;
+    }
+    .main-card-title{
+    padding-bottom: 11px;
+    padding-top: 10px;
+    font-size: 20px;
+    }
+    .card-price{
+    margin-top: 13px;
+    }
+    .rate{
+    font-size: 38px;
+    }
+    .price-unit{
+    font-size: 20px;
+    }
+    .feat-list{
+    padding-top: 10px;
+    }
+    .feat-list ul{
+        font-size: 14px;
+    }
+    .feat-list li{
+    padding-bottom: 15px;
+    }
+    .feat-list img{
+    width: 10%;
+    }
+
+
+    .sep-hr2{
+        width: 85%;
+        margin-top: 40px !important
+    }
+
+    .xt-service_heading{
+        padding-top: 25px;
+    }
+
+    .services{
+        margin-top: 20px;
+        margin-left: -10px;
+    }
+    .service {
+        margin-top: 35px;
+    }
+
+
+
+    .cleaning-service{
+        padding-bottom: 60px;
+    }
+    .cleaning-heading p{
+        font-size: 30px;
+    }
+    .cleaning-card{
+        margin-top: 30px;
+    }
+    .card{
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .whyDescription{
+        flex-direction: column;
+    }
+    .whyDescriptionItem {
+        width: auto;
+        margin: auto;
+        padding: 0%;
+    }
+    .whyDescriptionItemHeader {
+        font-size: 18px;
+    }
     
-    @media screen and (max-width:734px) {
+    .whyDescriptionItemText {
+        font-size: 12px;
+    }
     
-        #extra{
-            width: 90%;
-        }
-        #why-hl-main #left-side{
-            margin:0 15px 0 15px;
-            text-align: center;
-            width: 80%;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-        }
-        #why-hl-main #right-side{
-            margin:0 15px 0 15px;
-            text-align: center;
-            width: 80%;
-        }
+
+
+
+    .news_letter{
+        margin-top: -2px;
+        padding: 0%;
+    }
+    .up-arrow{
+        display: none;
+    }
+    .news_letter{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .chat{
+        margin-bottom: 20px;
+    }
+    .chat img{
+        width: 15%;
+    }
+    .newsetter{
+        margin-bottom: 10px;
+    }
+
+
+
+
+
+    .foot_menulink a{
+        padding-top: +5px;
+        padding-bottom: +5px;
+    }
+    .fimg1{
+        margin-left: +5px;
+    }
+
+    .foot_menu{
+        flex-direction: column;
+    }
+    .foot_menulink{
+        flex-direction: column;
+        margin-left: +5px;
+    
+    }
+    .foot_menulink a{
+        padding-top: +5px;
         
-        #why-hl-main p{    
-            text-align: center;
-            width: 100%;
-            margin-bottom: 0;
-        }
-        #why-hl-main h3{
-            font-size: 20px;
-            line-height: 24px;
-            margin-bottom: 9.5px;
-            color: #646464;
-            width: 100%;
-            
-        }
-        
+    }
+    .footer-logo{
+        width: 25%;
+        height: auto;
+    }
+
+}
+
+
+@media screen and (min-width:426px) and (max-width:769px){
+    .navbar{
+        background-color: #646464;
+        padding: 5px 4px;
+    }
+    .nav-btn-itmes{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 4px;
+    }
+    .header_banner img{    
+        height: auto; 
+    }
+
+
+    .sep_state{
+        padding-top: 20px;
+    }
+
+
+
+    .main-card{
+        width:60%;
+        height: auto;
+    }
+    .main-card-title{
+        padding-bottom: 12px;
+        padding-top: 11px;
+        font-size: 26px;
+    }
+    .card-price{
+        margin-top: 13px;
+    }
+    .rate{
+        font-size: 42px;
+    }
+    .price-unit{
+        font-size: 26px;
+    }
+    .feat-list{
+        padding-top: 10px;
+    }
+    .feat-list ul{
+        font-size: 18px;
+    }  
+    .feat-list img{
+        width: 10%;
+    }
+    .sep-hr2{
+        width: 85%;
+        margin-top: 40px !important
+    }
+
+    .xt-service_heading{
+        padding-top: 35px;
+    }
+
+
+    .services{
+        margin-top: 20px;
+        margin-left: -10px;
+    }
+    .service {
+        margin-top: 30px;
+    }
+
+
+    .cleaning-heading p{
+        font-size: 28px;
+    }
+    .card{
+        width: 100%;
+    }
+    .clean-card-list li img{
+        width: 28px;
+    }
+
+
+    .whyDescription{
+        flex-direction: column;
+    }
+    .whyDescriptionItem {
+        width: auto;
+        margin: auto;
+        padding: 0%;
+    }
+    .whyDescriptionItemHeader {
+        font-size: 24px;
     }
     
-    @media screen and (max-width:650px) {
-    
-        #one-time{
-            width: 90%;
-        }
-        
+    .whyDescriptionItemText {
+        font-size: 16px;
     }
-    
-    @media screen and (max-width:420px) {
-        .what-boxes{
-            width: 90%;
+
+
+    .news_letter{
+        padding: 0%;
+    }
+    .newsetter{
+        margin-bottom: 10px;
+    }
+    .up-arrow{
+        padding-top: 30px;
+    }
+    .up-arrow img{
+        padding-left: +5px;
+    }
+    .chat{
+        padding-top: 30px;
+    }
+    .chat img{
+        width: 90%;
+    }
+
+
+
+    .foot_menulink a{
+        padding-top: +5px;
+        padding-bottom: +5px;
+    }
+    .fimg1{
+        margin-left: +5px;
+        margin-bottom: +5px;
+    }
+    .footer-logo{
+        width: 90px;
+        height: auto;
+    }
+}
+
+
+
+@media screen and (min-width:769px) and (max-width:1025px){
+        .navbar{
+            background-color: #646464;
+            padding: 5px 4px;
         }
-        .what-boxes>img{
-            width: 100%;
+        .nav-btn-itmes{
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 4px;
         }
-        
-        #why-hl-main img{
-            width: 90%;
-     
+        .nav-link-items{
+            padding-bottom: +3px;
+        }
+        .header_banner img{    
+            height: auto; 
+        }
+
+        .main-card{
+            width:50%;
+            height: auto;
+        }
+        .rate{
+            font-size: 46px;
+        }
+        .price-unit{
+            font-size: 30px;
+        }
+        .feat-list{
+            padding-top: 15px;
+        }
+        .feat-list ul{
+            font-size: 18px;
+        }  
+        .feat-list img{
+            width: 10%;
+        }
+        .sep-hr2{
+            width: 70%;
+        }
+        .service {
+            margin-top: 30px;
+        }
+        .whyDescriptionItem {
+            padding: 0px 10px;
         }
     }
-    
-    @media screen and (max-width:340px) {
-        .submit-btn{
-            width: 233px;
-            margin-top: 10px;
-        }
-        #news .email{
-            margin: 0;
-        }
-    }
-    

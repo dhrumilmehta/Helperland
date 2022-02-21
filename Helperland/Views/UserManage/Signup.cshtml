@@ -1,0 +1,225 @@
+﻿@model Helperland.Models.User
+@{
+    ViewData["Title"] = "Signup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/create_acc.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <title>Create Acc</title>
+</head>
+
+<body>
+
+
+    <!--Navigation Bar-->
+    <nav class="navbar  navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-action="Index" asp-controller="Home">
+                <img src="~/Images/logo-large.png" alt="Helperland">
+            </a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation" style="color: #81b6c1;font-size:20px;">
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ms-auto  mb-lg-0 align-items-end">
+                    <li class="nav-item nav-btn-itmes">
+                        <a class="btn rounded-pill nav-btn" type="button">Book Now</a>
+                    </li>
+                    <li class="nav-item nav-btn-itmes">
+                        <a class="btn rounded-pill nav-btn price-btn" asp-action="Prices" asp-controller="Home" type="button">
+                            Prices & services
+                        </a>
+                    </li>
+                    <li class="nav-item nav-link-items"><a class="nav-link" href="#">Warranty</a></li>
+                    <li class="nav-item nav-link-items"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item nav-link-items"><a class="nav-link" asp-action="Contact" asp-controller="Home">Contact</a></li>
+                    <li class="nav-item nav-btn-itmes">
+                        <a href="#" class="btn rounded-pill nav-btn" type="button" data-bs-target="#login-modal" data-bs-toggle="modal">Login</a>
+                    </li>
+                    <li class="nav-item nav-btn-itmes">
+                        <a class="btn rounded-pill nav-btn" type="button" asp-action="BecomePro">Become a Helper</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade" id="login-modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title login-title">Log In</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group login-mail">
+                        <input type="email" class="form-control" placeholder="E-mail"
+                               aria-describedby="basic-addon1">
+                        <span class="input-group-text" id="basic-addon1"><img src="~/Images/email-icon.png"></span>
+                    </div>
+                    <div class="input-group login-pass">
+                        <input type="password" class="form-control" placeholder="Password"
+                               aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2"><img src="~/Images/lock.png"></span>
+                    </div>
+                    <div class="form-check rem-me">
+                        <input class="form-check-input" type="checkbox" value="" id="login-remember" checked>
+                        <label class="form-check-label" for="login-remember">
+                            Remember Me
+                        </label>
+                    </div>
+                    <div class="login-btn">
+                        <button class="btn rounded-pill">Log In</button>
+                    </div>
+                </div>
+                <div class="forgot-pass">
+                    <a class="forgot-pass-link" type="button" data-bs-toggle="modal" data-bs-target="#fgpass-modal" data-bs-dismiss="modal" href="#fgpass-modal">Forgot Password?</a>
+                </div>
+                <div class="create-acc">
+                    <span>
+                        Don't have an account?
+                    </span>
+                    <a type="button" class="create-acc-link" asp-action="Signup" asp-controller="UserManage">
+                        Create an account
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="fgpass-modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title fgpass-title">Forgot Password</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group fgpass-mail">
+                        <input type="email" class="form-control" placeholder="E-mail Address">
+                    </div>
+                    <div class="fgpass-btn">
+                        <button class="btn rounded-pill">Send</button>
+                    </div>
+                    <div class="fg-login">
+                        <a href="#login-modal" data-bs-toggle="modal" data-bs-dismiss="modal">Log In Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="touch-heading">
+        <h1>Create Account</h1>
+    </div>
+
+    <div class="container-fluid sep_contain">
+        <hr class="sep_hr" width="62px" height="1px">
+        <img class="separator" src="/Images/separator.png" alt="">
+        <hr class="sep_hr" width="62px" height="1px">
+    </div>
+
+
+
+    <form class="row g-3 signup_form" asp-action="Signup" asp-controller="UserManage" method="post">
+        <!--div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h4>@ViewBag.message</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div-->
+        <h4 class="text-center" style="color:red">@ViewBag.message</h4>
+
+        <div class="col-md-6 col-sm-12">
+            <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" name="FirstName" asp-for="FirstName">
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" name="LastName" asp-for="LastName">
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+            <div class="input-group">
+                <div class="input-group-text">+49</div>
+                <input type="tel" class="form-control" id="inputPhoneNo" placeholder="Mobile Number" asp-for="Mobile" name="Mobile">
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <input type="email" class="form-control" id="inputEmail" placeholder="E-Mail Address" asp-for="Email" name="Email">
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" asp-for="Password" name="Password">
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <input type="password" class="form-control" id="inputPasswordCnfrm" placeholder="Confirm Password">
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="subs-newsletter">
+            <label class="form-check-label" for="subs-newsletter">
+                Yes, I would like to subscribe to the Helperland GmbH
+                newsletter with vouchers, trends, promotions and individualized offers. I can unsubscribe from the
+                newsletter at any time in the newsletter and in my customer account.
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="acceptTerms">
+            <label class="form-check-label" for="acceptTerms">
+                I accept <a href="#">terms and conditions</a> of Helperland GmbH.
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="acceptTerms">
+            <label class="form-check-label" for="acceptTerms">
+                I have read the <a href="#">privacy policy</a>.
+            </label>
+        </div>
+
+        <div class="g-recaptcha text-center" data-sitekey="6Leo894dAAAAACvzr987WLweqfnQEVhsecrSZEvA"></div>
+
+
+        <div class="col-12">
+            <button type="submit" class="btn submit_button rounded-pill">Submit</button>
+        </div>
+
+        <div class="col-6 text-center m-auto pt-3 signin-link">
+            <p>Already have an account? <a href="#" data-bs-target="#login-modal" data-bs-toggle="modal">Sign In Now</a></p>
+        </div>
+    </form>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    
+    
+</body>
+
+</html>
