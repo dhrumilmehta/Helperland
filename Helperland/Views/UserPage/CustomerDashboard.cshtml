@@ -1,0 +1,233 @@
+﻿@model IEnumerable<Helperland.ViewModels.CustomerDashboard>;
+
+@{
+    int ServiceDashboardCount = 0;
+}
+
+<div class="col-md-7 dashboard-table">
+    <div class="service-heading">
+        <div class="heading dashHeading">
+            <p>Current Service Requests</p>
+        </div>
+        <div class="newRequest">
+            <a class="rounded-pill newrequestBtn" asp-action="BookService" asp-controller="ServiceManage">Add New Request</a>
+        </div>
+    </div>
+
+
+    <table class="dashboardTable">
+
+        <thead>
+            <tr>
+                <th class="col-md-1">
+                    Service ID
+                </th>
+                <th class="col-md-1">
+                    Service Date
+                </th>
+                <th class="col-md-2">
+                    Service Provider
+                </th>
+                <th class="col-md-1">
+                    Payment
+                </th>
+                <th class="col-md-2">
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model.Count() > 0)
+            {
+
+                @foreach (var item in Model)
+                {
+
+                    /*@if (item.Status == 1 || item.Status == 2)
+                    {*/
+
+                        ServiceDashboardCount = ServiceDashboardCount + 1;
+                        <tr data-value=@item.ServiceRequestId>
+                            <td class="dashServId" data-label="Service ID">
+                                <div class="dashServIddiv">
+                                    @item.ServiceRequestId
+                                </div>
+                            </td>
+                            <td class="dashservDate" data-label="Service Date">
+                                <div class="dashdateDiv">
+                                    <p>
+                                        <img src="~/Images/calendar2.png">&nbsp;<span class="dashDate">@item.Date</span>
+                                    </p>
+                                    <p style="padding-left: 5px;">
+                                        <img src="~/Images/layer-14.png">&nbsp;<span>@item.StartTime - @item.EndTime</span>
+                                    </p>
+                                </div>
+                            </td>
+                            <td data-label="Service Provider">
+                                <div class="dashproInfo">
+                                    <div class="dashCapicon">
+                                        <img src="~/Images/forma-1-copy-19.png">
+                                    </div>
+                                    <div class="dashProname">
+                                        <p>Lyum Watson</p>              
+                                        <p>
+                                            <img src="~/Images/star1.png">
+                                            <img src="~/Images/star1.png">
+                                            <img src="~/Images/star1.png">
+                                            <img src="~/Images/star1.png">
+                                            <img src="~/Images/star2.png">
+                                            <span>4</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-label="Payment">
+                                <div class="dashPayment">
+
+                                    <span class="payAmount">€ <span>@item.TotalCost</span></span>
+
+                                </div>
+                            </td>
+                            <td data-label="Actions">
+                                <div class="actiobBtns">
+                                    <button class="rounded-pill customerReschedule" id="rescheduleBtn" data-bs-toggle="modal" data-bs-target="#rescheduleModal" value=@item.ServiceRequestId>Reschedule</button>
+                                    <button class="rounded-pill customerCancel" id="cancelBtn" data-bs-toggle="modal" data-bs-target="#cancelModal" value=@item.ServiceRequestId>Cancel</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    //}
+                }
+            }
+        </tbody>
+    </table>
+
+
+
+    <div class="page-control">
+        <div class="page-control-left">
+            <p>Show</p>
+            <select name="entries" id="entries">
+
+                @if (ServiceDashboardCount > 0)
+                {
+                    @for (int i = ServiceDashboardCount; i > 0; i--)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                }
+                <!--option value="10">10</!--option>
+                <option value="10">9</option>
+                <option value="10">8</option>
+                <option value="10">7</option>
+                <option value="10">6</option>
+                <option value="10">5</option>
+                <option value="10">4</option>
+                <option value="10">3</option-->
+            </select>
+            <p>entries</p>
+            <p>Total Records: <span>@ServiceDashboardCount</span></p>
+        </div>
+
+        <div class="page-control-right" id="pg-right">
+
+            <a href=# class="page-btn"><img src="~/Images/first-page.png" alt="first page"></a>
+
+
+            <a href=# class="page-btn"><img src="~/Images/polygon-1-copy-5.png" alt="previous page"></a>
+
+
+            <a href=# class="page-btn page-no active-2">
+                <p>1</p>
+            </a>
+
+
+            <a href=# class="page-btn page-no">
+                <p>2</p>
+            </a>
+
+
+            <a href=# class="page-btn page-no">
+                <p>3</p>
+            </a>
+
+
+            <a href=# class="page-btn page-no">
+                <p>4</p>
+            </a>
+
+
+            <a href=# class="page-btn">
+                <img src="~/Images/polygon-1-copy-5.png" alt="next  page"
+                     style="transform: rotate(180deg);">
+            </a>
+
+
+            <a href=# class="page-btn">
+                <img src="~/Images/first-page.png" alt="last page"
+                     style="transform: rotate(180deg);">
+            </a>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--Reschedule & Cancel Modals-->
+<!-- Reschedule Modal -->
+<div class="modal fade" id="rescheduleModal" tabindex="-1" aria-labelledby="rescheduleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered resmodal-dialog">
+        <div class="modal-content resmodal-content">
+            <input type="hidden" id="updateRequestId" name="updateRequestId" />
+            <div class="modal-header">
+                <h5 class="modal-title" id="rescheduleModalLabel">Reschedule Service Request</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body resmodal-body">
+                <span>Select Date & Time</span>
+                <div class="resInputs">
+                    <input id="RescheduledDate" class="resDate" type="date" />
+                    <input id="RescheduledTime" class="resTime" type="time" />
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button id="RescheduleUpdateBtn" class="rounded-pill resupdateBtn" data-bs-dismiss="modal" type="submit">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cancel Modal -->
+
+<div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered canmodal-dialog">
+        <div class="modal-content canmodal-content">
+            <input type="hidden" id="CancelRequestId" name="CancelRequestId" />
+            <div class="modal-header">
+                <h5 class="modal-title" id="cancelModalLabel">Cancel Service Request</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body canmodal-body">
+                <span>Why do you want to cancel service?</span>
+                <div class="canInputs">
+                    <textarea id="canText" cols="30" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button id="cancelServBtn" class="rounded-pill cancelServBtn">Cancel Now</button>
+            </div>
+        </div>
+    </div>
+</div>

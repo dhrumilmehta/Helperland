@@ -1,0 +1,174 @@
+﻿@model IEnumerable<Help.ViewModels.CustomerDashboard>;
+
+@{
+    int ServiceHistoryCount = 0;
+}
+
+<div class="col-md-7 main-table">
+    <div class="service-heading">
+        <div class="heading">
+            <p>Service History</p>
+        </div>
+        <div class="export">
+            <input class="export rounded-pill" type="button" value="Export">
+        </div>
+    </div>
+
+
+    <table class="historyTable">
+
+        <thead>
+            <tr>
+                <th class="col-md-2">
+                    Service Details &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
+                </th>
+                <th class="col-md-2">
+                    Service Provider &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
+                </th>
+                <th class="col-md-1 customer-detail">
+                    Payment &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
+                </th>
+                <th class="col-md-1">
+                    Status &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
+                </th>
+                <th class="col-md-1 rateSp">
+                    Rate SP
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model.Count() > 0)
+            {
+
+                @foreach (var item in Model)
+                {
+
+                    /*@if (item.Status == 1 || item.Status == 2)
+                    {*/
+
+                    ServiceHistoryCount = ServiceHistoryCount + 1;
+                    <tr>
+                        <td class="service-date" data-label="Service Details">
+                            <div class="servicedatediv">
+                                <p>
+                                    <img src="~/Images/calendar.png">&nbsp;<span>@item.Date</span>
+                                </p>
+                                <p>
+                                    @item.StartTime - @item.EndTime
+                                </p>
+                            </div>
+                        </td>
+                        <td data-label="Service Provider">
+                            <div class="pro_info">
+                                <div class="cap-icon">
+                                    <img src="~/Images/forma-1-copy-19.png">
+                                </div>
+                                <div class="pro-name">
+                                    <p>Lyum Watson</p>
+                                    <p>
+                                        <img src="~/Images/star1.png">
+                                        <img src="~/Images/star1.png">
+                                        <img src="~/Images/star1.png">
+                                        <img src="~/Images/star1.png">
+                                        <img src="~/Images/star2.png">
+                                        4
+                                    </p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="service-cost" data-label="Payment">
+                            <div class="service-costdiv">
+                                <span class="payAmount">€ <span>@item.TotalCost</span></span>
+                            </div>
+                        </td>
+                        <td data-label="Status">
+                            <div class="statusmain">
+                                <div class="status-complete status">
+                                    Completed
+                                </div>
+                            </div>
+                        </td>
+                        <td data-label="Rate SP">
+                            <div class="ratediv">
+                                <button class="rounded-pill rate-button">Rate SP</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    //}
+                }
+            }
+
+        </tbody>
+    </table>
+
+
+
+    <div class="page-control">
+        <div class="page-control-left">
+            <p>Show</p>
+            <select name="entries" id="entries">
+
+                @if (ServiceHistoryCount > 0)
+                {
+                    @for (int i = ServiceHistoryCount; i > 0; i--)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                }
+                <!--option value="10">10</!--option>
+                <option value="10">9</option>
+                <option value="10">8</option>
+                <option value="10">7</option>
+                <option value="10">6</option>
+                <option value="10">5</option>
+                <option value="10">4</option>
+                <option value="10">3</option-->
+            </select>
+            <p>entries</p>
+            <p>Total Records: <span>@ServiceHistoryCount</span></p>
+        </div>
+
+        <div class="page-control-right" id="pg-right">
+
+            <a href=# class="page-btn"><img src="~/Images/first-page.png" alt="first page"></a>
+
+
+            <a href=# class="page-btn"><img src="~/Images/polygon-1-copy-5.png" alt="previous page"></a>
+
+
+            <a href=# class="page-btn page-no active-2">
+                <p>1</p>
+            </a>
+
+
+            <a href=# class="page-btn page-no">
+                <p>2</p>
+            </a>
+
+
+            <a href=# class="page-btn page-no">
+                <p>3</p>
+            </a>
+
+
+            <a href=# class="page-btn page-no">
+                <p>4</p>
+            </a>
+
+
+            <a href=# class="page-btn">
+                <img src="~/Images/polygon-1-copy-5.png" alt="next  page"
+                     style="transform: rotate(180deg);">
+            </a>
+
+
+            <a href=# class="page-btn">
+                <img src="~/Images/first-page.png" alt="last page"
+                     style="transform: rotate(180deg);">
+            </a>
+
+        </div>
+    </div>
+</div>

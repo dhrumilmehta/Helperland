@@ -1,0 +1,128 @@
+﻿@model Helperland.ViewModels.ScheduleService
+
+@{
+    ViewData["Title"] = "scheduleservice";
+    String TodayDate = DateTime.Now.ToString("yyyy-MM-dd");
+}
+
+
+<div id="tab-content2" class="contents">
+
+    <form id="form2">
+
+        <div class="when-duration">
+            <div class="when">
+                <label for="when-input"> When do you need cleaner? </label>
+                <div id="when-input" style="display:flex">
+
+                    <div class="date-input input-group">
+                        <!--span class="input-group-text" id="basic-addon1">
+                            <img src="~/Images/admin-calendar-blue.png" alt="calender">
+                         </span-->
+                        <input type="date" id="date" class="form-control" aria-label="Date" aria-describedby="basic-addon1" asp-for="Date" min=@TodayDate value=@TodayDate>
+                    </div>
+                    <input type="time" class="time-input" asp-for="Time" id="Time">
+
+                </div>
+            </div>
+
+            <div class="timeduration">
+                <label for="timeduration-input"> How long do you need the cleaner for? </label>
+                <br>
+                <select id="timeduration-input" asp-for="Duration">
+                    <option selected value="3">3.0 Hrs</option>
+                    <option value="3.5">3.5 Hrs</option>
+                    <option value="4">4.0 Hrs</option>
+                    <option value="4.5">4.5 Hrs</option>
+                    <option value="5">5.0 Hrs</option>
+                    <option value="5.5">5.5 hrs</option>
+                    <option value="6">6.0 hrs</option>
+                    <option value="6.5">6.5 hrs</option>
+                    <option value="7">7.0 hrs</option>
+                    <option value="7.5">7.5 hrs</option>
+                    <option value="8">8.0 hrs</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="extraService-checkbox">
+            <p class="service-head">Extra services</p>
+            <div id="custom-checkboxes">
+                <div class="checkbox">
+                    <input type="checkbox" id="insideCabinetCheck" class="htmlcheckbox" asp-for="extra.Cabinet">
+                    <label for="insideCabinetCheck">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="37" height="48">
+                            <path id="extra-svg1" fill-rule="evenodd" fill="#646464"
+                                  d="M34.744 0H2.254C1.11 0 0 1.16 0 2.264v45.735h36.999V2.264C36.999 1.16 35.987 0 34.744 0zm-9.078 21.995a2.8 2.8 0 0 1-2.791 2.804h-8.751a2.8 2.8 0 0 1-2.791-2.804v-1.196a.797.797 0 1 1 1.592 0v1.196c0 .664.538 1.204 1.199 1.204h8.751c.661 0 1.855-.54 1.855-1.204v-1.196c0-.443-.301-.8.14-.8.44 0 .796.357.796.8v1.196z" />
+                        </svg>
+                    </label>
+                    <p>Inside Cabinets</p>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="insideFridgeCheck" asp-for="extra.Fridge" class="htmlcheckbox">
+                    <label for="insideFridgeCheck">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="28" height="56">
+                            <path id="extra-svg2" fill-rule="evenodd" fill="#646464"
+                                  d="M25.406 52.934v3.065h-5.302v-3.065H7.883v3.065H2.581v-3.065H0V20.313h27.999v32.621h-2.593zM5.749 25.7c0-1.293-.54-1.784-1.159-1.784-.666 0-1.16.537-1.16 1.784v6.748c0 .664.54 1.156 1.16 1.156.665 0 1.159.056 1.159-1.156V25.7zM0 18.2V0h27.999v18.2H0zm3.43-4.201c0 .663.54 1.155 1.16 1.155.665 0 1.158-.538 1.158-1.155V6.621c0-.663-.539-1.155-1.158-1.155-.666 0-1.16.934-1.16 1.155v7.378z" />
+                        </svg>
+                    </label>
+                    <p>Inside Fridge</p>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" asp-for="extra.Oven" id="insideOvenCheck" class="htmlcheckbox">
+                    <label for="insideOvenCheck">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             width="52" height="33">
+                            <path id="extra-svg3" fill-rule="evenodd" fill="#646464"
+                                  d="M50.119.981H1.879A1.881 1.881 0 0 0 0 2.863v28.246c0 1.037.842 1.881 1.879 1.881h48.24c1.039 0 1.88-.844 1.88-1.881V2.863a1.88 1.88 0 0 0-1.88-1.882zM41.814 8.68h2.936v3.22h-2.936V8.68zm0 3.045h2.936v2.941h-2.936v-2.941zm0 3.654h2.936v2.941h-2.936v-2.941zM38.6 8.68h2.399v3.22H38.6V8.68zm0 3.045h2.399v2.941H38.6v-2.941zm-3.829 17.5H31.52c.83-.292.876-.974.876-1.77h-6.111c3.125-1.913 5.172-5.054 5.172-8.611H7.21c0 3.557 2.46 6.7 4.981 8.611H6.82c0 .796-.377 1.478.134 1.77H3.758V4.746h31.013v24.479zM38.6 15.379h2.399v2.941H38.6v-2.941zm4.604 12.878c-1.774 0-3.212-1.44-3.212-2.837 0-2.155 1.438-3.595 3.212-3.595 1.772 0 3.209 1.44 3.209 3.595 0 1.397-1.437 2.837-3.209 2.837zm5.297-9.937h-2.936v-2.941h2.936v2.941zm0-3.654h-2.936v-2.941h2.936v2.941zm0-2.766h-2.936V8.68h2.936v3.22z" />
+                        </svg>
+                    </label>
+                    <p>Inside Oven</p>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="laundryCheck" asp-for="extra.laundry" class="htmlcheckbox">
+                    <label for="laundryCheck">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39"
+                             height="46">
+                            <path id="extra-svg4" fill-rule="evenodd" fill="#646464"
+                                  d="M0 45.999V8.987h38.999v37.012H0zm19.499-30.76c-6.798 0-12.329 5.497-12.329 12.254s5.531 12.255 12.329 12.255c6.798 0 12.329-5.498 12.329-12.255 0-6.757-5.53-12.254-12.329-12.254zm0 22.233c-5.535 0-10.039-4.477-10.039-9.979 0-5.502 4.504-9.978 10.039-9.978 5.851 0 10.04 4.476 10.04 9.978s-4.189 9.979-10.04 9.979zm7.985-9.979c0-4.383-3.575-7.936-7.985-7.936-3.609 0-7.984 3.553-7.984 7.936l.002.09c.379.326.796.637 2.283.637.115 0 .537-.368.944-.724.405-.354.788-.689 1.57-.689 1.636 0 1.164.335 1.569.689.408.356.829.724 1.664.724s1.256-.368 1.663-.724c.406-.354.789-.689 1.57-.689.782 0 1.165.335 1.57.689.408.356.829.724 1.79.724.576 0 .985-.26 1.34-.554.001-.058.004-.115.004-.173zm8.961-20.764c0 .624-.508 1.13-1.136 1.13a1.133 1.133 0 0 1-1.136-1.13c0-.623.509-1.129 1.136-1.129.628 0 1.136.506 1.136 1.129zm-3.645 0c0 .624-.509 1.13-1.137 1.13-.303 0-1.136-.506-1.136-1.13 0-.623.833-1.129 1.136-1.129.628 0 1.137.506 1.137 1.129zm-3.646 0c0 .624-.509 1.13-.974 1.13-.79 0-1.298-.506-1.298-1.13 0-.623.508-1.129 1.298-1.129.465 0 .974.506.974 1.129zm-20.683 0c0 .624-.508 1.13-1.136 1.13a1.133 1.133 0 0 1-1.136-1.13c0-.623.509-1.129 1.136-1.129.628 0 1.136.506 1.136 1.129zm-3.645 0c0 .624-.509 1.13-1.136 1.13-.07 0-1.137-.506-1.137-1.13C2.553 6.106 3.62 5.6 3.69 5.6c.627 0 1.136.506 1.136 1.129zM0 0h38.999v3.982H0V0z" />
+                        </svg>
+                    </label>
+                    <p>Laundry Wash & Dry</p>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="interiorCheck" asp-for="extra.window" class="htmlcheckbox">
+                    <label for="interiorCheck">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="47"
+                             height="47">
+                            <path id="extra-svg5" fill-rule="evenodd" fill="#646464"
+                                  d="M45.699 46.999H1.3a1.3 1.3 0 0 1-1.3-1.3v-44.4A1.3 1.3 0 0 1 1.3 0h44.399c.719 0 1.3.581 1.3 1.299v44.4a1.3 1.3 0 0 1-1.3 1.3zM42.996 4.1H4.3v38.896h38.696V4.1zM21.68 21.68H7.642V7.641H21.68V21.68zm0 17.676H7.642V25.319H21.68v14.037zM39.358 21.68H25.319V7.641h14.039V21.68zm0 17.676H25.319V25.319h14.039v14.037z" />
+                        </svg>
+                    </label>
+                    <p>Interior Windows</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="comment-box">
+            <label for="comment">
+                Comments
+            </label>
+            <br>
+            <textarea  asp-for="Comments" id="comment" cols="30" rows="10" style="padding:7px"></textarea>
+            <br>
+            <input type="checkbox" asp-for="havePet" id="have-pet"> <label class="have-pet" for="have-pet">I have pets at home</label>
+        </div>
+
+        <input type="button" value="Continue" class="btn rounded-pill continue"  onclick="SaveServiceDetail();">
+
+    </form>
+
+</div>  

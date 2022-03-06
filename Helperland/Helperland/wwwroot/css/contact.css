@@ -1,0 +1,421 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family:'Roboto', sans-serif;
+  }
+
+
+
+
+.navbar{
+    background-color: #646464;
+    padding: 6px 10px;
+}
+.navbar-brand img{
+    width: auto;
+    max-height: 50px;
+    padding-left: +5px;
+}
+.nav-link{
+    color: #fff ;
+}
+.nav-link:hover{
+    color:#81b6c1;
+    border: transparent;
+}
+.nav-item{
+    font-size: 15px;
+}
+.nav-btn{
+    color: white;
+    background-color: #29626D;
+    border: solid 1px white;
+    text-decoration: none;
+}
+.price-btn{
+    background-color: transparent;
+    border: solid 1px white;
+}
+.nav-btn:hover{
+    color: #29626D !important;
+    border: solid 1px #29626D;
+    background-color: white;
+}
+
+
+.nav-btn-itmes{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.nav-link-items{
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+
+
+
+
+
+.header_banner img{    
+    width: 100%;
+    height: 370px;      
+    background-size: cover;
+    margin: 0;         
+}
+
+
+
+
+
+
+.contact_heading{
+    text-align: center;
+    padding-top: 32px;
+}
+.contact_heading h1{
+    font-weight: 700;
+    color: #4F4F4F;
+}
+
+.sep_contain{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 9px;
+}
+.separator{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+
+
+
+
+
+
+
+
+.contact-service{
+    margin-top: 53px;
+}
+.contact-forms {
+	padding-left: 60px;
+    padding-right: 85px;
+}
+
+.contact-image {
+	width: 108px;
+	height: 108px;
+	margin: auto;
+}
+
+.contact-text {
+	font-size: 16px;
+	margin: 17px 0 1px;
+	color: #646464;
+}
+.contact-text{
+    max-width: 180px;
+}
+
+
+
+
+
+
+.sep-hr2{
+    width: 65%;
+    margin-top: 50px !important;
+    margin: auto;
+}
+
+
+.touch-heading{
+    text-align: center;
+    padding-top: 74px;
+}
+.touch-heading h1{
+    font-weight: 700;
+    color: #4F4F4F;
+}
+
+
+
+
+.form-select{
+    color: #898787;
+}
+.form-select option{
+    color: black !important;
+}
+.contact_form{
+    width: 50%;
+    margin: auto;
+    padding-top: 23px;
+}
+.submit_button{
+    margin:auto;
+  display:block;
+background-color: #1D7A8C;
+border: hidden;
+font-size: 20px;
+color: white;
+}
+.submit_button:hover{
+background-color: white;
+color:  #1D7A8C;
+border: solid 1px #1D7A8C;
+}
+
+
+.map iframe{
+    margin-top: 80px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 0%;
+    border:0;
+    height: 400px;
+}
+
+
+
+
+
+
+.news_letter{
+    margin-top: 45px;
+    text-align: center;
+}
+
+.head_newsletter{
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #353548;
+    
+}
+.newsetter{
+    border-radius: 55px;
+    border:solid .3px #565656;
+    height:40px;
+    width:235px;
+    padding:13px;
+    font-size: 13px;
+}
+.btn-submit{
+    background-color:#FF7B6D;
+    border-radius: 50px;
+    border:none;
+    color:white;
+    font-weight: normal;
+    font-size: 15px;
+    width:80px;
+    height:40px;
+    margin-left:5px;}
+.btn-submit:hover{
+    background-color:white;
+    color:#FF7B6D;
+    font-weight: bold;
+    border: solid 2px #FF7B6D;
+}
+
+
+
+
+
+footer{
+    background-color: #111111;
+    width: 100%;
+    color: white;
+    min-height: 195px;
+    margin-top: 50px;
+  }
+  .footer-logo{
+      width: 120px;
+      height: 92px;
+  }
+footer .container a {
+    text-decoration: none;
+    color: #F1F1F1;
+    font-size: 14px;
+  }
+.foot_menu{
+    padding-top: 20px;
+    max-width: 1350px;
+  }
+.icons{
+padding-top: +15px;
+}
+.fimg1 {
+    width: 9px;
+    height: 18px;
+    margin-right: 20px;
+  }
+.fimg2 {
+    width: 20px;
+    height: 20px;
+  }
+  
+.term_c{
+    color: #9BA0A3;
+    font-size: 14px;
+  }
+.term_c a{
+      text-decoration: none;
+      color: #9BA0A3;
+  }
+.foot_menulink{
+padding-top: +20px;
+margin-left: -25px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 426px){
+    .navbar{
+        background-color: #646464;
+        padding: 5px 2px;
+    }
+    .nav-btn-itmes{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .header_banner img{    
+        height: auto; 
+    }
+    .contact-text{
+        margin-top:8px;
+    }
+    .contact-mail{
+        margin-top: 5px !important;
+    }
+    .contact-service{
+        margin-top: 40px;
+        padding-left: +20px;
+    }
+    .contact-forms {
+        margin-top: +10px;
+    }
+    .sep-hr2{
+        width: 85%;
+        margin-top: 40px !important
+    }
+    .contact_form{
+        width: 75%;
+    }
+    .submit_button{
+        font-size: 16px;
+    }
+    .newsetter{
+        margin-bottom: 10px;
+    }
+    .head_newsletter{
+        font-size: 16px; 
+    }
+    .newsetter{
+        width:200px;
+        font-size: 13px;
+    }
+    .btn-submit{
+        font-size: 14px;
+        width:60px;
+    }
+    .foot_menulink a{
+        padding-top: +5px;
+        padding-bottom: +5px;
+    }
+    .fimg1{
+        margin-left: +5px;
+    }
+
+    .foot_menu{
+        flex-direction: column;
+    }
+    .foot_menulink{
+        flex-direction: column;
+        margin-left: +5px;
+    
+    }
+    .foot_menulink a{
+        padding-top: +5px;
+        
+    }
+    .footer-logo{
+        width: 25%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width:426px) and (max-width:769px){
+        .navbar{
+            background-color: #646464;
+            padding: 5px 4px;
+        }
+        .nav-btn-itmes{
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 4px;
+        }
+        .header_banner img{    
+            height: auto; 
+        }
+        .contact-service{
+            margin-top: 40px;
+            padding-left: +20px;
+        }
+        .sep-hr2{
+            width: 85%;
+            margin-top: 40px !important
+        }
+        .contact_form{
+            width: 75%;
+        }
+        .submit_button{
+            font-size: 18px;
+        }
+        .foot_menulink a{
+            padding-top: +5px;
+            padding-bottom: +5px;
+        }
+        .fimg1{
+            margin-left: +5px;
+            margin-bottom: +5px;
+        }
+        .footer-logo{
+            width: 90px;
+            height: auto;
+        }
+}
+
+
+@media screen and (min-width:769px) and (max-width:1025px){
+    .navbar{
+        background-color: #646464;
+        padding: 5px 4px;
+    }
+    .nav-btn-itmes{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 4px;
+    }
+    .nav-link-items{
+        padding-bottom: +3px;
+    }
+    .header_banner img{    
+        height: auto; 
+    }
+    .sep-hr2{
+        width: 70%;
+    }
+}

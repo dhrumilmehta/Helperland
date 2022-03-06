@@ -1,0 +1,194 @@
+﻿@model Helperland.Models.ContactU
+
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/CSS/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="~/js/contact.js"></script>
+
+    <title>Contact Us</title>
+</head>
+
+<body>
+
+
+    <!--Navigation Bar-->
+    <nav class="navbar  navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-action="Index">
+                <img src="~/Images/logo-large.png" alt="Helperland">
+            </a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation" style="color: #81b6c1;font-size:20px;">
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ms-auto  mb-lg-0 align-items-end">
+                    <li class="nav-item nav-btn-itmes">
+                        <a class="btn rounded-pill nav-btn" type="button" asp-action="BecomePro">Book Now</a>
+                    </li>
+                    <li class="nav-item nav-btn-itmes">
+                        <a class="btn rounded-pill nav-btn price-btn" asp-action="Prices" type="button">
+                            Prices & services
+                        </a>
+                    </li>
+                    <li class="nav-item nav-link-items"><a class="nav-link" href="#">Warranty</a></li>
+                    <li class="nav-item nav-link-items"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item nav-link-items"><a class="nav-link" asp-action="Contact">Contact</a></li>
+                    <li class="nav-item nav-btn-itmes">
+                        <a class="btn rounded-pill nav-btn" type="button">Login</a>
+                    </li>
+                    <li class="nav-item nav-btn-itmes">
+                        <a class="btn rounded-pill nav-btn" type="button" asp-action="BecomePro" asp-controller="UserManage">Become a Helper</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header_banner">
+        <img src="~/Images/group-16_2.png" alt="banner">
+    </div>
+
+
+    <section class="mid-content">
+
+
+        <div class="contact_heading">
+            <h1>Contact Us</h1>
+        </div>
+
+        <div class="container-fluid sep_contain">
+            <hr class="sep_hr" width="62px" height="1px">
+            <img class="separator" src="~/Images/separator.png" alt="">
+            <hr class="sep_hr" width="62px" height="1px">
+        </div>
+
+
+        <div class="contact-service d-flex flex-wrap align-items-center justify-content-center">
+            <div class="contact-forms">
+                <div class="contact-image d-flex align-items-center justify-content-center">
+                    <img src="~/Images/forma-1_2.png" alt="">
+                </div>
+                <div class="contact-text text-center"><span>1111 Lorem ipsum text 100, Lorem ipsum AB</span></div>
+            </div>
+            <div class="contact-forms">
+                <div class="contact-image d-flex align-items-center justify-content-center">
+                    <img src="~/Images/phone-call.png" alt="">
+                </div>
+                <div class="contact-text text-center"><span>+49 (40) 123 56 7890   +49 (40) 123 56 7000</span></div>
+            </div>
+            <div class="contact-forms">
+                <div class="contact-image d-flex align-items-center justify-content-center">
+                    <img src="~/Images/vector-smart-object.png" alt="">
+                </div>
+                <div class="contact-text text-center contact-mail"><span>info@helperland.com</span></div>
+            </div>
+        </div>
+
+
+
+        <div class="sep-hr2">
+            <hr>
+        </div>
+
+        <div class="touch-heading">
+            <h1>Get in touch with us</h1>
+        </div>
+
+        <div class="container-fluid sep_contain">
+            <hr class="sep_hr" width="62px" height="1px">
+            <img class="separator" src="~/Images/separator.png" alt="">
+            <hr class="sep_hr" width="62px" height="1px">
+        </div>
+
+
+        <form class="row g-3 contact_form" method="post" asp-action="Contact" asp-controller="Home" enctype="multipart/form-data">
+            <div class="col-md-6 col-sm-12">
+                <input asp-for="Name" type="text" class="form-control" id="FirstName" name="Name" placeholder="Name">
+            </div>
+            <!--<div class="col-md-6 col-sm-12">
+                <input asp-for="LastName" type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name">
+            </div>-->
+            <div class="col-md-6 col-sm-12">
+                <div class="input-group"> 
+                    <div class="input-group-text">+45</div>
+                    <input asp-for="PhoneNumber" type="tel" class="form-control" id="PhoneNumber" name="PhoneNumber" placeholder="Mobile Number">
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <input asp-for="Email" type="email" name="Email" class="form-control" id="Email" placeholder="E-Mail Address">
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <select id="Subject" class="form-select" name="Subject" asp-for="SubjectType">
+                    <option value="" disabled selected hidden id="disabled">Subject</option>
+                    <option value="career">General</option>
+                    <option value="inquiry">Inquiry</option>
+                    <option value="inquiry">Renewal</option>
+                    <option value="inquiry">Other</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <textarea class="form-control" id="Message" name="Message" asp-for="Message" rows="5" placeholder="Message"></textarea>
+            </div>
+            <div class="col-12">
+                <button class="btn submit_button rounded-pill" type="submit" value="Create">Submit</button>
+            </div>
+        </form>
+        
+
+    </section>
+
+
+    <section class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2525.2755560860005!2d7.130313315795984!3d50.73337787951551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8addff5d1803d%3A0x518acab4fd9eb236!2sHelperland%20GmbH!5e0!3m2!1sen!2sin!4v1640106596909!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy"></iframe>
+
+        <!--img src="~/Images/pin.png" alt="locationMarker">
+
+        <img src="~/Images/group-16.png" alt="mapImage"-->
+    </section>
+
+
+
+    <div class="container-fluid news_letter">
+        <p class="head_newsletter">GET OUR NEWSLETTER</p>
+        <form action="#" method="post">
+            <input class="newsetter" type="email" name="email" placeholder="YOUR EMAIL"> <input type="submit"
+                                                                                                class="btn-submit" name="submit" value="Submit">
+        </form>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

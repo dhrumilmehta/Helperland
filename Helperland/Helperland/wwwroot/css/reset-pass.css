@@ -1,0 +1,196 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family:'Roboto', sans-serif;
+  }
+
+
+
+
+.navbar{
+    background-color: #646464;
+    padding: 6px 10px;
+}
+.navbar-brand img{
+    width: auto;
+    max-height: 50px;
+    padding-left: +5px;
+}
+.nav-link{
+    color: #fff ;
+}
+.nav-link:hover{
+    color:#81b6c1;
+    border: transparent;
+}
+.nav-item{
+    font-size: 15px;
+}
+.nav-btn{
+    color: white;
+    background-color: #29626D;
+    border: solid 1px white;
+}
+.price-btn{
+    background-color: transparent;
+    border: solid 1px white;
+}
+.nav-btn:hover{
+    color: #29626D !important;
+    border: solid 1px #29626D;
+    background-color: white;
+}
+
+
+.nav-btn-itmes{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.nav-link-items{
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+.sep_contain{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 9px;
+}
+.separator{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+
+.touch-heading{
+    text-align: center;
+    padding-top: 30px;
+}
+.touch-heading h1{
+    font-weight: 700;
+    color: #4F4F4F;
+}
+
+
+
+
+
+
+
+.form-select{
+    color: #898787;
+}
+.form-select option{
+    color: black !important;
+}
+.resetpass_form{
+    width: 50%;
+    margin: auto;
+    padding-top: 23px;
+}
+.form-check{
+    margin-top: 25px;
+    margin-bottom: 0%;
+    color: #4f4f4f;
+}
+.form-check a{
+    color: #1D7A8C;
+    text-decoration: none;
+}
+.submit_button{
+    margin:auto;
+  display:block;
+background-color: #1D7A8C;
+border: hidden;
+font-size: 20px;
+color: white;
+}
+.submit_button:hover{
+background-color: white;
+color:  #1D7A8C;
+border: solid 2px #1D7A8C;
+font-weight: bolder;
+}
+.form_label{
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+
+
+
+
+@media screen and (max-width: 426px){
+    .navbar{
+        background-color: #646464;
+        padding: 5px 2px;
+    }
+    .nav-btn-itmes{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+
+    .resetpass_form{
+        width: 75%;
+    }
+    .submit_button{
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (min-width:426px) and (max-width:769px){
+        .navbar{
+            background-color: #646464;
+            padding: 5px 4px;
+        }
+        .nav-btn-itmes{
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 4px;
+        }
+
+        .resetpass_form{
+            width: 75%;
+        }
+        .submit_button{
+            font-size: 18px;
+        }
+
+       
+}
+
+
+@media screen and (min-width:769px) and (max-width:1025px){
+    .navbar{
+        background-color: #646464;
+        padding: 5px 4px;
+    }
+    .nav-btn-itmes{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 4px;
+    }
+    .nav-link-items{
+        padding-bottom: +3px;
+    }
+    
+}
