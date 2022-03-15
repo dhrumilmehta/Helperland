@@ -36,7 +36,7 @@ namespace Helperland.Data
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=LAPTOP-R8BNG9C3\\MSSQLSERVER01;initial catalog=Helperland;TRUSTED_CONNECTION=TRUE");
+                optionsBuilder.UseSqlServer("Data Source=LAPTOP-R8BNG9C3;initial catalog=Helperland;TRUSTED_CONNECTION=TRUE");
             }
         }
 
@@ -61,10 +61,7 @@ namespace Helperland.Data
 
             modelBuilder.Entity<ContactU>(entity =>
             {
-                entity.HasKey(e => e.ContactUsId)
-                    .HasName("PK_ContactUs");
-
-                entity.ToTable("ContactU");
+                entity.HasKey(e => e.ContactUsId);
 
                 entity.Property(e => e.CreatedOn).HasColumnType("datetime");
 
@@ -249,7 +246,7 @@ namespace Helperland.Data
 
                 entity.Property(e => e.TestName)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(100);
             });
 
             modelBuilder.Entity<User>(entity =>

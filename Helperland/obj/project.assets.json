@@ -6222,11 +6222,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dhrumil Mehta\\Desktop\\dummy\\adi\\Helperland-main\\Helperland\\Helperland.csproj",
+      "projectUniqueName": "C:\\Users\\Dhrumil Mehta\\Desktop\\project\\Helperland\\Helperland.csproj",
       "projectName": "Helperland",
-      "projectPath": "C:\\Users\\Dhrumil Mehta\\Desktop\\dummy\\adi\\Helperland-main\\Helperland\\Helperland.csproj",
+      "projectPath": "C:\\Users\\Dhrumil Mehta\\Desktop\\project\\Helperland\\Helperland.csproj",
       "packagesPath": "C:\\Users\\Dhrumil Mehta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dhrumil Mehta\\Desktop\\dummy\\adi\\Helperland-main\\Helperland\\obj\\",
+      "outputPath": "C:\\Users\\Dhrumil Mehta\\Desktop\\project\\Helperland\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dhrumil Mehta\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -14,13 +14,21 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="~/css/Upcoming_services.css">
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script src="~/js/Upcoming_services.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="~/js/providerpg.js"></script>
+
 
     <title>Upcoming Services</title>
+
+
 </head>
 
 <body>
@@ -29,7 +37,7 @@
     <!--Navigation Bar-->
     <nav class="navbar  navbar-expand-lg">
         <div class="container-fluid navbar_div">
-            <a class="navbar-brand" asp-action="Index" asp-controller="Home">
+            <a class="navbar-brand" href="homepage.html">
                 <img src="~/Images/logo-small.png" alt="Helperland">
             </a>
 
@@ -50,7 +58,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" onclick="MySetting()">
                                 My Settings
                             </a>
                         </li>
@@ -76,10 +84,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-end">
 
-                    <li class="nav-item nav-options"><a class="nav-link" href="#">Prices & Services</a></li>
+                    <li class="nav-item nav-options"><a class="nav-link" asp-action="Prices" asp-controller="Home">Prices & Services</a></li>
                     <li class="nav-item nav-options"><a class="nav-link" href="#">Warranty</a></li>
                     <li class="nav-item nav-options"><a class="nav-link" href="#">Blog</a></li>
-                    <li class="nav-item nav-options"><a class="nav-link" href="#">Contanct us</a></li>
+                    <li class="nav-item nav-options"><a class="nav-link" asp-action="Contact" asp-controller="Home">Contanct us</a></li>
 
                     <div class="vl-1 d-none d-lg-block"></div>
                     <a class="notify d-none d-lg-block" href="#">
@@ -103,7 +111,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" onclick="MySetting()" style="cursor: pointer;">
                                     My Settings
                                 </a>
                             </li>
@@ -115,7 +123,9 @@
                         </ul>
                     </li>
 
-                    <li class="d-block d-lg-none nav-divider"><hr></li>
+                    <li class="d-block d-lg-none nav-divider">
+                        <hr>
+                    </li>
 
                     <li class="nav-item nav-options d-block d-lg-none">
                         <button class="nav-btn" href="#">
@@ -123,17 +133,12 @@
                         </button>
                     </li>
                     <li class="nav-item nav-options d-block d-lg-none">
-                        <button class="nav-btn" href="#">
-                            New Service
+                        <button class="nav-btn" onclick="TabNSNav()">
+                            New Service Requests
                         </button>
                     </li>
                     <li class="nav-item nav-options d-block d-lg-none">
-                        <button class="nav-btn" href="#">
-                            Requests
-                        </button>
-                    </li>
-                    <li class="nav-item nav-options d-block d-lg-none">
-                        <button class="nav-btn" href="#">
+                        <button class="nav-btn" onclick="TabUSNav()">
                             Upcoming Services
                         </button>
                     </li>
@@ -143,7 +148,7 @@
                         </button>
                     </li>
                     <li class="nav-item nav-options d-block d-lg-none">
-                        <button class="nav-btn" href="#">
+                        <button class="nav-btn" onclick="TabSHNav()">
                             Service History
                         </button>
                     </li>
@@ -153,8 +158,18 @@
                         </button>
                     </li>
                     <li class="nav-item nav-options d-block d-lg-none">
-                        <button class="nav-btn" href="#">
+                        <button class="nav-btn" onclick="TabBCNav()">
                             Block Customer
+                        </button>
+                    </li>
+                    <li class="nav-item nav-options d-block d-lg-none">
+                        <button class="nav-btn" href="#">
+                            Invoices
+                        </button>
+                    </li>
+                    <li class="nav-item nav-options d-block d-lg-none">
+                        <button class="nav-btn" href="#">
+                            Notifications
                         </button>
                     </li>
 
@@ -172,285 +187,61 @@
         <h2>Welcome,<span class="greet_user"> @TempData["UserName"]</span></h2>
     </section>
 
-       
+
 
 
     <!--Content-->
     <div class="row  service-content justify-content-center">
 
         <div class="col-md-2   service-sidebar d-none d-lg-block" id="service-sidebar">
-            <button class="sidebar-list container-fluid" href="#">
+            <button class="sidebar-list container-fluid" id="DashboardTab">
                 Dashboard
             </button>
-            <button class="sidebar-list  container-fluid" href="#">
-                New Service
+            <button class="sidebar-list  container-fluid active" id="NewServReqTab" onclick="TabNSClick()">
+                New Service Requests
             </button>
-            <button class="sidebar-list  container-fluid" href="#">
-                Requests
-            </button>
-            <button class="sidebar-list  container-fluid active" href="#">
+            <button class="sidebar-list  container-fluid" id="UpcomingServTab" onclick="TabUSClick()">
                 Upcoming Services
             </button>
             <button class="sidebar-list  container-fluid" href="#">
                 Service Schedule
             </button>
-            <button class="sidebar-list  container-fluid" href="#">
+            <button class="sidebar-list  container-fluid" id="ServHistoryTab" onclick="TabSHClick()">
                 Service History
             </button>
             <button class="sidebar-list  container-fluid" href="#">
                 My Ratings
             </button>
-            <button class="sidebar-list  container-fluid" href="#">
+            <button class="sidebar-list  container-fluid" id="BlockCustTab" onclick="TabBCClick()">
                 Block Customer
+            </button>
+            <button class="sidebar-list  container-fluid" href="#">
+                Invoices
+            </button>
+            <button class="sidebar-list  container-fluid" href="#">
+                Notifications
             </button>
 
         </div>
 
 
+        @await Html.PartialAsync("ProviderUpcomingServ")
 
-        <table class="col-lg-7 ">
-            <thead>
-                <tr>
-                    <th class="col-lg-1">
-                        Service ID &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
-                    </th>
-                    <th class="col-lg-2">
-                        Service Date &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
-                    </th>
-                    <th class="col-lg-2 customer-detail">
-                        Customer details &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
-                    </th>
-                    <th class="col-lg-1">
-                        Distance &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
-                    </th>
-                    <th class="col-lg-1">
-                        Actions &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        323436
-                    </td>
-                    <td>
-                        <p>
-                            <img src="~/Images/calendar2.png"> <span class="service-date">09/04/2018</span>
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-14.png"> 12:00 - 18:00
-                        </p>
-                    </td>
-                    <td class="customer-detail">
-                        <p>
-                            David Bough
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-15.png"> Musterstrabe 5,12345 Bonn
-                        </p>
-                    </td>
-                    <td>
-                        15 km
-                    </td>
-                    <td>
-                        <button class="rounded-pill cancel-button">Cancel</button>
-                    </td>
-                </tr>
+        @await Html.PartialAsync("ProviderServiceReq")
 
+        @await Html.PartialAsync("ProviderServiceHistory")
 
-                <tr>
-                    <td>
-                        323436
-                    </td>
-                    <td>
-                        <p>
-                            <img src="~/Images/calendar2.png"> <span class="service-date">09/04/2018</span>
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-14.png"> 12:00 - 18:00
-                        </p>
-                    </td>
-                    <td class="customer-detail">
-                        <p>
-                            David Bough
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-15.png"> Musterstrabe 5,12345 Bonn
-                        </p>
-                    </td>
-                    <td>
-                        15 km
-                    </td>
-                    <td>
-                        <button class="rounded-pill cancel-button">Cancel</button>
-                    </td>
-                </tr>
+        @await Html.PartialAsync("ProviderBlockCustomer")
 
+        @await Html.PartialAsync("ProviderSetting") 
 
-                <tr>
-                    <td>
-                        323436
-                    </td>
-                    <td>
-                        <p>
-                            <img src="~/Images/calendar2.png"> <span class="service-date">09/04/2018</span>
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-14.png"> 12:00 - 18:00
-                        </p>
-                    </td>
-                    <td class="customer-detail">
-                        <p>
-                            David Bough
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-15.png"> Musterstrabe 5,12345 Bonn
-                        </p>
-                    </td>
-                    <td>
-                        15 km
-                    </td>
-                    <td>
-                        <button class="rounded-pill cancel-button">Cancel</button>
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        323436
-                    </td>
-                    <td>
-                        <p>
-                            <img src="~/Images/calendar2.png"> <span class="service-date">09/04/2018</span>
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-14.png"> 12:00 - 18:00
-                        </p>
-                    </td>
-                    <td class="customer-detail">
-                        <p>
-                            David Bough
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-15.png"> Musterstrabe 5,12345 Bonn
-                        </p>
-                    </td>
-                    <td>
-                        15 km
-                    </td>
-                    <td>
-                        <button class="rounded-pill cancel-button">Cancel</button>
-                    </td>
-                </tr>
-
-
-
-
-                <tr>
-                    <td>
-                        323436
-                    </td>
-                    <td>
-                        <p>
-                            <img src="~/Images/calendar2.png"> <span class="service-date">09/04/2018</span>
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-14.png"> 12:00 - 18:00
-                        </p>
-                    </td>
-                    <td class="customer-detail">
-                        <p>
-                            David Bough
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-15.png"> Musterstrabe 5,12345 Bonn
-                        </p>
-                    </td>
-                    <td>
-                        15 km
-                    </td>
-                    <td>
-                        <button class="rounded-pill cancel-button">Cancel</button>
-                    </td>
-                </tr>
-
-
-
-
-
-                <tr>
-                    <td>
-                        323436
-                    </td>
-                    <td>
-                        <p>
-                            <img src="~/Images/calendar2.png"> <span class="service-date">09/04/2018</span>
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-14.png"> 12:00 - 18:00
-                        </p>
-                    </td>
-                    <td class="customer-detail">
-                        <p>
-                            David Bough
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-15.png"> Musterstrabe 5,12345 Bonn
-                        </p>
-                    </td>
-                    <td>
-                        15 km
-                    </td>
-                    <td>
-                        <button class="rounded-pill cancel-button">Cancel</button>
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        323436
-                    </td>
-                    <td>
-                        <p>
-                            <img src="~/Images/calendar2.png"> <span class="service-date">09/04/2018</span>
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-14.png"> 12:00 - 18:00
-                        </p>
-                    </td>
-                    <td class="customer-detail">
-                        <p>
-                            David Bough
-                        </p>
-                        <p>
-                            <img src="~/Images/layer-15.png"> Musterstrabe 5,12345 Bonn
-                        </p>
-                    </td>
-                    <td>
-                        15 km
-                    </td>
-                    <td>
-                        <button class="rounded-pill cancel-button">Cancel</button>
-                    </td>
-                </tr>
-
-
-
-            </tbody>
-        </table>
-
-    </div>
-
-
-
-
+    </div> 
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+
 </body>
 
 </html>

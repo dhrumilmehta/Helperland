@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Help.Controllers
+namespace Helperland.Controllers
 {
     public class HomeController : Controller
     {
@@ -33,9 +33,7 @@ namespace Help.Controllers
 
         public IActionResult Contact()
         {
-            ContactU contactUs = new ContactU();
-            return View(contactUs);
-
+            return View();
         }
 
 
@@ -57,7 +55,6 @@ namespace Help.Controllers
         [HttpPost]
         public IActionResult Contact(ContactU contactUs)
         {
-            contactUs.IsDeleted = false;
             _helpContext.ContactUs.Add(contactUs);
             _helpContext.SaveChanges();
             return RedirectToAction("Index");

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Help.ViewModels.CustomerDashboard>;
+﻿@model IEnumerable<Helperland.ViewModels.CustomerDashboard>;
 
 @{
     int ServiceHistoryCount = 0;
@@ -9,29 +9,29 @@
         <div class="heading">
             <p>Service History</p>
         </div>
-        <div class="export">
-            <input class="export rounded-pill" type="button" value="Export">
+        <div class="export" id="export">
+            <input class="rounded-pill" type="button" value="Export" id="btnExport" onclick="exportexcel()">
         </div>
     </div>
 
 
-    <table class="historyTable">
+    <table class="historyTable" id="HistoryTable">
 
         <thead>
             <tr>
-                <th class="col-md-2">
-                    Service Details &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
+                <th class="col-md-2" onclick="sortTable(0)" style="cursor:pointer">
+                    Service Details 
                 </th>
-                <th class="col-md-2">
-                    Service Provider &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
+                <th class="col-md-2" onclick="sortTable(1)" style="cursor:pointer">
+                    Service Provider 
                 </th>
-                <th class="col-md-1 customer-detail">
-                    Payment &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
+                <th class="col-md-1" onclick="sortTable(2)" style="cursor:pointer">
+                    Payment 
                 </th>
-                <th class="col-md-1">
-                    Status &nbsp;<a href="#"><img src="~/Images/sort.png" alt="sort-logo"></a>
+                <th class="col-md-1" style="cursor:pointer">
+                    Status 
                 </th>
-                <th class="col-md-1 rateSp">
+                <th class="col-md-1 rateSp" style="cursor:pointer">
                     Rate SP
                 </th>
             </tr>
@@ -44,59 +44,76 @@
                 @foreach (var item in Model)
                 {
 
-                    /*@if (item.Status == 1 || item.Status == 2)
-                    {*/
+                    @if (item.Status == 3 || item.Status == 4)
+                    {
 
-                    ServiceHistoryCount = ServiceHistoryCount + 1;
-                    <tr>
-                        <td class="service-date" data-label="Service Details">
-                            <div class="servicedatediv">
-                                <p>
-                                    <img src="~/Images/calendar.png">&nbsp;<span>@item.Date</span>
-                                </p>
-                                <p>
-                                    @item.StartTime - @item.EndTime
-                                </p>
-                            </div>
-                        </td>
-                        <td data-label="Service Provider">
-                            <div class="pro_info">
-                                <div class="cap-icon">
-                                    <img src="~/Images/forma-1-copy-19.png">
-                                </div>
-                                <div class="pro-name">
-                                    <p>Lyum Watson</p>
+
+                        string statusbtn;              @* disabled, rateClass,*@
+
+                        @if (item.Status == 3)
+                        {
+                            @*rateClass = "rateactive";*@
+                            statusbtn = "completed";
+                            @*disabled = "";*@
+                        }
+                        else
+                        {
+
+                            statusbtn = "cancelled";
+                            @*disabled = "disabled";*@
+                            @*rateClass = "rateDisabled";*@
+                        }
+
+                        ServiceHistoryCount = ServiceHistoryCount + 1;
+                        <tr>
+                            <td class="service-date" data-label="Service Details">
+                                <div class="servicedatediv">
                                     <p>
-                                        <img src="~/Images/star1.png">
-                                        <img src="~/Images/star1.png">
-                                        <img src="~/Images/star1.png">
-                                        <img src="~/Images/star1.png">
-                                        <img src="~/Images/star2.png">
-                                        4
+                                        <img src="~/Images/calendar.png">&nbsp;<span>@item.Date</span>
+                                    </p>
+                                    <p>
+                                        @item.StartTime - @item.EndTime
                                     </p>
                                 </div>
-                            </div>
-                        </td>
-                        <td class="service-cost" data-label="Payment">
-                            <div class="service-costdiv">
-                                <span class="payAmount">€ <span>@item.TotalCost</span></span>
-                            </div>
-                        </td>
-                        <td data-label="Status">
-                            <div class="statusmain">
-                                <div class="status-complete status">
-                                    Completed
+                            </td>
+                            <td data-label="Service Provider">
+                                <div class="pro_info">
+                                    <div class="cap-icon">
+                                        <img src="~/Images/forma-1-copy-19.png">
+                                    </div>
+                                    <div class="pro-name">
+                                        <p>Lyum Watson</p>
+                                        <p>
+                                            <img src="~/Images/star1.png">
+                                            <img src="~/Images/star1.png">
+                                            <img src="~/Images/star1.png">
+                                            <img src="~/Images/star1.png">
+                                            <img src="~/Images/star2.png">
+                                            4
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td data-label="Rate SP">
-                            <div class="ratediv">
-                                <button class="rounded-pill rate-button">Rate SP</button>
-                            </div>
-                        </td>
-                    </tr>
+                            </td>
+                            <td class="service-cost" data-label="Payment">
+                                <div class="service-costdiv">
+                                    <span class="payAmount">€ <span>@item.TotalCost</span></span>
+                                </div>
+                            </td>
+                            <td data-label="Status">
+                                <div class="statusmain">
+                                    <div class="status-complete status @statusbtn">
+                                        @statusbtn
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-label="Rate SP">
+                                <div class="ratediv">
+                                    <button class="rounded-pill rate-button">Rate SP</button>
+                                </div>
+                            </td>
+                        </tr>
 
-                    //}
+                    }
                 }
             }
 
@@ -172,3 +189,43 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("HistoryTable");
+        switching = true;
+        dir = "asc";
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount++;
+            } else {
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+</script>

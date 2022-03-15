@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <title>Become a Provider</title>
 </head>
@@ -32,7 +32,7 @@
 
         <nav class="navbar  navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-action="Index">
+                <a class="navbar-brand" asp-action="Index" asp-controller="Home">
                     <img src="~/Images/logo-large.png" alt="Helperland">
                 </a>
                 <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
@@ -45,15 +45,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav  ms-auto  mb-lg-0 align-items-end">
                         <li class="nav-item button">
-                            <a class="nav-link">
+                            <a class="nav-link"  asp-action="BookService" asp-controller="ServiceManage">
                                 Book a
                                 Cleaner
                             </a>
                         </li>
-                        <li class="nav-item"><a asp-action="Prices" class="nav-link">Prices</a></li>
+                        <li class="nav-item"><a asp-action="Prices" asp-controller="Home" class="nav-link">Prices</a></li>
                         <li class="nav-item"><a class="nav-link">Our Guarantee</a></li>
                         <li class="nav-item"><a class="nav-link">Blog</a></li>
-                        <li class="nav-item"><a asp-action="Contact" class="nav-link">Contact us</a></li>
+                        <li class="nav-item"><a asp-action="Contact" asp-controller="Home" class="nav-link">Contanct us</a></li>
                         <li class="nav-item login-button">
                             <a type="button" class="nav-link"
                                data-bs-target="#login-modal" data-bs-toggle="modal">Login</a>
@@ -102,20 +102,28 @@
             <h2 class="form-title text-center">Register Now!</h2>
 
             <input class="form-control" type="text" name="FirstName" id="fname" placeholder="First Name" asp-for="FirstName">
+            <span asp-validation-for="FirstName" class="text-danger" style="font-size: 12px"></span>
+
             <input class="form-control" type="text" name="LastName" id="lname" placeholder="Last Name" asp-for="LastName">
+            <span asp-validation-for="LastName" class="text-danger" style="font-size: 12px"></span>
+
             <input class="form-control" type="email" name="Email" id="ProviderEmail"
                    placeholder="Email Address" asp-for="Email">
+            <span asp-validation-for="Email" class="text-danger" style="font-size: 12px"></span>
 
             <div class="input-group row">
                 <input type="text" class="input-group-text col-2" id="country-code" placeholder="+91" disabled>
                 <input type="tel" name="Mobile" id="phone" class="form-control col-10" placeholder="Phone Number"
                        aria-label="Phone Number" aria-describedby="basic-addon1" autocomplete="off" asp-for="Mobile">
             </div>
+            <span asp-validation-for="Mobile" class="text-danger" style="font-size: 12px"></span>
 
-            <input class="form-control" type="password" name="Password" id="password" placeholder="Password" asp-for="Password">
+            <input class="form-control" type="password" name="Password" id="password" placeholder="Password" asp-for="Password" style="margin-top:15px">
+            <span asp-validation-for="Password" class="text-danger" style="font-size: 12px"></span>
 
-            <input class="form-control" type="password" name="cnfrm-password" id="cnfrm-password"
+            <input class="form-control" type="password" id="cnfrm-password" asp-for="ConfirmPassword" name="ConfirmPassword"
                    placeholder="Confirm Password">
+            <span asp-validation-for="ConfirmPassword" class="text-danger" style="font-size: 12px"></span>
 
             <div class="form-check sendnews">
                 <input type="checkbox" class="form-check-input" id="send-newsletter">
@@ -131,7 +139,7 @@
 
             <div class="g-recaptcha" data-sitekey="6Leo894dAAAAACvzr987WLweqfnQEVhsecrSZEvA"></div>
 
-            <button class="btn rounded-pill m-auto d-flex align-items-center justify-content-center" type="submit" value="Create">
+            <button class="btn rounded-pill m-auto d-flex align-items-center justify-content-center" type="submit" value="Create" id="ProsignSubmit">
                 Get Started&nbsp;&nbsp;<img src="~/Images/arrow-white.png" alt="white_arrow">
             </button>
         </form>
@@ -245,6 +253,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $("#acceptTerms").change(function () {
+                var len = $("#acceptTerms:checked").length;
+                if (len == 0)
+                    $("#ProsignSubmit").prop("disabled", true);
+                else
+                    $("#ProsignSubmit").removeAttr("disabled");
+            });
+            $("#acceptTerms").trigger('change');
+        });
+    </script>
+
+    @if (ViewBag.promessage != null)
+    {
+        <text>
+            <script>
+            $(document).ready(function () {
+               alert('@ViewBag.promessage');
+            });
+            </script>
+        </text>
+    }
+
 
 </body>
 

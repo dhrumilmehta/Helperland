@@ -28,3 +28,10 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active-2";
   });
 }
+
+function MySetting() {
+    $("#tab-content2").hide();
+    $("#tab-content3").show();
+    $("#tab-content1").hide();
+
+}
