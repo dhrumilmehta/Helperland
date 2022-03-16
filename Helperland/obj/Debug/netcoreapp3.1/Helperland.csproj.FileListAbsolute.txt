@@ -51,7 +51,6 @@ C:\Users\Dhrumil Mehta\Desktop\project\Helperland\bin\Debug\netcoreapp3.1\runtim
 C:\Users\Dhrumil Mehta\Desktop\project\Helperland\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\Dhrumil Mehta\Desktop\project\Helperland\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Dhrumil Mehta\Desktop\project\Helperland\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Dhrumil Mehta\Desktop\project\Helperland\obj\Debug\netcoreapp3.1\Helperland.csproj.AssemblyReference.cache
 C:\Users\Dhrumil Mehta\Desktop\project\Helperland\obj\Debug\netcoreapp3.1\Helperland.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Dhrumil Mehta\Desktop\project\Helperland\obj\Debug\netcoreapp3.1\Helperland.AssemblyInfoInputs.cache
 C:\Users\Dhrumil Mehta\Desktop\project\Helperland\obj\Debug\netcoreapp3.1\Helperland.AssemblyInfo.cs
