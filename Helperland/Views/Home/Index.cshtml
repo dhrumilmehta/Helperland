@@ -24,7 +24,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-    <title>Homepage</title>
+    
 </head>
 
 <body>
@@ -54,7 +54,7 @@
                         <li class="nav-item"><a asp-action="Prices" class="nav-link">Prices</a></li>
                         <li class="nav-item"><a class="nav-link">Our Guarantee</a></li>
                         <li class="nav-item"><a class="nav-link">Blog</a></li>
-                        <li class="nav-item"><a asp-action="Contact" class="nav-link">Contact us</a></li>
+                        <li class="nav-item"><a asp-action="Contact" class="nav-link">Contanct us</a></li>
                         <li class="nav-item login-button">
                             <a type="button" class="nav-link"
                                data-bs-target="#login-modal" data-bs-toggle="modal">Login</a>
@@ -96,13 +96,20 @@
             </div>
         </nav>
 
-        @await Html.PartialAsync("LoginModal")
+        @await Html.PartialAsync("Login")
         @await Html.PartialAsync("ForgetPassword")
 
         @if (@TempData["LoginNeed"] != null)
         {
             <div id="NeedLogin" class="alert alert-warning alert-dismissible fade show justify-content-center" role="alert" style="width:25%;height:auto;margin:auto">
                 <strong>@TempData["LoginNeed"]</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        @if (@TempData["resetpass"] != null)
+        {
+            <div id="NeedLogin" class="alert alert-success alert-dismissible fade show justify-content-center" role="alert" style="width:25%;height:auto;margin:auto">
+                <strong>@TempData["resetpass"]</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         }
@@ -130,7 +137,7 @@
 
 
         <div class=" container-fluid book-btn">
-            <button class="rounded-pill">Let's Book a Cleaner</button>
+            <a asp-action="BookService" asp-controller="ServiceManage"><button class="rounded-pill">Let's Book a Cleaner</button></a>
         </div>
 
 
@@ -456,21 +463,19 @@
             crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-
         function closefun() {
             var element = document.getElementById("policy");
             element.classList.add("d-none");
         }
-
     </script>
 
     <script>
-
         $("#NeedLogin").fadeTo(2000, 500).slideUp(500, function () {
             $("#NeedLogin").slideUp(500);
         });
-        
     </script>
+
+   
 
 </body>
 

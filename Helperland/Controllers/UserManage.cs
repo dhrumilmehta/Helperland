@@ -9,7 +9,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Threading.Tasks;
 
-namespace Helperland.Controllers
+namespace Help.Controllers
 {
     public class UserManage : Controller
     {
@@ -37,6 +37,8 @@ namespace Helperland.Controllers
                     user.IsRegisteredUser = true;
                     user.ModifiedBy = 123;
                     user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+                    user.IsApproved = true;
+                    user.IsActive = true;
 
                     _helperlandContext.Users.Add(user);
                     _helperlandContext.SaveChanges();
@@ -67,7 +69,7 @@ namespace Helperland.Controllers
             if (_helperlandContext.Users.Where(x => x.Email == user.Email && pass).Count() > 0)
             {
                 var U = _helperlandContext.Users.FirstOrDefault(x => x.Email == user.Email);
-                Console.WriteLine("1");
+
 
                 if (user.Remember == true)
                 {
@@ -84,13 +86,33 @@ namespace Helperland.Controllers
 
                 if (U.UserTypeId == 1)
                 {
+                    if (U.IsActive == false)
+                    {
+                        TempData["NotActive"] = "Account Deactivated, Please Contact Admin.";
+                        return RedirectToAction("Index", "Home");
+                    }
 
                     return RedirectToAction("Customer", "UserPage");
                 }
                 else if (U.UserTypeId == 2)
                 {
+                    if (U.IsApproved == false || U.IsActive == false)
+                    {
+                        TempData["NotActive"] = "Account Deactivated, Please Contact Admin.";
+                        return RedirectToAction("Index", "Home");
+                    }
 
                     return RedirectToAction("Provider", "UserPage");
+                }
+                else if (U.UserTypeId == 3)
+                {
+                    if (U.IsActive == false)
+                    {
+                        TempData["AdminAccess"] = "Access Denied !!";
+                        return RedirectToAction("Index", "Home");
+                    }
+
+                    return RedirectToAction("AdminDashboard", "Admin");
                 }
                 else
                 {
@@ -133,6 +155,9 @@ namespace Helperland.Controllers
                     signup.IsRegisteredUser = true;
                     signup.ModifiedBy = 123;
                     signup.Password = BCrypt.Net.BCrypt.HashPassword(signup.Password);
+                    signup.IsApproved = false;
+                    signup.IsActive = false;
+                    signup.UserProfilePicture = "cap.png";
 
                     _helperlandContext.Users.Add(signup);
                     _helperlandContext.SaveChanges();

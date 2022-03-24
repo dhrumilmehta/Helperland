@@ -22,8 +22,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="~/js/providerpg.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" defer></script>
+    <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js" defer></script>
+    <script src="~/js/providerpg.js" defer></script>
 
 
     <title>Upcoming Services</title>
@@ -50,7 +51,7 @@
                         <img src="~/Images/sp-arrow-down.png" alt="down-arrow">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li class="dropdown-item">Warm Welcome,<br><span class="user-name"> @TempData["UserName"]</span></li>
+                        <li class="dropdown-item">Warm Welcome,<br><span class="user-name"> @ViewBag.Name</span></li>
                         <div class="dropdown-divider"></div>
                         <li>
                             <a class="dropdown-item" href="#">
@@ -103,7 +104,7 @@
                             <img src="~/Images/sp-arrow-down.png" alt="down-arrow">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li class="dropdown-item">Warm Welcome,<br><span class="user-name"> @TempData["UserName"]</span></li>
+                            <li class="dropdown-item">Warm Welcome,<br><span class="user-name"> @ViewBag.Name</span></li>
                             <div class="dropdown-divider"></div>
                             <li>
                                 <a class="dropdown-item" href="#">
@@ -184,7 +185,7 @@
 
     <!--Greeting Header-->
     <section class="container-fluid d-flex justify-content-center greet-header">
-        <h2>Welcome,<span class="greet_user"> @TempData["UserName"]</span></h2>
+        <h2>Welcome,<span class="greet_user"> @ViewBag.Name</span></h2>
     </section>
 
 

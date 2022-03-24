@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Helperland.Controllers
+namespace Help.Controllers
 {
     public class UserPage : Controller
     {
@@ -564,9 +564,10 @@ namespace Helperland.Controllers
 
 
 
-
-        public JsonResult GetProData()
+        [HttpGet]
+        public JsonResult GetProDetail()
         {
+
             int? Id = HttpContext.Session.GetInt32("userId");
             if (Id == null)
             {
@@ -574,17 +575,22 @@ namespace Helperland.Controllers
             }
 
             User user = _helperlandContext.Users.FirstOrDefault(x => x.UserId == Id);
+            return new JsonResult(user);
+        }
+
+        [HttpGet]
+        public JsonResult GetProAddress()
+        {
+
+            int? Id = HttpContext.Session.GetInt32("userId");
+            if (Id == null)
+            {
+                Id = Convert.ToInt32(Request.Cookies["userId"]);
+            }
 
             UserAddress Addresses = _helperlandContext.UserAddresses.FirstOrDefault(x => x.UserId == Id);
+            return new JsonResult(Addresses);
 
-            ProviderDetail sPSettingsDTO = new ProviderDetail();
-
-            sPSettingsDTO.user = user;
-            sPSettingsDTO.address = Addresses;
-
-
-
-            return new JsonResult(sPSettingsDTO);
         }
 
 
@@ -598,16 +604,16 @@ namespace Helperland.Controllers
             }
 
 
-            User sp = _helperlandContext.Users.FirstOrDefault(x => x.UserId == (int)Id);
+            User sp = _helperlandContext.Users.FirstOrDefault(x => x.UserId == Id);
             sp.FirstName = sPSettings.user.FirstName;
             sp.LastName = sPSettings.user.LastName;
             sp.Mobile = sPSettings.user.Mobile;
             sp.DateOfBirth = sPSettings.user.DateOfBirth;
             sp.NationalityId = sPSettings.user.NationalityId;
             sp.Gender = sPSettings.user.Gender;
-            //sp.UserProfilePicture = sPSettings.user.UserProfilePicture;
+            sp.UserProfilePicture = sPSettings.user.UserProfilePicture;
             sp.ModifiedDate = DateTime.Now;
-            sp.ModifiedBy = 1;
+            sp.ModifiedBy = 123;
 
 
             var userresult = _helperlandContext.Users.Update(sp);
@@ -651,7 +657,7 @@ namespace Helperland.Controllers
         }
 
 
-
+        [HttpPost]
         public IActionResult ProChangePassword(ChangePassword password)
         {
             int? Id = HttpContext.Session.GetInt32("userId");
@@ -677,6 +683,414 @@ namespace Helperland.Controllers
 
 
         }
+
+
+
+
+
+        public JsonResult getUpcomingService()
+        {
+            int? Id = HttpContext.Session.GetInt32("userId");
+            if (Id == null)
+            {
+                Id = Convert.ToInt32(Request.Cookies["userId"]);
+            }
+
+            User user = _helperlandContext.Users.FirstOrDefault(x => x.UserId == Id);
+
+            List<NewServiceReq> UpcomingTable = new List<NewServiceReq>();
+
+            var ServiceRequest = _helperlandContext.ServiceRequests.Where(x => x.Status == 2 && x.ServiceProviderId == user.UserId).ToList();
+
+            if (ServiceRequest.Any())
+            {
+                foreach (var req in ServiceRequest)
+                {
+                    NewServiceReq temp = new NewServiceReq();
+
+
+                    temp.ServiceRequestId = req.ServiceRequestId;
+                    var StartDate = req.ServiceStartDate.ToString();
+                    temp.Date = req.ServiceStartDate.ToString("dd/MM/yyyy");
+                    temp.StartTime = req.ServiceStartDate.AddHours(0).ToString("HH:mm ");
+                    var totaltime = (double)(req.ServiceHours + req.ExtraHours);
+                    temp.EndTime = req.ServiceStartDate.AddHours(totaltime).ToString("HH:mm ");
+                    /* complete btn */
+                    temp.Complete = req.ServiceStartDate.AddHours(totaltime) <= DateTime.Now;
+                    temp.Status = (int)req.Status;
+                    temp.TotalCost = req.TotalCost;
+                    // temp.HasPet = req.HasPets;
+                    //temp.Comments = req.Comments;
+                    User customer = _helperlandContext.Users.FirstOrDefault(x => x.UserId == req.UserId);
+                    temp.CustomerName = customer.FirstName + " " + customer.LastName;
+
+                    ServiceRequestAddress Address = (ServiceRequestAddress)_helperlandContext.ServiceRequestAddresses.FirstOrDefault(x => x.ServiceRequestId == req.ServiceRequestId);
+
+                    temp.Address = Address.AddressLine1 + ", " + Address.AddressLine2 + ", " + Address.City + " , " + Address.PostalCode;
+
+
+
+                    UpcomingTable.Add(temp);
+
+
+
+
+
+
+                }
+
+
+            }
+
+
+            return new JsonResult(UpcomingTable);
+
+        }
+
+
+
+
+        public JsonResult GetCustomer()
+        {
+
+            int? Id = HttpContext.Session.GetInt32("userId");
+            if (Id == null)
+            {
+                Id = Convert.ToInt32(Request.Cookies["userId"]);
+            }
+
+            List<int> customerID = _helperlandContext.ServiceRequests.Where(x => x.ServiceProviderId == Id && x.Status != 1).Select(u => u.UserId).ToList();
+
+
+            var CustomerSetId = new HashSet<int>(customerID);
+
+            List<BlockCustomerData> blockData = new List<BlockCustomerData>();
+
+            foreach (int temp in CustomerSetId)
+            {
+                User user = _helperlandContext.Users.FirstOrDefault(x => x.UserId == temp);
+                FavoriteAndBlocked FB = _helperlandContext.FavoriteAndBlockeds.FirstOrDefault(x => x.UserId == Id && x.TargetUserId == temp);
+
+                BlockCustomerData blockCustomerData = new BlockCustomerData
+                {
+                    user = user,
+                    favoriteAndBlocked = FB
+                };
+
+                blockData.Add(blockCustomerData);
+
+
+
+            }
+
+
+
+            return Json(blockData);
+
+
+        }
+
+
+
+        public string cancelRequest(ServiceRequest request)
+        {
+
+            ServiceRequest requestObj = _helperlandContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == request.ServiceRequestId);
+
+            requestObj.ServiceProviderId = null;
+            requestObj.Status = 1;
+
+            var result = _helperlandContext.ServiceRequests.Update(requestObj);
+            _helperlandContext.SaveChanges();
+            if (result != null)
+            {
+                return "Success";
+            }
+            else
+            {
+                return "error";
+            }
+
+
+
+
+        }
+
+
+
+        public string BlockCustomer(BlockCust temp)
+        {
+            int? Id = HttpContext.Session.GetInt32("userId");
+            if (Id == null)
+            {
+                Id = Convert.ToInt32(Request.Cookies["userId"]);
+            }
+
+            FavoriteAndBlocked obj = _helperlandContext.FavoriteAndBlockeds.FirstOrDefault(x => x.UserId == Id && x.TargetUserId == temp.Id);
+
+            if (temp.Req == "B")
+            {
+
+                if (obj == null)
+                {
+                    obj = new FavoriteAndBlocked();
+                    obj.UserId = (int)Id;
+                    obj.TargetUserId = temp.Id;
+                    obj.IsBlocked = true;
+
+                }
+                else
+                {
+                    obj.IsBlocked = true;
+                }
+
+            }
+            else
+            {
+                obj.IsBlocked = false;
+
+            }
+
+
+
+
+
+            var result = _helperlandContext.FavoriteAndBlockeds.Update(obj);
+            _helperlandContext.SaveChanges();
+            if (result != null)
+            {
+                return "Suceess";
+            }
+            else
+            {
+                return "error";
+            }
+
+
+        }
+
+
+
+
+
+
+
+        [HttpGet]
+        public JsonResult getAllDetails(NewServiceReq ID)
+        {
+
+            NewServiceReq Details = new NewServiceReq();
+
+            ServiceRequest sr = _helperlandContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == ID.ServiceRequestId);
+
+            Details.ServiceRequestId = ID.ServiceRequestId;
+
+            Details.Date = sr.ServiceStartDate.ToString("dd/MM/yyyy");
+
+            Details.StartTime = sr.ServiceStartDate.ToString("HH:mm");
+
+            Details.Duration = (decimal)(sr.ServiceHours + sr.ExtraHours);
+
+            Details.EndTime = sr.ServiceStartDate.AddHours((double)Details.Duration).ToString("HH:mm");
+            Details.TotalCost = sr.TotalCost;
+            Details.Comments = sr.Comments;
+            Details.Status = (int)sr.Status;
+            Details.Complete = sr.ServiceStartDate.AddHours((double)Details.Duration) <= DateTime.Now;
+
+
+
+            List<ServiceRequestExtra> SRExtra = _helperlandContext.ServiceRequestExtras.Where(x => x.ServiceRequestId == ID.ServiceRequestId).ToList();
+
+
+
+            foreach (ServiceRequestExtra row in SRExtra)
+            {
+                if (row.ServiceExtraId == 1)
+                {
+                    Details.Cabinet = true;
+                }
+                else if (row.ServiceExtraId == 2)
+                {
+                    Details.Oven = true;
+                }
+                else if (row.ServiceExtraId == 3)
+                {
+                    Details.Window = true;
+                }
+                else if (row.ServiceExtraId == 4)
+                {
+                    Details.Fridge = true;
+                }
+                else
+                {
+                    Details.Laundry = true;
+                }
+            }
+
+            ServiceRequestAddress Address = _helperlandContext.ServiceRequestAddresses.FirstOrDefault(x => x.ServiceRequestId == ID.ServiceRequestId);
+
+            Details.Address = Address.AddressLine1 + ", " + Address.AddressLine2 + ", " + Address.City + " - " + Address.PostalCode;
+            Details.ZipCode = Address.PostalCode;
+
+            User customer = _helperlandContext.Users.FirstOrDefault(x => x.UserId == sr.UserId);
+
+            Details.CustomerName = customer.FirstName + " " + customer.LastName;
+
+
+            return new JsonResult(Details);
+        }
+
+
+
+
+        [HttpGet]
+        public string acceptService(NewServiceReq ID)
+        {
+            int? spId = HttpContext.Session.GetInt32("userId");
+            if (spId == null)
+            {
+                spId = Convert.ToInt32(Request.Cookies["userId"]);
+            }
+
+            ServiceRequest serviceRequest = _helperlandContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == ID.ServiceRequestId);
+            if (serviceRequest != null && serviceRequest.Status != 1)
+            {
+                return new string("Service Req Not available");
+            }
+
+            int conflict = CheckConflict((int)serviceRequest.ServiceRequestId);
+
+            if (conflict != -1)
+            {
+
+                return conflict.ToString();
+
+            }
+
+
+
+            serviceRequest.Status = 2;
+            serviceRequest.ServiceProviderId = spId;
+            serviceRequest.SpacceptedDate = DateTime.Now;
+            var result = _helperlandContext.ServiceRequests.Update(serviceRequest);
+            _helperlandContext.SaveChanges();
+            if (result != null)
+            {
+                return "Suceess";
+            }
+            else
+            {
+                return "error";
+            }
+
+        }
+
+
+        public string ConflictDetails(NewServiceReq ID)
+        {
+            Console.WriteLine(ID.ServiceRequestId);
+
+            int conflict = CheckConflict(ID.ServiceRequestId);
+
+            ServiceRequest sr = _helperlandContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == conflict);
+
+
+            string conflictmsg = "This Request is conflicting with Service ID: " + sr.ServiceRequestId + " on :" + sr.ServiceStartDate;
+
+            return conflictmsg;
+
+
+
+
+
+
+        }
+
+        public int CheckConflict(int SRID)
+        {
+
+            int? Id = HttpContext.Session.GetInt32("userId");
+            if (Id == null)
+            {
+                Id = Convert.ToInt32(Request.Cookies["userId"]);
+            }
+
+
+            ServiceRequest request = _helperlandContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == SRID);
+
+            String reqdate = request.ServiceStartDate.ToString("yyyy-MM-dd");
+
+            String startDateStr = reqdate + " 00:00:00.000";
+            String endDateStr = reqdate + " 23:59:59.999";
+
+
+            DateTime startDate = DateTime.ParseExact(startDateStr, "yyyy-MM-dd HH:mm:ss.fff",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+
+            DateTime endDate = DateTime.ParseExact(endDateStr, "yyyy-MM-dd HH:mm:ss.fff",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+
+            List<ServiceRequest> list = _helperlandContext.ServiceRequests.Where(x => (x.ServiceProviderId == Id) && (x.Status == 2) && (x.ServiceStartDate > startDate && x.ServiceStartDate < endDate)).ToList();
+
+            double mins = ((double)(request.ServiceHours + request.ExtraHours)) * 60;
+            DateTime endTimeRequest = request.ServiceStartDate.AddMinutes(mins + 60);
+
+            request.ServiceStartDate = request.ServiceStartDate.AddMinutes(-60);
+            Console.WriteLine(endTimeRequest);
+            Console.WriteLine(request.ServiceStartDate);
+            foreach (ServiceRequest booked in list)
+            {
+                mins = ((double)(booked.ServiceHours + booked.ExtraHours)) * 60;
+                DateTime endTimeBooked = booked.ServiceStartDate.AddMinutes(mins);
+
+                if (request.ServiceStartDate < booked.ServiceStartDate)
+                {
+                    if (endTimeRequest <= booked.ServiceStartDate)
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        return booked.ServiceRequestId;
+                    }
+                }
+                else
+                {
+                    if (request.ServiceStartDate < endTimeBooked)
+                    {
+                        return booked.ServiceRequestId;
+                    }
+                }
+
+            }
+
+            return -1;
+
+        }
+
+
+
+
+
+        public string CompleteService(ServiceRequest request)
+        {
+
+            ServiceRequest requestObj = _helperlandContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == request.ServiceRequestId);
+
+            requestObj.Status = 3;
+
+            var result = _helperlandContext.ServiceRequests.Update(requestObj);
+            _helperlandContext.SaveChanges();
+            if (result != null)
+            {
+                return "true";
+            }
+            else
+            {
+                return "false";
+            }
+        }
+
 
     }
 

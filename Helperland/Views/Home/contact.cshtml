@@ -22,8 +22,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="~/js/contact.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" defer></script>
+    <script src="~/js/contact.js" defer></script>
 
     <title>Contact Us</title>
 </head>
@@ -131,7 +131,10 @@
 
         <form class="row g-3 contact_form" method="post" asp-action="Contact" asp-controller="Home" enctype="multipart/form-data">
             <div class="col-md-6 col-sm-12">
-                <input asp-for="Name" type="text" class="form-control" id="FirstName" name="FirstName" placeholder="First Name">
+                <input asp-for="Name" type="text" class="form-control" id="FirstName" name="FirstName" placeholder="Name">
+            </div>
+            <div class="col-md-6 col-sm-12">
+                
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="input-group">
@@ -153,6 +156,14 @@
             </div>
             <div class="col-12">
                 <textarea class="form-control" id="Message" name="Message" asp-for="Message" rows="5" placeholder="Message"></textarea>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <p style="color:#646464;font-weight: 600;margin-bottom: 5px;">Attachment</p>
+                <label for="attachment" style="cursor: pointer;border: solid 1px #b3b0b0;" class="btn rounded-pill">
+                    <input type="file" class="form-control d-none" id="attachment" asp-for="Attach">
+                    Upload
+                </label>
+                <div id="file-upload-filename" style="margin-top:10px;color:#646464;font-weight: 600;"></div>
             </div>
             <div class="col-12">
                 <button class="btn submit_button rounded-pill" type="submit" value="Create">Submit</button>

@@ -16,13 +16,13 @@
     <div class="tabcontent" id="tab1">
 
         <div class="ActivityStatus">
-            <h5>Active Status: <span class="ActivityIndicator" style="color:greenyellow">Active</span></h5>
+            <h5>Active Status: <span class="ActivityIndicator" style="color:green">Active</span></h5>
         </div>
         <div class="Details-header" style="margin-top: 20px;">
             <h6 style="font-size: 18px;">Basic Details</h6>
         </div>
         <hr class="form1-divide">
-        <form class="row g-3" id="form1">
+        <form class="row g-3" id="form1" method="post">
             <div class="row detail-info">
                 <div class="col-md-4 detail-inputs">
                     <label for="detail-fname" class="form-label">First Name</label>
@@ -47,7 +47,7 @@
                 <div class="col-md-4 detail-inputs">
                     <label for="detail-dob" class="form-label">Date Of Birth</label>
 
-                    <div id="detail-dob" class="ontainer-fluid" style="display:flex">
+                    <div id="detail-dob" style="display:flex">
 
 
                         <select style="width: 70%;margin-right: 10px;" class="form-select" id="dobday"
@@ -134,6 +134,58 @@
                 </div>
             </div>
 
+            <div class="select-avtar">
+                <p style="padding-left: 5px;font-size: 16px;font-weight: 600; color: #646464;">Select Avatar</p>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="avtar" id="avtar1"
+                               value="avatar-car.png" checked>
+                        <label class="form-check-label" for="avtar1">
+                            <img src="/Images/avatar-car.png"
+                                 alt="..">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="avtar" id="avtar2"
+                               value="avatar-female.png">
+                        <label class="form-check-label" for="avtar2">
+                            <img src="/Images/avatar-female.png"
+                                 alt="..">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="avtar" id="avtar3" value="cap.png">
+                        <label class="form-check-label" for="avtar3">
+                            <img src="/Images/avatar-hat.png"
+                                 alt="..">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="avtar" id="avtar4"
+                               value="avatar-iron.png">
+                        <label class="form-check-label" for="avtar4">
+                            <img src="/Images/avatar-iron.png"
+                                 alt="..">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="avtar" id="avtar5"
+                               value="avatar-male.png">
+                        <label class="form-check-label" for="avtar5">
+                            <img src="/Images/avatar-male.png"
+                                 alt="..">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="avtar" id="avtar6"
+                               value="avatar-ship.png">
+                        <label class="form-check-label" for="avtar6">
+                            <img src="/Images/avatar-ship.png"
+                                 alt="..">
+                        </label>
+                    </div>
+                </div>
+            </div>
 
             <div class="Details-header" style="margin-top: 30px;">
                 <h6 style="font-size: 18px;">My Address</h6>
@@ -162,7 +214,7 @@
 
 
             <div class="col-12 detail-saveBtn">
-                <button type="submit" id="DetailsSubmit" class="rounded-pill">Save</button>
+                <button type="button" id="DetailsSubmit" class="rounded-pill">Save</button>
             </div>
 
         </form>
@@ -176,31 +228,31 @@
 
     <div class="tabcontent" id="tab2">
 
-        <form class="row g-3" id="form2">
+        <form class="row g-3" id="form2" method="post">
             <div class="row">
                 <div class="col-md-5 changepass-inputs">
                     <label for="old-password" class="form-label">Old Password</label>
-                    <input type="text" class="form-control" id="old-password">
+                    <input type="password" class="form-control" id="old-password">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-5 changepass-inputs">
                     <label for="new-password" class="form-label">New Password</label>
-                    <input type="text" class="form-control" id="new-password">
+                    <input type="password" class="form-control" id="new-password">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-5 changepass-inputs">
                     <label for="cnfrm-password" class="form-label">Confirm Password</label>
-                    <input type="text" class="form-control" id="cnfrm-password">
+                    <input type="password" class="form-control" id="cnfrm-password">
                 </div>
             </div>
 
 
             <div class="col-12 changepass-saveBtn">
-                <button type="submit" class="rounded-pill" id="ChangePassword">Save</button>
+                <button type="button" class="rounded-pill" id="ChangePassword">Save</button>
             </div>
 
         </form>
@@ -213,18 +265,13 @@
 
 
 <script>
-
     var currentYear = new Date().getFullYear()
     var option = "";
     for (var year = 1940; year <= currentYear; year++) {
-
         var option = document.createElement("option");
         option.text = year;
         option.value = year;
-
         document.getElementById("dobyear").appendChild(option)
-
     }
     document.getElementById("dobyear").value = currentYear;
 </script>
-

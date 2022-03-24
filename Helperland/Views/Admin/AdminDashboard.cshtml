@@ -1,0 +1,278 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/css/service_request.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" defer></script>
+
+    <script src="~/js/admin.js" defer></script>
+
+
+    <title>Admin Page</title>
+</head>
+
+<body>
+
+
+    <!--Navigation Bar-->
+    <nav class="navbar  navbar-expand-lg">
+        <div class="container-fluid navbar_div">
+            <a class="navbar-brand" href="homepage.html">
+                helperland
+            </a>
+
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation" style="font-size:20px;outline: none !important;box-shadow: none;">
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-end">
+
+                    <li class="nav-item nav-options user-btn">
+                        <img src="~/Images/user.png" alt=""><span>
+                            @ViewBag.Name&nbsp;@ViewBag.Lname
+                        </span>
+                    </li>
+                    <li class="nav-item nav-options logout-btn">
+                        <a class="btn rounded-pill book-btn" type="button" asp-action="Logout" asp-controller="UserManage">
+                            <img src="~/Images/logout.png"
+                                 alt="">
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <section class="main-section">
+        <div class="side-nav" id="lnav-list">
+            <ul>
+                <li><button class="lnav-link">Service Management</button></li>
+                <li><button class="lnav-link">Role Management</button></li>
+                <li>
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                            aria-expanded="false" aria-controls="collapseOne">
+                        Coupon Code Management
+                    </button>
+                    <div id="collapseOne" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <button class="lnav-link">Coupon Codes</button>
+                            <button class="lnav-link">Usage History</button>
+                        </div>
+                    </div>
+                </li>
+                <li><button class="lnav-link">Escalation Management</button></li>
+                <li>
+                    <button class="active lnav-link" onclick="NavBtnServReq()" id="ServiceReqBtn">
+                        Service Requests
+                    </button>
+                </li>
+                <li><button class="lnav-link">Service Providers</button></li>
+                <li><button class="lnav-link" onclick="NavBtnUserMng()" id="UserMngBtn">User Management</button></li>
+                <li>
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                        Finance Module
+                    </button>
+                    <div id="collapseTwo" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <button class="lnav-link">All Transactions</button>
+                            <button class="lnav-link">Generate Payment</button>
+                            <button class="lnav-link">Customer Invoices</button>
+                        </div>
+                    </div>
+                </li>
+                <li><button class="lnav-link">Zip Code Management</button></li>
+                <li><button class="lnav-link">Rating Management</button></li>
+                <li><button class="lnav-link">Inquiry Management</button></li>
+                <li><button class="lnav-link">Newsletter Management</button></li>
+                <li>
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                        Content Management
+                    </button>
+                    <div id="collapseThree" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <button class="lnav-link">Blog</button>
+                            <button class="lnav-link">FAQs</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+
+        @await Html.PartialAsync("ServiceRequestPage")
+
+        @await Html.PartialAsync("UserManagePage")
+
+
+    </section>
+
+
+
+
+    <section class="modal-popup">
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary d-none" data-bs-toggle="modal" id="ServiceEditBtn"
+                data-bs-target="#ServiceEditModal">
+            Service Edit modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="ServiceEditModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" style="max-width: 550px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel" style="font-weight: 600;">Edit Service Request</h5>
+                        <button type="button" id="ServiceEditModalClose" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="font-weight:500">
+                        <!--div class="alert alert-danger d-none mt-3 d-flex justify-content-center"
+                             style="max-width:800px" id="ServiceEditPopupAlert" role="alert">
+                        </div-->
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="ServiceEditDate" class="form-label">Date</label>
+                                <input type="date" class="form-control" name="date" id="ServiceEditDate"
+                                       placeholder="calender">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="ServiceEditTime">Time</label>
+                                <input type="time" id="ServiceEditTime" class="form-control">
+                            </div>
+                        </div>
+
+                        <p class="form-label mt-4" style="font-weight:700;margin-bottom: 20px;"> Service Address</p>
+
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <label for="ServiceEditStreet" class="form-label">Street Name</label>
+                                <input type="text" class="form-control" name="Street" id="ServiceEditStreet">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="ServiceEditHouse" class="form-label">House No</label>
+                                <input type="text" class="form-control" name="House" id="ServiceEditHouse">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="ServiceEditZipCode" class="form-label">PostalCode</label>
+                                <input type="text" class="form-control" name="PostalCode" id="ServiceEditZipCode">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="ServiceEditCity" class="form-label">City</label>
+                                <input type="text" class="form-control" name="City" id="ServiceEditCity" style="cursor:not-allowed">
+
+                            </div>
+                        </div>
+                        <p class="form-label mt-4" style="font-weight:700;margin-bottom: 20px;"> Invoice Address</p>
+
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <label for="ServiceEditInvoiceStreet" class="form-label">Street Name</label>
+                                <input type="text" class="form-control" name="Street" id="ServiceEditInvoiceStreet">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="ServiceEditInvoiceHouse" class="form-label">House No</label>
+                                <input type="text" class="form-control" name="House" id="ServiceEditInvoiceHouse">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="ServiceEditInvoiceZipCode" class="form-label">PostalCode</label>
+                                <input type="text" class="form-control" name="PostalCode"
+                                       id="ServiceEditInvoiceZipCode">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="ServiceEditInvoiceCity" class="form-label">City</label>
+                                <input type="text" class="form-control" name="City" id="ServiceEditInvoiceCity" style="cursor:not-allowed">
+
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="row mt-4">
+                                <label for="ServiceWhyEdit" class="form-label ">
+                                    Why do you want to
+                                    reSchedule Service req?
+                                </label>
+                                <textarea class="form-control ms-2" name="City" id="ServiceWhyEdit"></textarea>
+                            </div>
+                            <div class="row mt-4">
+                                <label for="ServiceWhyCall" class="form-label">
+                                    Call Center EMP Notes
+                                </label>
+                                <textarea class="form-control ms-2" name="City" id="ServiceWhyCall"
+                                          placeholder="Enter Notes"></textarea>
+                            </div>
+                            <div class="row mt-4 mb-2">
+                                <button type="button" id="ServEditUpdateBtn"
+                                        class=" ms-2 btn btn-primary ">
+                                    Update
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous">
+
+    </script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/r-2.2.9/rg-1.1.4/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
+</body>
+
+</html>

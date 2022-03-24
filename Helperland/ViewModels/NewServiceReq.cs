@@ -43,5 +43,7 @@ namespace Helperland.ViewModels
 
         public bool HasPet { get; set; }
 
+        public bool Complete { get; set; }
+
     }
 }
