@@ -1,137 +1,19 @@
 
-
-function sortUSTable(n) {
-  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-  table = document.getElementById("UpcomingServiceTable");
-  switching = true;
-  dir = "asc";
-  while (switching) {
-    switching = false;
-    rows = table.rows;
-    for (i = 1; i < (rows.length - 1); i++) {
-      shouldSwitch = false;
-      x = rows[i].getElementsByTagName("TD")[n];
-      y = rows[i + 1].getElementsByTagName("TD")[n];
-      if (dir == "asc") {
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-          shouldSwitch = true;
-          break;
-        }
-      } else if (dir == "desc") {
-        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-          shouldSwitch = true;
-          break;
-        }
-      }
-    }
-    if (shouldSwitch) {
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
-      switchcount++;
-    } else {
-      if (switchcount == 0 && dir == "asc") {
-        dir = "desc";
-        switching = true;
-      }
-    }
-  }
-}
-
-
-
-function sortNSTable(n) {
-  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-  table = document.getElementById("NewServTable");
-  switching = true;
-  dir = "asc";
-  while (switching) {
-    switching = false;
-    rows = table.rows;
-    for (i = 1; i < (rows.length - 1); i++) {
-      shouldSwitch = false;
-      x = rows[i].getElementsByTagName("TD")[n];
-      y = rows[i + 1].getElementsByTagName("TD")[n];
-      if (dir == "asc") {
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-          shouldSwitch = true;
-          break;
-        }
-      } else if (dir == "desc") {
-        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-          shouldSwitch = true;
-          break;
-        }
-      }
-    }
-    if (shouldSwitch) {
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
-      switchcount++;
-    } else {
-      if (switchcount == 0 && dir == "asc") {
-        dir = "desc";
-        switching = true;
-      }
-    }
-  }
-}
-
-
-
-function sortSHTable(n) {
-  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-  table = document.getElementById("ServHistoryTable");
-  switching = true;
-  dir = "asc";
-  while (switching) {
-    switching = false;
-    rows = table.rows;
-    for (i = 1; i < (rows.length - 1); i++) {
-      shouldSwitch = false;
-      x = rows[i].getElementsByTagName("TD")[n];
-      y = rows[i + 1].getElementsByTagName("TD")[n];
-      if (dir == "asc") {
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-          shouldSwitch = true;
-          break;
-        }
-      } else if (dir == "desc") {
-        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-          shouldSwitch = true;
-          break;
-        }
-      }
-    }
-    if (shouldSwitch) {
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
-      switchcount++;
-    } else {
-      if (switchcount == 0 && dir == "asc") {
-        dir = "desc";
-        switching = true;
-      }
-    }
-  }
-}
-
-
-
-
-
-
 function TabNSClick() {
   $("#NewServReqTab").addClass("active");
   $("#UpcomingServTab").removeClass("active");
   $("#ServHistoryTab").removeClass("active");
   $("#BlockCustTab").removeClass("active");
+    $("#MyRatingTab").removeClass("active");
+    $("#ServScheduleTab").removeClass("active");
 
   $(".NewServContainer").show();
   $(".ServHistory").hide();
   $(".UpcomingServiceContainer").hide();
   $(".BlockCust").hide();
     $(".provider-setting").hide();
-  
+    $(".RatingContainer").hide();
+    $(".ScheduleContainer").hide();
 }
 
 function TabUSClick() {
@@ -139,13 +21,17 @@ function TabUSClick() {
   $("#NewServReqTab").removeClass("active");
   $("#UpcomingServTab").addClass("active");
   $("#ServHistoryTab").removeClass("active");
-  $("#BlockCustTab").removeClass("active");
+    $("#BlockCustTab").removeClass("active");
+    $("#MyRatingTab").removeClass("active");
+    $("#ServScheduleTab").removeClass("active");
 
   $(".NewServContainer").hide();
   $(".ServHistory").hide();
   $(".UpcomingServiceContainer").show();
   $(".BlockCust").hide();
     $(".provider-setting").hide();
+    $(".RatingContainer").hide();
+    $(".ScheduleContainer").hide();
 }
 
 function TabSHClick() {
@@ -153,13 +39,17 @@ function TabSHClick() {
   $("#NewServReqTab").removeClass("active");
   $("#UpcomingServTab").removeClass("active");
   $("#ServHistoryTab").addClass("active");
-  $("#BlockCustTab").removeClass("active");
+    $("#BlockCustTab").removeClass("active");
+    $("#MyRatingTab").removeClass("active");
+    $("#ServScheduleTab").removeClass("active");
 
   $(".NewServContainer").hide();
   $(".ServHistory").show();
   $(".UpcomingServiceContainer").hide();
   $(".BlockCust").hide();
     $(".provider-setting").hide();
+    $(".RatingContainer").hide();
+    $(".ScheduleContainer").hide();
 }
 
 
@@ -168,17 +58,60 @@ function TabBCClick() {
   $("#NewServReqTab").removeClass("active");
   $("#UpcomingServTab").removeClass("active");
   $("#ServHistoryTab").removeClass("active");
-  $("#BlockCustTab").addClass("active");
+    $("#BlockCustTab").addClass("active");
+    $("#MyRatingTab").removeClass("active");
+    $("#ServScheduleTab").removeClass("active");
 
   $(".NewServContainer").hide();
   $(".ServHistory").hide();
   $(".UpcomingServiceContainer").hide();
   $(".BlockCust").show();
     $(".provider-setting").hide();
+    $(".RatingContainer").hide();
+    $(".ScheduleContainer").hide();
 }
 
 
+function TabMRClick() {
 
+    $("#NewServReqTab").removeClass("active");
+    $("#UpcomingServTab").removeClass("active");
+    $("#ServHistoryTab").removeClass("active");
+    $("#BlockCustTab").removeClass("active");
+    $("#MyRatingTab").addClass("active");
+    $("#ServScheduleTab").removeClass("active");
+    
+
+    $(".NewServContainer").hide();
+    $(".ServHistory").hide();
+    $(".UpcomingServiceContainer").hide();
+    $(".BlockCust").hide();
+    $(".provider-setting").hide();
+    $(".RatingContainer").show();
+    $(".ScheduleContainer").hide();
+}
+
+
+function TabSSClick() {
+
+    $("#NewServReqTab").removeClass("active");
+    $("#UpcomingServTab").removeClass("active");
+    $("#ServHistoryTab").removeClass("active");
+    $("#BlockCustTab").removeClass("active");
+    $("#MyRatingTab").removeClass("active");
+    $("#ServScheduleTab").addClass("active");
+
+
+    $(".NewServContainer").hide();
+    $(".ServHistory").hide();
+    $(".UpcomingServiceContainer").hide();
+    $(".BlockCust").hide();
+    $(".provider-setting").hide();
+    $(".RatingContainer").hide();
+    $(".ScheduleContainer").show();
+
+    calendar.render();
+}
 
 function TabNSNav() {
 
@@ -187,6 +120,7 @@ function TabNSNav() {
   $(".UpcomingServiceContainer").hide();
   $(".BlockCust").hide();
     $(".provider-setting").hide();
+    $(".RatingContainer").hide();
 }
 
 function TabUSNav() {
@@ -196,7 +130,8 @@ function TabUSNav() {
   $(".UpcomingServiceContainer").show();
     $(".BlockCust").hide();
     $(".provider-setting").hide();
-
+    $(".RatingContainer").hide();
+    $(".ScheduleContainer").hide();
 }
 
 function TabSHNav() {
@@ -206,7 +141,8 @@ function TabSHNav() {
   $(".UpcomingServiceContainer").hide();
   $(".BlockCust").hide();
     $(".provider-setting").hide();
-
+    $(".RatingContainer").hide();
+    $(".ScheduleContainer").hide();
 }
 
 function TabBCNav() {
@@ -215,13 +151,34 @@ function TabBCNav() {
   $(".ServHistory").hide();
   $(".UpcomingServiceContainer").hide();
   $(".BlockCust").show();
-  $(".provider-setting").hide();
+    $(".provider-setting").hide();
+    $(".RatingContainer").hide();
+    $(".ScheduleContainer").hide();
 }
 
 
+function TabMRNav() {
+
+    $(".NewServContainer").hide();
+    $(".ServHistory").hide();
+    $(".UpcomingServiceContainer").hide();
+    $(".BlockCust").hide();
+    $(".provider-setting").hide();
+    $(".RatingContainer").show();
+    $(".ScheduleContainer").hide();
+}
 
 
+function TabSSNav() {
 
+    $(".NewServContainer").hide();
+    $(".ServHistory").hide();
+    $(".UpcomingServiceContainer").hide();
+    $(".BlockCust").hide();
+    $(".provider-setting").hide();
+    $(".RatingContainer").hide();
+    $(".ScheduleContainer").show();
+}
 
 
 function MySetting() {
@@ -230,6 +187,8 @@ function MySetting() {
     $("#UpcomingServTab").removeClass("active");
     $("#ServHistoryTab").removeClass("active");
     $("#BlockCustTab").removeClass("active");
+    $("#MyRatingTab").removeClass("active");
+    $("#ServScheduleTab").removeClass("active");
 
     $("#MyDetails").addClass("active2")
     $("#change-pass").removeClass("active2")
@@ -239,6 +198,8 @@ function MySetting() {
     $(".UpcomingServiceContainer").hide();
     $(".BlockCust").hide();
     $(".provider-setting").show();
+    $(".RatingContainer").hide();
+    $(".ScheduleContainer").hide();
     $("#tab1").show();
     $("#tab2").hide();
 }
@@ -250,7 +211,8 @@ function settingTab1() {
     $("#UpcomingServTab").removeClass("active");
     $("#ServHistoryTab").removeClass("active");
     $("#BlockCustTab").removeClass("active");
-
+    $("#MyRatingTab").removeClass("active");
+    $("#ServScheduleTab").removeClass("active");
 
 
 
@@ -260,7 +222,9 @@ function settingTab1() {
     $(".NewServContainer").hide();
     $(".ServHistory").hide();
     $(".UpcomingServiceContainer").hide();
+    $(".RatingContainer").hide();
     $(".BlockCust").hide();
+    $(".ScheduleContainer").hide();
     $(".provider-setting").show();
     $("#tab1").show();
     $("#tab2").hide();
@@ -270,13 +234,17 @@ function settingTab2() {
     $("#UpcomingServTab").removeClass("active");
     $("#ServHistoryTab").removeClass("active");
     $("#BlockCustTab").removeClass("active");
+    $("#MyRatingTab").removeClass("active");
+    $("#ServScheduleTab").removeClass("active");
 
     $("#MyDetails").removeClass("active2")
     $("#change-pass").addClass("active2")
 
     $(".NewServContainer").hide();
     $(".ServHistory").hide();
+    $(".RatingContainer").hide();
     $(".UpcomingServiceContainer").hide();
+    $(".ScheduleContainer").hide();
     $(".BlockCust").hide();
     $(".provider-setting").show();
     $("#tab2").show();
@@ -295,7 +263,6 @@ function settingTab2() {
 $(document).ready(function () {
 
     getServiceHistoryTable();
-
 });
 
 function getServiceHistoryTable() {
@@ -313,11 +280,15 @@ function getServiceHistoryTable() {
                     + '<td data-label="Service Date"> <div class="SH-ServDateSpan"><p><img src="/Images/calendar2.png" alt="calender">&nbsp;' + '<span class="service-date">'
                     + result[i].date + ' </span></p >'
                     + '<p><img src="/Images/layer-14.png" alt="clock">&nbsp;' + result[i].startTime + '-' + result[i].endTime + '</p></div></td>'
-                    + '<td class="SH-CustDetail" data-lable="Customer Details"><p>' + result[i].customerName + '</p>'
+                    + '<td class="SH-CustDetail" data-label="Customer Details"><p>' + result[i].customerName + '</p>'
                     + '<p><img src="/Images/layer-15.png" alt="Home" style="padding-bottom: 3px;">&nbsp;<span class="detailContent2">' + result[i].address + ' </span>'
                     + '</p></td></tr>');
 
             }
+
+            ServiceHistoryDatatable();
+                
+
         },
         error: function (error) {
             console.log(error);
@@ -326,12 +297,6 @@ function getServiceHistoryTable() {
 }
 
 
-
-$(document).ready(function () {
-
-    getUpcomingServiceTable();
-
-});
 
 
 
@@ -343,6 +308,10 @@ function getUpcomingServiceTable() {
         url: '/UserPage/getUpcomingService',
         contentType: "application/x-www-form-urlencoded; charset=UTF-8",
         success: function (result) {
+
+           
+
+
             $('#UpcomingServiceTbody').empty();
 
             for (var i = 0; i < result.length; i++) {
@@ -359,6 +328,8 @@ function getUpcomingServiceTable() {
                 );
             }
 
+            upcomingserviceDatatable();
+
         },
         error: function (error) {
             console.log(error);
@@ -368,7 +339,11 @@ function getUpcomingServiceTable() {
 }
 
 
+$(document).ready(function () {
 
+    getUpcomingServiceTable();
+
+});
 
 
 $(document).ready(function () {
@@ -599,7 +574,11 @@ function getaddressdata() {
 }
 
 
-
+$("#detail-zipcode").keyup(function () {
+    if ($("#detail-zipcode").val().length == 6) {
+        getCityFromPostalCode($("#detail-zipcode").val(), "#detail-city");
+    }
+});
 
 
 
@@ -1017,3 +996,290 @@ $("#newServiceReqCompleteBtn").on('click', function () {
 
 
 });
+
+
+
+
+//City from pincode
+function getCityFromPostalCode(zip, Id) {
+    $.ajax({
+        method: "GET",
+        url: "https://api.postalpincode.in/pincode/" + zip,
+        dataType: 'json',
+        cache: false,
+        success: function (result) {
+            if (result[0].status == "Error" || result[0].status == "404") {
+
+                alert("Invalid PostalCode");
+
+            }
+            else {
+                $(Id).val(result[0].PostOffice[0].District).prop("disabled", true);
+
+                state = result[0].PostOffice[0].State;
+
+
+            }
+        },
+        error: function (error) {
+
+        }
+    });
+}
+
+
+$(document).ready(function () {
+
+    MyRatings();
+
+});
+
+
+function MyRatings() {
+
+    $.ajax({
+        type: 'GET',
+        url: '/UserPage/getRatingData',
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+
+        success: function (result) {
+
+            $('#RatingList').empty();
+
+            for (var i = 0; i < result.length; i++) {
+
+                var star = "";
+
+
+                for (var j = 1; j < 6; j++) {
+
+                    if (j <= result[i].rating) {
+
+                        star += '<i class="fa fa-star " style="color:#ECB91C; "></i>';
+
+                    }
+                    else {
+                        star += '<i class="fa fa-star " style="color:silver;"></i>'
+                    }
+
+
+
+
+                }
+
+                star += '<span> &nbsp;' + result[i].remarks + '</span>'
+
+
+
+
+                $('#RatingList').append('<div class="row  rating-row"><div class="row"><div class="col-3">'
+                    + '<p>' + result[i].serviceRequestId + '</p>'
+                    + '<p>' + result[i].customerName + '</p></div><div class="col-5">'
+                    + '<p> <span><img src="/image/calendar2.png" alt=""></span> <span class="upcoming-date"><b>' + result[i].serviceDate + '</b></span></p>'
+                    + ' <p><span><img src="/image/layer-14.png" alt=""></span><span>' + result[i].startTime + ' - ' + result[i].endTime + '</span></p></div>'
+                    + '<div class="col-4"><p>Rating</p>'
+                    + '<div class="star-ratingmodel text-start">' + star + '</div></div></div><hr />'
+                    + '<div class="row"><p><b>Customer Comments</b></p><p>' + result[i].comments + '</p></div></div>'
+
+
+
+
+
+
+
+                );
+
+
+            }
+
+
+        },
+        error: function () {
+            alert("error");
+        }
+    });
+
+
+
+
+}
+
+
+$(document).ready(function () {
+
+    addServiceSchedule();
+
+});
+
+
+var calendarEl = document.getElementById('calendar');
+var calendar;
+
+function addServiceSchedule() {
+
+    $.ajax({
+        type: 'GET',
+        url: "/UserPage/GetServiceSchedule",
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+
+        success: function (result) {
+            console.log(result);
+            var events = [];
+            if (result != "false") {
+
+                for (let i = 0; i < result.length; i++) {
+                    var bgColor = "#555";
+                    if (result[i].status == 2) {
+                        bgColor = "#146371";
+                    }
+
+                    events.push({
+                        id: result[i].serviceRequestId,
+                        start: result[i].date,
+                        title: result[i].startTime + "-" + result[i].endTime,
+                        backgroundColor: bgColor,
+                        borderColor: "#fff",
+                    });
+                }
+
+                console.log(events);
+
+                calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth',
+
+                    headerToolbar: {
+                        left: 'prev,next',
+                        center: 'title',
+                        right: ''
+                    },
+                    events: events,
+                    eventClick: function (info) {
+
+                        console.log(info.event.id);
+                        serviceRequestId = info.event.id;
+                        $("#spserviceReqdetailsbtn").click();
+                    },
+                });
+                calendar.render();
+            }
+            else {
+
+                alert("Something went wrong...")
+
+            }
+        },
+        error: function (error) {
+            alert(error);
+        },
+
+
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*pagination for ProviderServiceReq*/
+
+
+
+var Newservicerequestpagination = new DataTable("#NewServTable", {
+    searching: false,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, "All"]],
+    lengthChange: true,
+    responsive: false,
+    pagingType: "full_numbers",
+    language: {
+        paginate: {
+            first: "<img src='/Images/first-page.png' alt='first'/>",
+            previous: "<img src='/Images/polygon-1-copy-5.png' alt='previous' />",
+            next: "<img src='/Images/polygon-1-copy-5.png' alt='next' style='transform: rotate(180deg)' />",
+            last: "<img src='/Images/first-page.png' alt='first' style='transform: rotate(180deg) ' />"
+        }
+    },
+    info: true,
+    columnDefs: [{ orderable: false, targets: 4 }]
+});
+
+
+
+/*ServiceHistoryDatatable  */
+
+function ServiceHistoryDatatable() {
+    $("#ServHistoryTable").DataTable({
+
+        searching: false,
+        lengthMenu: [[5, 10, 20, -1], [5, 10, 20, "All"]],
+        lengthChange: true,
+        responsive: false,
+        pagingType: "full_numbers",
+        language: {
+            paginate: {
+                first: "<img src='/Images/first-page.png' alt='first'/>",
+                previous: "<img src='/Images/polygon-1-copy-5.png' alt='previous' />",
+                next: "<img src='/Images/polygon-1-copy-5.png' alt='next' style='transform: rotate(180deg)' />",
+                last: "<img src='/Images/first-page.png' alt='first' style='transform: rotate(180deg) ' />"
+            }
+        },
+        info: true,
+        columnDefs: [{ orderable: false, targets: 2 }]
+
+    });
+
+}
+
+
+
+
+function upcomingserviceDatatable() {
+    $("#UpcomingServiceTable").DataTable({
+
+        searching: false,
+        lengthMenu: [[5, 10, 20, -1], [5, 10, 20, "All"]],
+        lengthChange: true,
+        responsive: false,
+        pagingType: "full_numbers",
+        language: {
+            paginate: {
+                first: "<img src='/Images/first-page.png' alt='first'/>",
+                previous: "<img src='/Images/polygon-1-copy-5.png' alt='previous' />",
+                next: "<img src='/Images/polygon-1-copy-5.png' alt='next' style='transform: rotate(180deg)' />",
+                last: "<img src='/Images/first-page.png' alt='first' style='transform: rotate(180deg) ' />"
+            }
+        },
+        info: true,
+        columnDefs: [{ orderable: false, targets: 4 }]
+
+    });
+
+}
+
+
+
+
+
+
+
+
+/* document.getElementById("PetsCheck").addEventListener("change", function () {
+
+
+    if (document.getElementById("PetsCheck").checked == true) {
+
+        Newservicerequestpagination.search("").draw();
+
+    }
+    else {
+
+        Newservicerequestpagination.search("false").draw();
+
+    }
+});  */

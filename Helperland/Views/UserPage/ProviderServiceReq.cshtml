@@ -15,23 +15,23 @@
             </select>
         </div>
         <div class="NewServCheckbox">
-            <input type="checkbox" id="PetsCheck" checked>
+            <input type="checkbox" id="PetsCheck" checked="checked">
             <label for="PetsCheck"> Include Pets at Home</label>
         </div>
     </div>
     <table class="NewServTable" id="NewServTable">
         <thead>
             <tr>
-                <th class="col-md-1" onclick="sortNSTable(0)" style="cursor: pointer;">
+                <th class="col-md-1" style="cursor: pointer;">
                     Service ID
                 </th>
-                <th class="col-md-1" onclick="sortNSTable(1)" style="cursor: pointer;">
+                <th class="col-md-1" style="cursor: pointer;">
                     Service Date
                 </th>
                 <th class="col-md-2 NScustomer-detail" style="cursor: pointer;">
                     Customer details
                 </th>
-                <th class="col-md-1" onclick="sortNSTable(2)" style="cursor: pointer;">
+                <th class="col-md-1" style="cursor: pointer;">
                     Payment
                 </th>
                 <th class="col-md-1">
@@ -101,7 +101,7 @@
 
 
 
-<!--Sp New Service requ details model -->
+<!--Sp New Service req details modal -->
 
 
 <button id="spserviceReqdetailsbtn" data-bs-toggle="modal" data-bs-target="#detailsModelServiceRequest" class="d-none">details</button>
@@ -109,32 +109,32 @@
 
 
 <div class="modal" tabindex="-1" id="detailsModelServiceRequest">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content text-start" style="padding:2% !important">
             <div class="modal-header">
-                <h5 class="modal-title">Service Details</h5>
+                <h5 class="modal-title" style="font-weight:600;">Service Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
             </div>
             <div class="modal-body float-start row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-4 col-sm-12">
                     <h4 id="SpServiceReqDatetime">05/10/2021 <br> 08:00 - 11:30</h4>
-                    <p>Duration: <span id="SpServiceReqDuration"> 3 hrs </span> </p>
+                    <p><span style="font-weight:600;">Duration:</span>   <span id="SpServiceReqDuration"> 3 hrs </span> </p>
                     <hr>
-                    <p>Service id: <span id="SpServiceReqId"> 8852</span></p>
+                    <p><span style="font-weight:600;">Service id:</span> <span id="SpServiceReqId"> 8852</span></p>
                     <div class="row">
-                        <p class="col-2">Extras: </p><br>
+                        <p class="col-2" style="font-weight:600;">Extras: </p><br>
                         <div class="col-8 text-center" id="SpServiceReqExtra"></div>
                     </div>
 
-                    <p class="pt-3 pt-sm-2">Total Payment: <span id="SpServiceReqAmount" class="price">8750 &euro;</span> </p>
+                    <p class="pt-3 pt-sm-2"><span style="font-weight:600;">Total Payment: </span>    <span id="SpServiceReqAmount" class="price" style="color: #68bbde;">8750 &euro;</span> </p>
                     <hr>
-                    <p>Customer Name:<span id="SpServiceReqCustomerName">Adi</span></p>
-                    <p>Service Address: <span id="SpServiceReqAddress">Ghuma Ahmedabad 380058</span></p>
+                    <p><span style="font-weight:600;">Customer Name:</span>  <span id="SpServiceReqCustomerName">Adi</span></p>
+                    <p><span style="font-weight:600;">Service Address:</span>  <span id="SpServiceReqAddress">Ghuma Ahmedabad 380058</span></p>
 
                     <hr>
 
-                    <p>Comments: <span id="SpServiceReqComment"></span></p>
+                    <p><span style="font-weight:600;">Comments:</span>   <span id="SpServiceReqComment"></span></p>
 
 
 
@@ -152,7 +152,7 @@
 
 
                 </div>
-                <div class="col-md-6 col-sm-12" id="newServiceReqMap">
+                <div class="col-md-8 col-sm-12 mt-4 mt-md-0 mt-lg-0" id="newServiceReqMap">
                 </div>
 
             </div>

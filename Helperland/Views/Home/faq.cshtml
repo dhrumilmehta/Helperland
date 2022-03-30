@@ -19,6 +19,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
+    <script src="~/js/faq.js" defer></script>
+
     <title>FAQ</title>
 </head>
 
@@ -91,326 +93,587 @@
 
         <div class="select_btn">
             <div class="row d-flex align-items-center justify-content-center">
-                <button class="forCustomer active col-12 col-sm-12 col-md-6">
+                <button class="forCustomer active col-12 col-sm-12 col-md-6" id="FaqCustTab" onclick="Tab1Click()">
                     FOR CUSTOMER
                 </button>
-                <button class="forServiceProvider col-12 col-sm-12 col-md-6">
+                <button class="forServiceProvider col-12 col-sm-12 col-md-6" id="FaqProTab" onclick="Tab2Click()">
                     FOR SERVICE PROVIDER
                 </button>
             </div>
         </div>
 
-        <div class="container-fluid accordion col-12" id="faqAccordion">
-            <div class="accordion-item">
-                <div class="accordion-header" id="faq0">
-                    <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse0"
-                         aria-expanded="false" aria-controls="collapse0">
-                        <img src="~/Images/right-arrow.png" alt="expandImage">
-                        <span class="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
-                            tellus ac ut non
-                            imperdiet?
-                        </span>
+        <section id="FaqCust">
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq0">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse0"
+                             aria-expanded="false" aria-controls="collapse0">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div id="collapse0" class="accordion-collapse collapse" aria-labelledby="faq0"
-                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
-                        vitae, dapibus velit.
-                        Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
-                        semper. Ut non
-                        imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
-                        gravida tincidunt. Fusce
-                        in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
-                        in faucibus. Donec et
-                        placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
-                        sodales tempor eros.
-                        Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
-                        ullamcorper accumsan ut
-                        eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                    <div id="collapse0" class="accordion-collapse collapse" aria-labelledby="faq0"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container-fluid accordion col-12" id="faqAccordion">
-            <div class="accordion-item">
-                <div class="accordion-header" id="faq1">
-                    <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
-                         aria-expanded="false" aria-controls="collapse1">
-                        <img src="~/Images/right-arrow.png" alt="expandImage">
-                        <span class="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
-                            tellus ac ut non
-                            imperdiet?
-                        </span>
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq1">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
+                             aria-expanded="false" aria-controls="collapse1">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1"
-                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
-                        vitae, dapibus velit.
-                        Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
-                        semper. Ut non
-                        imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
-                        gravida tincidunt. Fusce
-                        in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
-                        in faucibus. Donec et
-                        placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
-                        sodales tempor eros.
-                        Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
-                        ullamcorper accumsan ut
-                        eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                    <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container-fluid accordion col-12" id="faqAccordion">
-            <div class="accordion-item">
-                <div class="accordion-header" id="faq2">
-                    <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2"
-                         aria-expanded="false" aria-controls="collapse2">
-                        <img src="~/Images/right-arrow.png" alt="expandImage">
-                        <span class="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
-                            tellus ac ut non
-                            imperdiet?
-                        </span>
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq2">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2"
+                             aria-expanded="false" aria-controls="collapse2">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2"
-                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
-                        vitae, dapibus velit.
-                        Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
-                        semper. Ut non
-                        imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
-                        gravida tincidunt. Fusce
-                        in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
-                        in faucibus. Donec et
-                        placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
-                        sodales tempor eros.
-                        Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
-                        ullamcorper accumsan ut
-                        eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container-fluid accordion col-12" id="faqAccordion">
-            <div class="accordion-item">
-                <div class="accordion-header" id="faq3">
-                    <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3"
-                         aria-expanded="false" aria-controls="collapse3">
-                        <img src="~/Images/right-arrow.png" alt="expandImage">
-                        <span class="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
-                            tellus ac ut non
-                            imperdiet?
-                        </span>
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq3">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3"
+                             aria-expanded="false" aria-controls="collapse3">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
-                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
-                        vitae, dapibus velit.
-                        Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
-                        semper. Ut non
-                        imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
-                        gravida tincidunt. Fusce
-                        in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
-                        in faucibus. Donec et
-                        placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
-                        sodales tempor eros.
-                        Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
-                        ullamcorper accumsan ut
-                        eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container-fluid accordion col-12" id="faqAccordion">
-            <div class="accordion-item">
-                <div class="accordion-header" id="faq4">
-                    <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4"
-                         aria-expanded="false" aria-controls="collapse4">
-                        <img src="~/Images/right-arrow.png" alt="expandImage">
-                        <span class="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
-                            tellus ac ut non
-                            imperdiet?
-                        </span>
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq4">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4"
+                             aria-expanded="false" aria-controls="collapse4">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4"
-                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
-                        vitae, dapibus velit.
-                        Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
-                        semper. Ut non
-                        imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
-                        gravida tincidunt. Fusce
-                        in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
-                        in faucibus. Donec et
-                        placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
-                        sodales tempor eros.
-                        Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
-                        ullamcorper accumsan ut
-                        eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container-fluid accordion col-12" id="faqAccordion">
-            <div class="accordion-item">
-                <div class="accordion-header" id="faq5">
-                    <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5"
-                         aria-expanded="false" aria-controls="collapse5">
-                        <img src="~/Images/right-arrow.png" alt="expandImage">
-                        <span class="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
-                            tellus ac ut non
-                            imperdiet?
-                        </span>
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq5">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5"
+                             aria-expanded="false" aria-controls="collapse5">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5"
-                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
-                        vitae, dapibus velit.
-                        Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
-                        semper. Ut non
-                        imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
-                        gravida tincidunt. Fusce
-                        in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
-                        in faucibus. Donec et
-                        placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
-                        sodales tempor eros.
-                        Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
-                        ullamcorper accumsan ut
-                        eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container-fluid accordion col-12" id="faqAccordion">
-            <div class="accordion-item">
-                <div class="accordion-header" id="faq6">
-                    <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6"
-                         aria-expanded="false" aria-controls="collapse6">
-                        <img src="~/Images/right-arrow.png" alt="expandImage">
-                        <span class="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
-                            tellus ac ut non
-                            imperdiet?
-                        </span>
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq6">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6"
+                             aria-expanded="false" aria-controls="collapse6">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="faq6"
-                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
-                        vitae, dapibus velit.
-                        Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
-                        semper. Ut non
-                        imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
-                        gravida tincidunt. Fusce
-                        in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
-                        in faucibus. Donec et
-                        placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
-                        sodales tempor eros.
-                        Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
-                        ullamcorper accumsan ut
-                        eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="faq6"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container-fluid accordion col-12" id="faqAccordion">
-            <div class="accordion-item">
-                <div class="accordion-header" id="faq7">
-                    <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7"
-                         aria-expanded="false" aria-controls="collapse7">
-                        <img src="~/Images/right-arrow.png" alt="expandImage">
-                        <span class="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
-                            tellus ac ut non
-                            imperdiet?
-                        </span>
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq7">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7"
+                             aria-expanded="false" aria-controls="collapse7">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="faq7"
-                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
-                        vitae, dapibus velit.
-                        Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
-                        semper. Ut non
-                        imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
-                        gravida tincidunt. Fusce
-                        in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
-                        in faucibus. Donec et
-                        placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
-                        sodales tempor eros.
-                        Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
-                        ullamcorper accumsan ut
-                        eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                    <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="faq7"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container-fluid accordion col-12" id="faqAccordion">
-            <div class="accordion-item">
-                <div class="accordion-header" id="faq8">
-                    <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8"
-                         aria-expanded="false" aria-controls="collapse8">
-                        <img src="~/Images/right-arrow.png" alt="expandImage">
-                        <span class="question">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
-                            tellus ac ut non
-                            imperdiet?
-                        </span>
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq8">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8"
+                             aria-expanded="false" aria-controls="collapse8">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="faq8"
-                     data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
-                        vitae, dapibus velit.
-                        Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
-                        semper. Ut non
-                        imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
-                        gravida tincidunt. Fusce
-                        in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
-                        in faucibus. Donec et
-                        placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
-                        sodales tempor eros.
-                        Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
-                        ullamcorper accumsan ut
-                        eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                    <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="faq8"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+        <section id="FaqPro" style="display:none;">
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq0">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse0"
+                             aria-expanded="false" aria-controls="collapse0">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
+                    </div>
+                    <div id="collapse0" class="accordion-collapse collapse" aria-labelledby="faq0"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq1">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
+                             aria-expanded="false" aria-controls="collapse1">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
+                    </div>
+                    <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="faq1"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq2">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2"
+                             aria-expanded="false" aria-controls="collapse2">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
+                    </div>
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq3">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3"
+                             aria-expanded="false" aria-controls="collapse3">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
+                    </div>
+                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq4">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4"
+                             aria-expanded="false" aria-controls="collapse4">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
+                    </div>
+                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq5">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5"
+                             aria-expanded="false" aria-controls="collapse5">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
+                    </div>
+                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid accordion col-12" id="faqAccordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" id="faq6">
+                        <div class="accordion-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6"
+                             aria-expanded="false" aria-controls="collapse6">
+                            <img src="~/Images/right-arrow.png" alt="expandImage">
+                            <span class="question">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl nunc, iaculis mattis
+                                tellus ac ut non
+                                imperdiet?
+                            </span>
+                        </div>
+                    </div>
+                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="faq6"
+                         data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id diam tincidunt, fringilla ante
+                            vitae, dapibus velit.
+                            Vivamus id tortor rhoncus, efficitur quam at, suscipit tortor. Integer fermentum convallis eros vel
+                            semper. Ut non
+                            imperdiet velit. Praesent eu dui vel lacus porta eleifend eget quis dui. Integer tempus massa in
+                            gravida tincidunt. Fusce
+                            in libero tristique, euismod nisi vel, luctus urna. Interdum et malesuada fames ac ante ipsum primis
+                            in faucibus. Donec et
+                            placerat arcu. Suspendisse lacinia tristique massa. Etiam risus justo, scelerisque id arcu eu,
+                            sodales tempor eros.
+                            Aliquam efficitur pretium urna, sit amet congue risus malesuada rutrum. Donec id massa vel velit
+                            ullamcorper accumsan ut
+                            eget nisl. Fusce viverra commodo lacus, sit amet facilisis leo luctus dictum.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </section>
+
+
+
+
+
+
+
 
 
 
         <div class="container-fluid news_letter">
             <p class="head_newsletter">GET OUR NEWSLETTER</p>
-            <form action="#" method="submit">
+            <form action="#" method="post">
                 <input class="newsetter" type="email" name="email" placeholder="YOUR EMAIL"> <input type="submit"
                                                                                                     class="btn-submit" name="submit" value="Submit">
             </form>

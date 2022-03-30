@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dhrumil Mehta\\Documents\\Helperland\\Helperland\\Helperland.csproj": {}
+    "C:\\Users\\Dhrumil Mehta\\Desktop\\java\\Helperland\\Helperland.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dhrumil Mehta\\Documents\\Helperland\\Helperland\\Helperland.csproj": {
+    "C:\\Users\\Dhrumil Mehta\\Desktop\\java\\Helperland\\Helperland.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dhrumil Mehta\\Documents\\Helperland\\Helperland\\Helperland.csproj",
+        "projectUniqueName": "C:\\Users\\Dhrumil Mehta\\Desktop\\java\\Helperland\\Helperland.csproj",
         "projectName": "Helperland",
-        "projectPath": "C:\\Users\\Dhrumil Mehta\\Documents\\Helperland\\Helperland\\Helperland.csproj",
+        "projectPath": "C:\\Users\\Dhrumil Mehta\\Desktop\\java\\Helperland\\Helperland.csproj",
         "packagesPath": "C:\\Users\\Dhrumil Mehta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dhrumil Mehta\\Documents\\Helperland\\Helperland\\obj\\",
+        "outputPath": "C:\\Users\\Dhrumil Mehta\\Desktop\\java\\Helperland\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dhrumil Mehta\\AppData\\Roaming\\NuGet\\NuGet.Config",

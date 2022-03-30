@@ -1,5 +1,6 @@
 ﻿@{
     Layout = null;
+    String TodayDate = DateTime.Now.ToString("yyyy-MM-dd");
 }
 
 <!DOCTYPE html>
@@ -164,14 +165,13 @@
                     </div>
                     <div class="modal-body" style="font-weight:500">
                         <!--div class="alert alert-danger d-none mt-3 d-flex justify-content-center"
-                             style="max-width:800px" id="ServiceEditPopupAlert" role="alert">
-                        </div-->
+                         style="max-width:800px" id="ServiceEditPopupAlert" role="alert">
+                    </div-->
 
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="ServiceEditDate" class="form-label">Date</label>
-                                <input type="date" class="form-control" name="date" id="ServiceEditDate"
-                                       placeholder="calender">
+                                <input type="date" class="form-control" id="ServiceEditDate" min=@TodayDate value=@TodayDate>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label" for="ServiceEditTime">Time</label>
@@ -258,6 +258,89 @@
 
                 </div>
             </div>
+        </div>
+
+
+
+
+
+
+        <button type="button" class="btn btn-primary d-none" id="RefundModelBtn" data-bs-toggle="modal"
+                data-bs-target="#RefundModel">
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="RefundModel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered" style="max-width: 550px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title w700" id="exampleModalLabel">Refund Amount</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row ps-3">
+                            <div class="col-3 w500">
+
+                                <div class="row">Paid Amount </div>
+                                &euro; <span id="PaidAmount">5400</span>
+                            </div>
+                            <div class="col-4 w500">
+                                <div class="row">Refund Amount </div>
+                                &euro; <span id="RefundAmount">0</span>
+                            </div>
+                            <div class="col-5 w500">
+                                <div class="row">In Balance Amount </div>
+                                &euro; <span id="BalanceAmount">5400</span>
+                            </div>
+
+                        </div>
+
+                        <div class="row mt-4 ps-2">
+                            <div class="col-6">
+                                <label class="form-label w500">Amount</label>
+
+                                <div class="input-group" style="width:50% !important;">
+
+                                    <input type="number" class="form-control" value="0" id="RefundPercentage" placeholder="Amount" >
+                                </div>
+
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label w500">Calculate</label>
+
+                                <div class="input-group" style="width:50% !important;">
+                                    <input type="text" id="CalculateAmount" class="form-control" disabled style="cursor:not-allowed;">
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="form-label w500 mt-3 ps-2">Why you want to refund amount?</label>
+                        <textarea name="" class="form-control" id="WhyRefund"
+                                  placeholder="Why you want to refund amount?"></textarea>
+
+                        <label class="form-label w500 mt-3 ps-2">Call Center EMP Notes</label>
+                        <textarea name="" class="form-control" id="CallNotes" placeholder="Enter Notes"></textarea>
+
+
+
+
+                        <div class="row my-3 px-3">
+                            <button class="btn btn-primary" style="background-color:#1FB6FF; border-radius: 0%; border-color: #1FB6FF;"
+                                    type="button" id="RefundSubmit">
+                                Refund
+                            </button>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </section>

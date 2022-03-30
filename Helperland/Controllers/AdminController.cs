@@ -7,9 +7,10 @@ using Microsoft.AspNetCore.Session;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
-namespace Helperland.Controllers
+namespace Help.Controllers
 {
     public class AdminController : Controller
     {
@@ -372,8 +373,63 @@ namespace Helperland.Controllers
             var result1 = _helperlandContext.ServiceRequests.Update(serviceRequest);
             _helperlandContext.SaveChanges();
 
+            ServiceRequest request = _helperlandContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == data.ServiceRequestId);
+
             if (result1 != null && result2 != null)
             {
+
+                User SP = _helperlandContext.Users.FirstOrDefault(u => u.UserId == request.ServiceProviderId);
+
+                if (SP != null)
+                {
+
+                    string to = SP.Email;
+                    string subject = "Service Rescheduled/Updated";
+                    string body = "<h1>Service with ID " + data.ServiceRequestId + " has been Rescheduled/Updated to</h1><br>" + data.Date + data.StartTime + "</h2>";
+                    MailMessage msg = new MailMessage();
+                    msg.To.Add(to);
+                    msg.Subject = subject;
+                    msg.Body = body;
+                    msg.From = new MailAddress("dhrumilhelperlandtrail@gmail.com");
+                    msg.IsBodyHtml = true;
+                    SmtpClient setup = new SmtpClient("smtp.gmail.com")
+                    {
+                        Port = 587,
+                        UseDefaultCredentials = true,
+                        EnableSsl = true,
+                        Credentials = new System.Net.NetworkCredential("dhrumilhelperlandtrail@gmail.com", "Helperland@123")
+                    };
+                    setup.Send(msg);
+
+                }
+
+                User Cust = _helperlandContext.Users.FirstOrDefault(u => u.UserId == request.UserId);
+
+                ServiceRequestAddress addrs = _helperlandContext.ServiceRequestAddresses.FirstOrDefault(u => u.ServiceRequestId == request.ServiceRequestId);
+
+                if (Cust != null)
+                {
+
+                    string to = Cust.Email;
+                    string subject = "Service Rescheduled/Updated";
+                    string body = "<h1>Dear Customer your service request has been rescheduled to</h1><br><h2>" + data.Date + data.StartTime + "</h2><h1>At:<h2>" +
+                                  addrs.AddressLine2 + "&nbsp;" + addrs.AddressLine1 + "&nbsp;" + addrs.City + " - " + addrs.PostalCode + "</h2></h1>";
+                    MailMessage msg = new MailMessage();
+                    msg.To.Add(to);
+                    msg.Subject = subject;
+                    msg.Body = body;
+                    msg.From = new MailAddress("dhrumilhelperlandtrail@gmail.com");
+                    msg.IsBodyHtml = true;
+                    SmtpClient setup = new SmtpClient("smtp.gmail.com")
+                    {
+                        Port = 587,
+                        UseDefaultCredentials = true,
+                        EnableSsl = true,
+                        Credentials = new System.Net.NetworkCredential("dhrumilhelperlandtrail@gmail.com", "Helperland@123")
+                    };
+                    setup.Send(msg);
+                }
+
                 return Json("true");
             }
             else
@@ -401,10 +457,82 @@ namespace Helperland.Controllers
 
             if (result != null)
             {
+
+                if (cancelService.ServiceProviderId != null)
+                {
+
+                    User temp = _helperlandContext.Users.FirstOrDefault(x => x.UserId == cancelService.ServiceProviderId);
+
+                    string to = temp.Email;
+                    string subject = "Service Request Cancelled";
+                    string body = "<h3>Service request with Id: " + cancelService.ServiceRequestId + "<br>Scheduled at " + cancelService.ServiceStartDate + "<br>has been cancelled.</h3> ";
+                    MailMessage msg = new MailMessage();
+                    msg.To.Add(to);
+                    msg.Subject = subject;
+                    msg.Body = body;
+                    msg.From = new MailAddress("dhrumilhelperlandtrail@gmail.com");
+                    msg.IsBodyHtml = true;
+                    SmtpClient setup = new SmtpClient("smtp.gmail.com")
+                    {
+                        Port = 587,
+                        UseDefaultCredentials = true,
+                        EnableSsl = true,
+                        Credentials = new System.Net.NetworkCredential("dhrumilhelperlandtrail@gmail.com", "Helperland@123")
+                    };
+                    setup.Send(msg);
+
+                }
+
                 return Ok(Json("true"));
             }
 
             return Ok(Json("false"));
+        }
+
+
+
+
+
+        public JsonResult GetAdminRefundData(ServiceRequest Id)
+        {
+
+
+            Console.WriteLine(Id.ServiceRequestId);
+            ServiceRequest req = _helperlandContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == Id.ServiceRequestId);
+
+
+            var myData = new
+            {
+                TotalCost = req.TotalCost,
+                RefundAmount = req.RefundedAmount
+
+            };
+
+            return Json(myData);
+        }
+
+        public string AdminRefundUpdate(ServiceRequest req)
+        {
+            Console.WriteLine(req.RefundedAmount);
+            Console.WriteLine(req.ServiceRequestId);
+
+
+            ServiceRequest obj = _helperlandContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == req.ServiceRequestId);
+
+
+            obj.RefundedAmount = req.RefundedAmount;
+
+            var result = _helperlandContext.ServiceRequests.Update(obj);
+
+            _helperlandContext.SaveChanges();
+
+            if (result != null)
+            {
+
+                return "true";
+            }
+
+            return "error";
         }
 
     }

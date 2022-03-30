@@ -22,12 +22,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css">
+    <link rel="stylesheet" href="~/css/Admin-datatable.css">
+
     <script src="https://code.jquery.com/jquery-3.6.0.js" defer></script>
-    <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js" defer></script>
+    <script src="https://cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js" defer></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/r-2.2.9/rg-1.1.4/datatables.min.js" defer></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js" defer></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js" defer></script>
+
     <script src="~/js/providerpg.js" defer></script>
-
-
-    <title>Upcoming Services</title>
 
 
 </head>
@@ -144,7 +152,7 @@
                         </button>
                     </li>
                     <li class="nav-item nav-options d-block d-lg-none">
-                        <button class="nav-btn" href="#">
+                        <button class="nav-btn" onclick="TabSSNav()">
                             Service Schedule
                         </button>
                     </li>
@@ -154,7 +162,7 @@
                         </button>
                     </li>
                     <li class="nav-item nav-options d-block d-lg-none">
-                        <button class="nav-btn" href="#">
+                        <button class="nav-btn" onclick="TabMRNav()">
                             My Ratings
                         </button>
                     </li>
@@ -204,13 +212,13 @@
             <button class="sidebar-list  container-fluid" id="UpcomingServTab" onclick="TabUSClick()">
                 Upcoming Services
             </button>
-            <button class="sidebar-list  container-fluid" href="#">
+            <button class="sidebar-list  container-fluid"  onclick="TabSSClick()" id="ServScheduleTab">
                 Service Schedule
             </button>
             <button class="sidebar-list  container-fluid" id="ServHistoryTab" onclick="TabSHClick()">
                 Service History
             </button>
-            <button class="sidebar-list  container-fluid" href="#">
+            <button class="sidebar-list  container-fluid" onclick="TabMRClick()" id="MyRatingTab">
                 My Ratings
             </button>
             <button class="sidebar-list  container-fluid" id="BlockCustTab" onclick="TabBCClick()">
@@ -234,7 +242,11 @@
 
         @await Html.PartialAsync("ProviderBlockCustomer")
 
-        @await Html.PartialAsync("ProviderSetting") 
+        @await Html.PartialAsync("ProviderSetting")
+
+        @await Html.PartialAsync("ProviderRating")
+
+        @await Html.PartialAsync("ProviderSchedule")
 
     </div> 
 
