@@ -23,9 +23,9 @@ namespace Helperland.Models
         public int? Priority { get; set; }
         public int? AssignedToUser { get; set; }
         public bool IsDeleted { get; set; }
-        public string FileName { get; set; }
 
         [NotMapped]
         public IFormFile Attach { get; set; }
+        public string FileName { get; set; }
     }
 }

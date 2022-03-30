@@ -15,7 +15,7 @@ namespace Helperland.ViewModels
         public string newPassword { get; set; }
 
         [Required(ErrorMessage = "Please Re-Enter Password")]
-        [Compare("newPassword", ErrorMessage = "Passwords do not match!")]
+        [Compare("newPassword", ErrorMessage ="Passwords do not match!")]
         public string CnfrmnewPassword { get; set; }
     }
 }

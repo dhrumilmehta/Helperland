@@ -541,3 +541,31 @@ tbody tr td{
 .form-label {
     font-weight: 500;
 }
+
+
+
+/*Pagination*/
+
+.paging-nav {
+  text-align: right;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+
+.paging-nav a {
+  margin: auto 3px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1px 7px;
+  background: white;
+  color: #5f6166;
+  border: solid 1px #5f6166;
+  border-radius: 3px;
+}
+
+.paging-nav .selected-page {
+  background: #5f6166;
+  color: white;
+  font-weight: bold;
+}

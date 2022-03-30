@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Help.Controllers
+namespace Helperland.Controllers
 {
     public class UserPage : Controller
     {
@@ -55,16 +55,16 @@ namespace Help.Controllers
 
                 //var ServiceTable = _helperlandContext.ServiceRequests.Where(x=>x.UserId==user.UserId ).ToList();
                 if (ServiceTable.Any())  /*ServiceTable.Count()>0*/
-                {
+               { 
                     foreach (var service in ServiceTable)
                     {
-
+                       
                         CustomerDashboard dash = new CustomerDashboard();
                         dash.ServiceRequestId = service.ServiceRequestId;
                         var StartDate = service.ServiceStartDate.ToString();
                         //dash.Date = StartDate.Substring(0, 10);
                         //dash.StartTime = StartDate.Substring(11);
-                        dash.Date = service.ServiceStartDate.ToString("dd/MM/yyyy");
+                        dash.Date= service.ServiceStartDate.ToString("dd/MM/yyyy");
                         dash.StartTime = service.ServiceStartDate.AddHours(0).ToString("HH:mm ");
                         var totaltime = (double)(service.ServiceHours + service.ExtraHours);
                         dash.EndTime = service.ServiceStartDate.AddHours(totaltime).ToString("HH:mm ");
@@ -116,20 +116,24 @@ namespace Help.Controllers
             }
 
             return Ok(Json("false"));
-
+            
         }
 
 
 
 
         [HttpPost]
-        public IActionResult CancelService(ServiceRequest cancel)
+        public IActionResult CancelService(CustomerDashboard cancel)
         {
 
 
 
             Console.WriteLine(cancel.ServiceRequestId);
-            ServiceRequest cancelService = _helperlandContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == cancel.ServiceRequestId);
+
+            int service_id = cancel.ServiceRequestId;
+
+            ServiceRequest cancelService = _helperlandContext.ServiceRequests.FirstOrDefault(x => x.ServiceRequestId == service_id);
+            
             cancelService.Status = 4;
             if (cancel.Comments != null)
             {
@@ -227,7 +231,7 @@ namespace Help.Controllers
             addr.UserId = (int)Id;
             addr.IsDefault = false;
             addr.IsDeleted = false;
-
+            
             var result = _helperlandContext.UserAddresses.Add(addr);
             _helperlandContext.SaveChanges();
             if (result != null)
@@ -1094,4 +1098,4 @@ namespace Help.Controllers
 
     }
 
-}
+}  

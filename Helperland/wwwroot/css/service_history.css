@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
@@ -6,8 +6,8 @@
 
 body {
     overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
-}
+    font-family:'Roboto', sans-serif;
+  }
 
 
 
@@ -16,113 +16,94 @@ body {
 
 
 
-.navbar {
+.navbar{
     background-color: #646464;
     height: 56px;
     padding-left: 15px;
-    padding-right: 10px;
+    padding-right: 10px ;
 }
-
-.navbar-brand img {
+.navbar-brand img{
     height: 50px;
 }
-
-.nav-link {
+.nav-link{
     font-size: 15px;
-    color: #fff;
+    color:#fff;
 }
-
-    .nav-link:hover {
-        color: #90cfdc;
-        border: transparent;
-    }
-
-.nav-item {
+.nav-link:hover{
+    color:#90cfdc;
+    border: transparent;
+}
+.nav-item{
     font-size: 15px;
-    color: #fff;
-    padding-left: 30px;
+    color:#fff;
+    padding-left:30px;
 }
-
-.nav-options {
+.nav-options{
     padding-top: 6px;
 }
-
-.book-btn {
+.book-btn{
     color: white;
     background-color: #29626D;
     border: solid 1px white;
     margin-top: +1px;
 }
-
-    .book-btn:hover {
-        color: #29626D;
-        border: solid 1px #29626D;
-        background-color: white;
-    }
-
-.price-link {
+.book-btn:hover{
+    color: #29626D;
+    border: solid 1px #29626D;
+    background-color: white;
+}
+.price-link{
     padding-left: 28px !important;
 }
-
-.user-name {
+.user-name{
     font-weight: bolder;
 }
-
-.vl-1 {
+.vl-1{
     border: 1px solid #E1E1E1;
     height: 56px;
     margin-left: 30px;
 }
-
-.vl-2 {
+.vl-2{
     border: 1px solid #E1E1E1;
     height: 56px;
     margin-left: 20px;
 }
-
-.notify {
+.notify{
     display: flex;
     justify-content: center;
     margin-left: 20px;
 }
-
-    .notify img {
-        padding-top: 12px;
-    }
-
-.user-icon {
-    padding-right: 5px;
+.notify img{
+    padding-top: 12px;
+    
 }
-
-.dropdown-l {
+.user-icon{
+    padding-right:5px;
+}
+.dropdown-l{
     padding-left: 20px !important;
 }
-
 .dropdown-toggle::after {
     content: none !important;
 }
 
-.nav-btn {
+.nav-btn{
     text-decoration: none;
     font-size: 15px;
-    color: #fff;
+    color:#fff;
 }
-
-    .nav-btn:hover {
-        color: #90cfdc;
-        cursor: pointer;
-    }
-
-.nav-divider {
+.nav-btn:hover{
+    color:#90cfdc;
+    cursor: pointer;
+}
+.nav-divider{
     padding-top: +10px;
 }
-
-    .nav-divider hr {
-        color: white;
-        height: 2px;
-    }
-
-.navBtnli {
+.nav-divider hr{
+    color: white;
+    height: 2px;
+}
+.navBtnli{
     margin-top: 15px;
 }
 
@@ -131,22 +112,20 @@ body {
 
 
 
-.dropdown-s {
+.dropdown-s{
     margin-left: 0%;
     margin-right: +5px;
+
 }
-
-    .dropdown-s img {
-        padding-top: +11px;
-    }
-
-.response-icon img {
+.dropdown-s img{
+    padding-top: +11px;
+}
+.response-icon img{
     padding-top: +13px;
     width: 100%;
     height: auto;
 }
-
-.user-icon-1 {
+.user-icon-1{
     padding-right: 2px;
     width: 70%;
     height: auto;
@@ -160,18 +139,16 @@ body {
 
 
 
-.greet-header {
+.greet-header{
     background-color: #F9F9F9;
     border-bottom: 1px solid #e9e5e5;
 }
-
-    .greet-header h2 {
-        padding-top: 38px;
-        padding-bottom: 43px;
-        color: #4F4F4F;
-    }
-
-.greet_user {
+.greet-header h2{
+    padding-top: 38px;
+    padding-bottom: 43px;
+    color: #4F4F4F;
+}
+.greet_user{
     font-weight: bolder;
 }
 
@@ -181,20 +158,19 @@ body {
 
 
 
-.service-content {
+.service-content{
     padding-top: 31px;
     padding-bottom: 39px;
     margin: auto;
 }
-
-.service-sidebar {
+.service-sidebar{
     background-color: #1D7A8C;
-    max-height: 1032px;
+    max-height: 1032px ;
     padding: 0%;
 }
 
 
-.sidebar-list {
+.sidebar-list{
     padding-top: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid #E1E1E1 !important;
@@ -202,35 +178,33 @@ body {
     text-align: start;
     color: #FFFFFF;
     font-size: 18px;
-    background-color: #1D7A8C;
+    background-color: #1D7A8C;  
 }
-
-    .active, .sidebar-list:hover {
-        background-color: #146371;
-    }
+.active, .sidebar-list:hover{
+    background-color: #146371;
+    
+}
 
 
 
 /*Service History Table*/
-.main-table {
+.main-table{
     padding-left: 32px;
     display: none;
 }
 
 
 
-.service-heading {
-    display: flex;
-    justify-content: space-between;
+.service-heading{
+    display:flex;
+  justify-content:space-between;
 }
-
-.heading p {
+.heading p{
     color: #646464;
     font-size: 22px;
     font-weight: 800;
 }
-
-.export input {
+.export input{
     width: 80px;
     height: 30px;
     background-color: #1D7A8C;
@@ -242,91 +216,80 @@ body {
 }
 
 
-table {
+table{
     color: #646464;
     border: solid 1px #CCCCCC;
     overflow: auto;
 }
-
-thead {
+thead{
     text-align: center;
     background-color: #F9F9F9;
-    height: 50px;
-    border-bottom: solid 1px #CCCCCC;
+    height:50px;
+    border-bottom: solid 1px #CCCCCC ;
     font-size: 16px;
     font-weight: bolder;
 }
-
-tbody {
+tbody{
     text-align: center;
 }
-
-    tbody tr {
-        height: 71px;
-        font-size: 16px;
-        border-bottom: solid 1px #CCCCCC;
-    }
-
-.servDate {
-    font-weight: bold;
+tbody tr{
+    height:71px;
+    font-size: 16px;
+    border-bottom: solid 1px #CCCCCC ;
 }
 
-.service-date p {
+.servDate{
+    font-weight: bold;
+}
+.service-date p{
     margin-bottom: 2%;
 }
 
-.pro_info {
+.pro_info{
     display: inline-flex;
     text-align: left;
 }
-
-.cap-icon {
+.cap-icon{
     width: 50px;
     height: 50px;
     border: solid 1px #646464;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+}
+.cap-icon img{
+    width: 30px;
+    height: 25px;
+    margin-left: +9px;
 }
 
-    .cap-icon img {
-        width: 30px;
-        height: 25px;
-        margin-left: +9px;
-    }
-
-.pro-name {
+.pro-name{
     margin-left: +10px;
 }
-
-    .pro-name p {
-        margin-bottom: 0%;
-        color: #646464;
-    }
-
-.service-cost {
+.pro-name p{
+    margin-bottom: 0%;
+    color: #646464;
+}
+.service-cost{
     color: #1D7A8C;
     font-size: 20px;
     font-weight: 700;
 }
-
-.status {
+.status{
     width: 100px;
     color: white;
     height: auto;
     margin: auto;
 }
-
-.completed {
+.completed{
     background-color: rgb(67, 167, 67);
 }
-
 .cancelled {
     background-color: #d4433d !important;
 }
-
-.rate-button {
+.rate-button{
     width: 80px;
     height: 30px;
     background-color: rgb(118, 159, 201);
@@ -340,11 +303,12 @@ tbody {
 
 /*Dashboard Table*/
 
-.dashboard-table {
+.dashboard-table{
     padding-left: 32px;
+
 }
 
-.newrequestBtn {
+.newrequestBtn{
     padding: 5px 10px;
     background-color: #1D7A8C;
     color: white;
@@ -353,28 +317,25 @@ tbody {
     border: none;
     text-decoration: none;
 }
-
-    .newrequestBtn:hover {
-        color: white;
-        text-decoration: none;
-    }
-
+.newrequestBtn:hover {
+    color: white;
+    text-decoration: none;
+}
 
 
 
-.dashServIddiv {
+
+.dashServIddiv{
     font-weight: 600;
 }
-
-.dashdateDiv {
+.dashdateDiv{
     padding-top: 5px;
 }
-
-.dashDate {
+.dashDate{
     font-weight: 700;
 }
 
-.payAmount {
+.payAmount{
     color: #1D7A8C;
     font-size: 20px;
     font-weight: 800;
@@ -382,59 +343,55 @@ tbody {
 
 
 
-.dashproInfo {
+.dashproInfo{
     display: inline-flex;
     text-align: left;
 }
-
-.dashCapicon {
+.dashCapicon{
     width: 50px;
     height: 50px;
     border: solid 1px #646464;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+}
+.dashCapicon img{
+    width: 30px;
+    height: 25px;
+    margin-left: +9px;
 }
 
-    .dashCapicon img {
-        width: 30px;
-        height: 25px;
-        margin-left: +9px;
-    }
-
-.dashProname {
+.dashProname{
     margin-left: +10px;
 }
-
-    .dashProname p {
-        margin-bottom: 0%;
-        color: #646464;
-    }
-
+.dashProname p{
+    margin-bottom: 0%;
+    color: #646464;
+}
 
 
-#rescheduleBtn {
+
+#rescheduleBtn{
     padding: 5px 10px;
     margin-right: +2px;
     background-color: #1D7A8C;
     color: white;
     border: solid 1px #1D7A8C;
 }
-
-#cancelBtn {
+#cancelBtn{
     padding: 5px 8px;
     background-color: #e64242;
     color: white;
     border: solid 1px #e64242;
 }
 
-#rescheduleBtn:hover {
+#rescheduleBtn:hover{
     background-color: #fff;
     color: #1D7A8C;
 }
-
-#cancelBtn:hover {
+#cancelBtn:hover{
     background-color: #fff;
     color: #e64242;
 }
@@ -444,29 +401,28 @@ tbody {
 
 
 /*Page Control*/
-.page-control {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    text-align: center;
-    color: #646464;
-    font-size: 14px;
-    font-weight: bold;
+.page-control{
+    display:flex;
+  justify-content:space-between;
+  margin-top: 10px;
+  text-align: center;
+  color: #646464;
+  font-size: 14px;
+  font-weight: bold;
+  
 }
-
-.page-control-left {
+.page-control-left{
     display: inline-flex;
     column-gap: 10px;
     padding-top: +5px;
 }
-
-.page-control-right {
+.page-control-right{
     display: inline-flex;
     column-gap: 5px;
 }
 
 
-#entries {
+#entries{
     width: 60px;
     height: 30px;
     margin-right: -3px;
@@ -476,7 +432,7 @@ tbody {
 
 
 
-.page-btn {
+.page-btn{
     text-align: center;
     justify-content: center;
     width: 35px;
@@ -485,16 +441,14 @@ tbody {
     border: solid 1px gray;
     padding-top: +5px;
 }
-
-.page-no {
+.page-no{
     text-decoration: none;
     color: #646464;
 }
-
-    .active-2, .page-no:hover {
-        background-color: #1D7A8C;
-        color: white;
-    }
+.active-2, .page-no:hover{
+    background-color: #1D7A8C;
+    color: white;
+}
 
 
 
@@ -502,90 +456,77 @@ tbody {
 
 
 /*Reschedule Modal*/
-.resmodal-content {
+.resmodal-content{
     padding-left: 5px;
 }
-
-#rescheduleModalLabel {
+#rescheduleModalLabel{
     color: #646464;
     font-weight: 600;
 }
-
-.resmodal-body {
+.resmodal-body{
     color: #464545;
     font-weight: 500;
 }
-
-.resInputs {
+.resInputs{
     margin-top: 10px;
 }
-
-    .resInputs input {
-        padding: 8px;
-        color: #646464;
-        border: solid 1px #a7a6a6;
-    }
-
-.resDate {
+.resInputs input{
+    padding: 8px;
+    color: #646464;
+    border: solid 1px #a7a6a6;
+}
+.resDate{
     width: 50%;
     margin-right: 10px;
 }
-
-.resTime {
+.resTime{
     width: 40%;
 }
-
-.resupdateBtn {
+.resupdateBtn{
     width: 45%;
     padding: 5px;
     background-color: #1D7A8C;
     color: white;
     border: solid 1px #1D7A8C;
 }
-
-    .resupdateBtn:hover {
-        background-color: #fff;
-        color: #1D7A8C;
-    }
+.resupdateBtn:hover{
+    background-color: #fff;
+    color: #1D7A8C;
+}
 
 
 /*Cancel Modal*/
 
-.canmodal-content {
+.canmodal-content{
     padding-left: 5px;
 }
-
-#cancelModalLabel {
+#cancelModalLabel{
     color: #646464;
     font-weight: 600;
 }
-
-.canmodal-body {
+.canmodal-body{
     color: #464545;
     font-weight: 500;
 }
-
-.canInputs {
+.canInputs{
     margin-top: 10px;
 }
+.canInputs textarea{
+    padding: 5px;
+    width: 99%;
+}
 
-    .canInputs textarea {
-        padding: 5px;
-        width: 99%;
-    }
-
-.cancelServBtn {
+.cancelServBtn{
     width: 45%;
     padding: 5px;
     background-color: #1D7A8C;
     color: white;
     border: solid 1px #1D7A8C;
 }
-
-    .cancelServBtn:hover {
-        background-color: #fff;
-        color: #1D7A8C;
-    }
+.cancelServBtn:hover{
+    background-color: #fff;
+    color: #1D7A8C;
+}
 
 
 
@@ -593,129 +534,123 @@ tbody {
 
 
 /****My Settings***/
-.my-setting {
+.my-setting{
     padding-left: 32px;
     display: none;
 }
 
 
-.setting-tabs {
+.setting-tabs{
     display: flex;
 }
-
-.setting-tab {
+.setting-tab{
     padding: 16px 40px;
     padding-left: 80px !important;
-    border-bottom: solid 2px #d8d7d7;
+    border-bottom:solid 2px #d8d7d7;
+
     color: #646464;
     font-size: 16px;
     font-weight: 700;
     text-decoration: none;
 }
 
-    .setting-tab:hover {
-        color: #1D7A8C;
-        text-decoration: none;
-        border-bottom: solid 2px #1D7A8C;
-    }
-
-.active2 {
+.setting-tab:hover{
     color: #1D7A8C;
-    border-bottom: solid 2px #1D7A8C;
+    text-decoration: none;
+    border-bottom:solid 2px #1D7A8C;
+}
+.active2{
+    color: #1D7A8C;
+    border-bottom:solid 2px #1D7A8C;
 }
 
 
 
-.tabcontent {
+.tabcontent{
     margin-top: 35px;
     padding-left: 10px;
 }
 
 
 /*Form 1*/
-#tab1 {
+#tab1{
     display: none;
 }
 
 
-.detail-inputs {
+.detail-inputs{
     margin-top: 25px;
     color: #646464;
     font-weight: 600;
 }
 
 
-.form1-divide {
+.form1-divide{
     margin-top: 50px;
     height: 2px;
 }
 
-.detail-selectlang {
+.detail-selectlang{
     color: #646464;
     font-weight: 600;
 }
-
-#detail-lang option {
+#detail-lang option{
     color: #646464;
 }
 
 
 
-.detail-saveBtn {
+.detail-saveBtn{
     margin-top: 50px;
 }
-
-    .detail-saveBtn button {
-        background-color: #1D7A8C;
-        color: white;
-        border: solid 1px #1D7A8C;
-        padding: 5px 20px;
-    }
+.detail-saveBtn button{
+    background-color: #1D7A8C;
+    color: white;
+    border: solid 1px #1D7A8C;
+    padding: 5px 20px;
+}
 
 
 /*Form 2*/
-.addressTable tr th, .addressTable tr td {
+.addressTable tr th, .addressTable tr td{
     padding-left: 20px;
 }
 
-.addressdetaildiv {
+.addressdetaildiv{
     padding-top: 10px;
 }
 
-.addAddressBtn {
+.addAddressBtn{
     margin-top: 50px;
 }
-
-    .addAddressBtn button {
-        background-color: #1D7A8C;
-        color: white;
-        border: solid 1px #1D7A8C;
-        padding: 5px 20px;
-    }
+.addAddressBtn button{
+    background-color: #1D7A8C;
+    color: white;
+    border: solid 1px #1D7A8C;
+    padding: 5px 20px;
+}
 
 /*Form 3*/
 
-#tab3 {
+#tab3{
     display: none;
 }
 
-.changepass-inputs {
+.changepass-inputs{
     margin-top: 25px;
     color: #646464;
     font-weight: 600;
 }
 
-.changepass-saveBtn {
+.changepass-saveBtn{
     margin-top: 50px;
 }
-
-    .changepass-saveBtn button {
-        background-color: #1D7A8C;
-        color: white;
-        border: solid 1px #1D7A8C;
-        padding: 5px 20px;
-    }
-
+.changepass-saveBtn button{
+    background-color: #1D7A8C;
+    color: white;
+    border: solid 1px #1D7A8C;
+    padding: 5px 20px;
+}
 
 
 
@@ -741,58 +676,52 @@ tbody {
 
 
 
-footer {
+
+footer{
     background-color: #111111;
     width: 100%;
     color: white;
     min-height: 195px;
     margin-bottom: 0%;
-}
-
-.footer-logo {
-    width: 120px;
-    height: 92px;
-}
-
+  }
+  .footer-logo{
+      width: 120px;
+      height: 92px;
+  }
 footer .container a {
     text-decoration: none;
     color: #F1F1F1;
     font-size: 14px;
-}
-
-.foot_menu {
+  }
+.foot_menu{
     padding-top: 20px;
     max-width: 1350px;
+  }
+.icons{
+padding-top: +15px;
 }
-
-.icons {
-    padding-top: +15px;
-}
-
 .fimg1 {
     width: 9px;
     height: 18px;
     margin-right: 20px;
-}
-
+  }
 .fimg2 {
     width: 20px;
     height: 20px;
-}
-
-.term_c {
+  }
+  
+.term_c{
     color: #9BA0A3;
     font-size: 14px;
+  }
+.term_c a{
+      text-decoration: none;
+      color: #9BA0A3;
+  }
+.foot_menulink{
+padding-top: +20px;
 }
 
-    .term_c a {
-        text-decoration: none;
-        color: #9BA0A3;
-    }
-
-.foot_menulink {
-    padding-top: +20px;
-}
 
 
 
@@ -803,61 +732,53 @@ footer .container a {
 
 
 
-
-
-@media screen and (max-width: 329px) {
-    .navbar {
+ 
+@media screen and (max-width: 329px){
+    .navbar{
         height: auto;
     }
-
-    .navbar-brand img {
+    .navbar-brand img{
         width: 75%;
         height: auto;
     }
-
-    .foot_menulink a {
+    .foot_menulink a{
         padding-top: +5px;
         padding-bottom: +5px;
     }
-
-    .fimg1 {
+    .fimg1{
         margin-left: +5px;
     }
 
-    .foot_menu {
+    .foot_menu{
         flex-direction: column;
     }
-
-    .foot_menulink {
+    .foot_menulink{
         flex-direction: column;
+    
     }
-
-        .foot_menulink a {
-            padding-top: +5px;
-        }
-
-    .footer-logo {
+    .foot_menulink a{
+        padding-top: +5px;
+        
+    }
+    .footer-logo{
         width: 25%;
         height: auto;
     }
 
-    .response-icon {
+    .response-icon{
         margin-right: 0%;
     }
-
-        .response-icon img {
-            padding-top: +14px;
-            width: 85%;
-            height: auto;
-        }
-
-    .dropdown-s {
+    .response-icon img{
+        padding-top: +14px;
+        width: 85%;
+        height: auto;
+    }
+    .dropdown-s{
         padding-left: 10%;
         margin-right: -10px;
         padding-top: +2px;
     }
-
-    .user-icon-1 {
+    .user-icon-1{
         padding-right: 2px;
         width: 60%;
         height: auto;
@@ -865,334 +786,300 @@ footer .container a {
 
 
 
-
-    .historyTable {
+    
+    .historyTable{
         border: none;
     }
-
-        .historyTable thead {
-            display: none;
-        }
-
-        .historyTable, .historyTable tbody, .historyTable tr, .historyTable td {
-            display: block;
-            width: 100%;
-            height: auto;
-            font-size: 12px !important;
-        }
-
-            .historyTable tbody, .historyTable tr, .historyTable td {
-                width: 100% !important;
-            }
-
-                .historyTable tbody tr td {
-                    text-align: end;
-                    padding-right: 1%;
-                    position: relative;
-                    border-bottom: solid 1px #9BA0A3;
-                }
-
-                .historyTable td::before {
-                    content: attr(data-label);
-                    position: absolute;
-                    left: 1%;
-                    padding-top: 6%;
-                }
-
-
-
-            .historyTable tr {
-                border: solid 1px #9BA0A3;
-                border-bottom: none;
-                margin-bottom: 40px;
-            }
-
-
-    .servicedatediv {
-        padding-top: 7px;
+    .historyTable thead{
+        display: none;
+    }
+    .historyTable, .historyTable tbody, .historyTable tr, .historyTable td{
+        display: block;
+        width: 100%;
+        height: auto;
+        font-size: 12px !important;
+    } 
+    .historyTable tbody, .historyTable tr, .historyTable td{
+        width: 100% !important;
+    }
+    .historyTable tbody tr td{
+        text-align: end;
+        padding-right: 1%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .historyTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 6%;
     }
 
-    .pro_info {
+
+
+    .historyTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+
+    .servicedatediv{
+        padding-top: 7px;
+        
+    }
+    .pro_info{
         padding-bottom: 12px;
         padding-top: 12px;
     }
-
-    .service-costdiv {
+    .service-costdiv{
         padding-top: 15px;
         padding-bottom: 14px;
         padding-right: 20px !important;
     }
-
-    .statusmain {
+    .statusmain{
         padding-top: 20px;
         padding-bottom: 20px;
     }
-
-    .status {
+    .status{
         width: 25%;
         margin-right: 0;
         text-align: center;
     }
-
-    .ratediv {
+    .ratediv{
         padding-top: 15px;
         padding-bottom: 10px;
         padding-right: 7px;
     }
 
-    .service-cost {
+    .service-cost{
         color: #646464;
         font-weight: 500;
         font-size: 12px !important;
+        
     }
-
-    .rate-button {
+    
+    .rate-button{
         width: 22%;
-        font-size: 12px !important;
+        font-size: 12px  !important;
+    } 
+    .cap-icon{
+      display: none;
     }
 
-    .cap-icon {
-        display: none;
-    }
 
 
 
 
 
+    
 
 
 
-
-
-    .dashboardTable {
+    .dashboardTable{
         border: none;
     }
-
-        .dashboardTable thead {
-            display: none;
-        }
-
-        .dashboardTable, .dashboardTable tbody, .dashboardTable tr, .dashboardTable td {
-            display: block;
-            width: 95%;
-            height: auto;
-            font-size: 10px;
-        }
-
-            .dashboardTable tbody, .dashboardTable tr, .dashboardTable td {
-                width: 100% !important;
-            }
-
-                .dashboardTable tbody tr td {
-                    text-align: end;
-                    padding-right: 5%;
-                    position: relative;
-                    border-bottom: solid 1px #9BA0A3;
-                }
-
-                .dashboardTable td::before {
-                    content: attr(data-label);
-                    position: absolute;
-                    left: 3%;
-                    padding-top: 3%;
-                }
+    .dashboardTable thead{
+        display: none;
+    }
+    .dashboardTable, .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        display: block;
+        width: 95%;
+        height: auto;
+        font-size: 10px;
+    }
+    .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        width: 100% !important;
+    }
+    .dashboardTable tbody tr td{
+        text-align: end;
+        padding-right: 5%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .dashboardTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 3%;
+    }
 
 
 
-            .dashboardTable tr {
-                border: solid 1px #9BA0A3;
-                border-bottom: none;
-                margin-bottom: 40px;
-            }
+    .dashboardTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
 
 
-    .dashServIddiv {
+    .dashServIddiv{
         padding-right: 20px;
         padding-top: 20px;
         padding-bottom: 20px;
+        
     }
-
-    .dashproInfo {
+    .dashproInfo{
         padding-bottom: 15px;
         padding-top: 15px;
     }
-
-    .dashPayment {
+    .dashPayment{
         padding-top: 15px;
         padding-bottom: 20px;
         padding-right: 35px;
     }
-
-    .payAmount {
+    .payAmount{
         font-size: 12px;
     }
-
-    .actiobBtns {
+    .actiobBtns{
         padding-top: 15px;
         padding-bottom: 15px;
         font-size: 8px;
     }
 
-    .dashCapicon {
+    .dashCapicon{
         display: none;
     }
 
-    .dashHeading p {
+    .dashHeading p{
         font-size: 16px;
     }
-
-    .newrequestBtn {
+    .newrequestBtn{
         font-size: 10px;
     }
 
 
 
 
-    #rescheduleModalLabel {
+    #rescheduleModalLabel{
         font-size: 16px;
     }
-
-    .resmodal-body {
+    .resmodal-body{
         font-size: 14px;
     }
 
-    #cancelModalLabel {
+    #cancelModalLabel{
         font-size: 18px;
     }
-
-    .canmodal-body {
+    .canmodal-body{
         font-size: 16px;
     }
-
-    .canInputs textarea {
+    .canInputs textarea{
         width: 98%;
     }
+
+
 }
 
-@media screen and (min-width: 330px) and (max-width: 426px) {
-    .navbar {
+@media screen and (min-width: 330px) and (max-width: 426px){
+    .navbar{
         height: auto;
     }
-
-    .navbar-brand img {
+    .navbar-brand img{
         width: 75%;
         height: auto;
     }
-
-    .foot_menulink a {
+    .foot_menulink a{
         padding-top: +5px;
         padding-bottom: +5px;
     }
-
-    .fimg1 {
+    .fimg1{
         margin-left: +5px;
     }
 
-    .foot_menu {
+    .foot_menu{
         flex-direction: column;
     }
-
-    .foot_menulink {
+    .foot_menulink{
         flex-direction: column;
+    
     }
-
-        .foot_menulink a {
-            padding-top: +5px;
-        }
-
-    .footer-logo {
+    .foot_menulink a{
+        padding-top: +5px;
+        
+    }
+    .footer-logo{
         width: 25%;
         height: auto;
     }
 
 
 
-
-    .historyTable {
+    
+    .historyTable{
         border: none;
     }
-
-        .historyTable thead {
-            display: none;
-        }
-
-        .historyTable, .historyTable tbody, .historyTable tr, .historyTable td {
-            display: block;
-            width: 100%;
-            height: auto;
-            font-size: 16px;
-        }
-
-            .historyTable tbody, .historyTable tr, .historyTable td {
-                width: 100% !important;
-            }
-
-                .historyTable tbody tr td {
-                    text-align: end;
-                    padding-right: 3%;
-                    position: relative;
-                    border-bottom: solid 1px #9BA0A3;
-                }
-
-                .historyTable td::before {
-                    content: attr(data-label);
-                    position: absolute;
-                    left: 3%;
-                    padding-top: 5%;
-                }
-
-            .historyTable tr {
-                border: solid 1px #9BA0A3;
-                border-bottom: none;
-                margin-bottom: 40px;
-            }
-
-
-    .servicedatediv {
-        padding-top: 7px;
+    .historyTable thead{
+        display: none;
+    }
+    .historyTable, .historyTable tbody, .historyTable tr, .historyTable td{
+        display: block;
+        width: 100%;
+        height: auto;
+        font-size: 16px;
+    }
+    .historyTable tbody, .historyTable tr, .historyTable td{
+        width: 100% !important;
+    }
+    .historyTable tbody tr td{
+        text-align: end;
+        padding-right: 3%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .historyTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 5%;
+    }
+    .historyTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
     }
 
-    .pro_info {
+
+    .servicedatediv{
+        padding-top: 7px;
+        
+    }
+    .pro_info{
         padding-bottom: 12px;
         padding-top: 12px;
     }
-
-    .service-costdiv {
+    .service-costdiv{
         padding-top: 15px;
         padding-bottom: 14px;
         padding-right: 30px;
     }
-
-    .statusmain {
+    .statusmain{
         padding-top: 20px;
         padding-bottom: 20px;
     }
-
-    .status {
+    .status{
         width: 25%;
         margin-right: 0;
         text-align: center;
     }
-
-    .ratediv {
+    .ratediv{
         padding-top: 15px;
         padding-bottom: 15px;
         padding-right: 7px;
     }
 
-    .service-cost {
+    .service-cost{
         color: #646464;
         font-weight: 500;
         font-size: 16px !important;
+        
     }
-
-    .rate-button {
+    .rate-button{
         width: 22%;
         font-size: 16px !important;
     }
-
-    .cap-icon {
-        display: none;
+    .cap-icon{
+      display: none;
     }
 
 
@@ -1205,84 +1092,75 @@ footer .container a {
 
 
 
-    .dashboardTable {
+    .dashboardTable{
         border: none;
     }
-
-        .dashboardTable thead {
-            display: none;
-        }
-
-        .dashboardTable, .dashboardTable tbody, .dashboardTable tr, .dashboardTable td {
-            display: block;
-            width: 95%;
-            height: auto;
-            font-size: 14px;
-        }
-
-            .dashboardTable tbody, .dashboardTable tr, .dashboardTable td {
-                width: 100% !important;
-            }
-
-                .dashboardTable tbody tr td {
-                    text-align: end;
-                    padding-right: 5%;
-                    position: relative;
-                    border-bottom: solid 1px #9BA0A3;
-                }
-
-                .dashboardTable td::before {
-                    content: attr(data-label);
-                    position: absolute;
-                    left: 3%;
-                    padding-top: 3%;
-                }
+    .dashboardTable thead{
+        display: none;
+    }
+    .dashboardTable, .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        display: block;
+        width: 95%;
+        height: auto;
+        font-size: 14px;
+    }
+    .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        width: 100% !important;
+    }
+    .dashboardTable tbody tr td{
+        text-align: end;
+        padding-right: 5%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .dashboardTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 3%;
+    }
 
 
 
-            .dashboardTable tr {
-                border: solid 1px #9BA0A3;
-                border-bottom: none;
-                margin-bottom: 40px;
-            }
+    .dashboardTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
 
 
-    .dashServIddiv {
+    .dashServIddiv{
         padding-top: 20px;
         padding-bottom: 20px;
         padding-right: 30px;
+        
     }
-
-    .dashproInfo {
+    .dashproInfo{
         padding-bottom: 15px;
         padding-top: 15px;
     }
-
-    .dashPayment {
+    .dashPayment{
         padding-top: 15px;
         padding-bottom: 20px;
         padding-right: 35px;
     }
-
-    .payAmount {
+    .payAmount{
         font-size: 18px;
     }
-
-    .actiobBtns {
+    .actiobBtns{
         padding-top: 15px;
         padding-bottom: 15px;
         font-size: 12px;
     }
 
-    .dashCapicon {
+    .dashCapicon{
         display: none;
     }
 
-    .dashHeading p {
+    .dashHeading p{
         font-size: 16px;
     }
-
-    .newrequestBtn {
+    .newrequestBtn{
         font-size: 12px;
     }
 
@@ -1299,115 +1177,103 @@ footer .container a {
         padding: 5px 10px;
         padding-left: 0% !important;
     }
+    
 }
-
-@media screen and (min-width: 427px) and (max-width: 769px) {
-    .navbar {
+@media screen and (min-width: 427px) and (max-width: 769px){
+    .navbar{
         height: auto;
     }
-
-    .navbar-collapse {
+    .navbar-collapse{
         padding-top: +5px;
     }
 
-    .foot_menulink a {
+    .foot_menulink a{
         padding-top: +5px;
         padding-bottom: +5px;
     }
-
-    .fimg1 {
+    .fimg1{
         margin-left: +5px;
         margin-bottom: +5px;
     }
-
-    .footer-logo {
+    .footer-logo{
         width: 90px;
         height: auto;
     }
 
 
 
-    .historyTable {
+    .historyTable{
         border: none;
     }
-
-        .historyTable thead {
-            display: none;
-        }
-
-        .historyTable, .historyTable tbody, .historyTable tr, .historyTable td {
-            display: block;
-            width: 95%;
-            height: auto;
-            font-size: 20px;
-        }
-
-            .historyTable tbody, .historyTable tr, .historyTable td {
-                width: 100% !important;
-            }
-
-                .historyTable tbody tr td {
-                    text-align: end;
-                    padding-right: 5%;
-                    position: relative;
-                    border-bottom: solid 1px #9BA0A3;
-                }
-
-                .historyTable td::before {
-                    content: attr(data-label);
-                    position: absolute;
-                    left: 3%;
-                    padding-top: 3%;
-                }
-
-
-
-            .historyTable tr {
-                border: solid 1px #9BA0A3;
-                border-bottom: none;
-                margin-bottom: 40px;
-            }
-
-
-    .servicedatediv {
-        padding-top: 7px;
+    .historyTable thead{
+        display: none;
+    }
+    .historyTable, .historyTable tbody, .historyTable tr, .historyTable td{
+        display: block;
+        width: 95%;
+        height: auto;
+        font-size: 20px;
+    }
+    .historyTable tbody, .historyTable tr, .historyTable td{
+        width: 100% !important;
+    }
+    .historyTable tbody tr td{
+        text-align: end;
+        padding-right: 5%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .historyTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 3%;
     }
 
-    .pro_info {
+
+
+    .historyTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+
+    .servicedatediv{
+        padding-top: 7px;
+        
+    }
+    .pro_info{
         padding-bottom: 12px;
         padding-top: 12px;
     }
-
-    .service-costdiv {
+    .service-costdiv{
         padding-top: 15px;
         padding-bottom: 14px;
         padding-right: 50px;
     }
-
-    .statusmain {
+    .statusmain{
         padding-top: 20px;
         padding-bottom: 20px;
     }
-
-    .status {
+    .status{
         width: 25%;
         margin-right: 0;
         text-align: center;
     }
-
-    .ratediv {
+    .ratediv{
         padding-top: 15px;
         padding-bottom: 15px;
         padding-right: 7px;
     }
 
-    .service-cost {
+    .service-cost{
         color: #646464;
         font-weight: 500;
         font-size: 20px !important;
+        
     }
-
-    .rate-button {
+    .rate-button{
         width: 22%;
         font-size: 18px !important;
     }
@@ -1427,173 +1293,166 @@ footer .container a {
 
 
 
-    .dashboardTable {
+    .dashboardTable{
         border: none;
     }
-
-        .dashboardTable thead {
-            display: none;
-        }
-
-        .dashboardTable, .dashboardTable tbody, .dashboardTable tr, .dashboardTable td {
-            display: block;
-            width: 95%;
-            height: auto;
-            font-size: 18px;
-        }
-
-            .dashboardTable tbody, .dashboardTable tr, .dashboardTable td {
-                width: 100% !important;
-            }
-
-                .dashboardTable tbody tr td {
-                    text-align: end;
-                    padding-right: 5%;
-                    position: relative;
-                    border-bottom: solid 1px #9BA0A3;
-                }
-
-                .dashboardTable td::before {
-                    content: attr(data-label);
-                    position: absolute;
-                    left: 3%;
-                    padding-top: 3%;
-                }
+    .dashboardTable thead{
+        display: none;
+    }
+    .dashboardTable, .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        display: block;
+        width: 95%;
+        height: auto;
+        font-size: 18px;
+    }
+    .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        width: 100% !important;
+    }
+    .dashboardTable tbody tr td{
+        text-align: end;
+        padding-right: 5%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .dashboardTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 3%;
+    }
 
 
 
-            .dashboardTable tr {
-                border: solid 1px #9BA0A3;
-                border-bottom: none;
-                margin-bottom: 40px;
-            }
+    .dashboardTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
 
 
-    .dashServIddiv {
+    .dashServIddiv{
         padding-top: 20px;
         padding-bottom: 20px;
         padding-right: 35px;
+        
     }
-
-    .dashproInfo {
+    .dashproInfo{
         padding-bottom: 15px;
         padding-top: 15px;
     }
-
-    .dashPayment {
+    .dashPayment{
         padding-top: 15px;
         padding-bottom: 20px;
         padding-right: 50px;
     }
-
-    .payAmount {
+    .payAmount{
         font-size: 24px;
     }
-
-    .actiobBtns {
+    .actiobBtns{
         padding-top: 15px;
         padding-bottom: 15px;
         font-size: 16px;
     }
-}
 
-@media screen and (min-width: 770px) and (max-width: 991px) {
-    .navbar {
-        height: auto;
+
+
+
+
+
+
+    
+    
     }
+    
+    @media screen and (min-width: 770px) and (max-width: 991px){
+        .navbar{
+            height: auto;
+        }
+        .navbar-collapse{
+            padding-top: +5px;
+        }
 
-    .navbar-collapse {
-        padding-top: +5px;
-    }
-
-    .main-table {
-        width: 95%;
-    }
-
-    .historyTable {
+        .main-table{
+            width: 95%;
+        }
+        
+    .historyTable{
         border: none;
     }
-
-        .historyTable thead {
-            display: none;
-        }
-
-        .historyTable, .historyTable tbody, .historyTable tr, .historyTable td {
-            display: block;
-            width: 100%;
-            height: auto;
-            font-size: 20px;
-        }
-
-            .historyTable tbody, .historyTable tr, .historyTable td {
-                width: 100% !important;
-            }
-
-                .historyTable tbody tr td {
-                    text-align: end;
-                    padding-right: 5%;
-                    position: relative;
-                    border-bottom: solid 1px #9BA0A3;
-                }
-
-                .historyTable td::before {
-                    content: attr(data-label);
-                    position: absolute;
-                    left: 3%;
-                    padding-top: 3%;
-                }
-
-
-
-            .historyTable tr {
-                border: solid 1px #9BA0A3;
-                border-bottom: none;
-                margin-bottom: 40px;
-            }
-
-
-    .servicedatediv {
-        padding-top: 7px;
+    .historyTable thead{
+        display: none;
+    }
+    .historyTable, .historyTable tbody, .historyTable tr, .historyTable td{
+        display: block;
+        width: 100%;
+        height: auto;
+        font-size: 20px;
+    }
+    .historyTable tbody, .historyTable tr, .historyTable td{
+        width: 100% !important;
+    }
+    .historyTable tbody tr td{
+        text-align: end;
+        padding-right: 5%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .historyTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 3%;
     }
 
-    .pro_info {
+
+
+    .historyTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+
+    .servicedatediv{
+        padding-top: 7px;
+        
+    }
+    .pro_info{
         padding-bottom: 12px;
         padding-top: 12px;
     }
-
-    .service-costdiv {
+    .service-costdiv{
         padding-top: 15px;
         padding-bottom: 14px;
         padding-right: 50px;
     }
-
-    .statusmain {
+    .statusmain{
         padding-top: 20px;
         padding-bottom: 20px;
     }
-
-    .status {
+    .status{
         width: 20%;
         margin-right: 0;
         text-align: center;
     }
-
-    .ratediv {
+    .ratediv{
         padding-top: 15px;
         padding-bottom: 15px;
         padding-right: 7px;
     }
 
-    .service-cost {
+    .service-cost{
         color: #646464;
         font-weight: 500;
         font-size: 20px !important;
+        
     }
-
-    .rate-button {
+    
+    .rate-button{
         width: 15%;
         font-size: 18px !important;
     }
+    
 
 
 
@@ -1601,76 +1460,71 @@ footer .container a {
 
 
 
-
-    .dashboard-table {
+    .dashboard-table{
         width: 95%;
     }
-
-    .dashboardTable {
+    
+    .dashboardTable{
         border: none;
     }
-
-        .dashboardTable thead {
-            display: none;
-        }
-
-        .dashboardTable, .dashboardTable tbody, .dashboardTable tr, .dashboardTable td {
-            display: block;
-            width: 95%;
-            height: auto;
-            font-size: 20px;
-        }
-
-            .dashboardTable tbody, .dashboardTable tr, .dashboardTable td {
-                width: 100% !important;
-            }
-
-                .dashboardTable tbody tr td {
-                    text-align: end;
-                    padding-right: 5%;
-                    position: relative;
-                    border-bottom: solid 1px #9BA0A3;
-                }
-
-                .dashboardTable td::before {
-                    content: attr(data-label);
-                    position: absolute;
-                    left: 3%;
-                    padding-top: 3%;
-                }
-
-
-
-            .dashboardTable tr {
-                border: solid 1px #9BA0A3;
-                border-bottom: none;
-                margin-bottom: 40px;
-            }
-
-
-    .dashServIddiv {
-        padding-top: 20px;
-        padding-bottom: 20px;
+    .dashboardTable thead{
+        display: none;
+    }
+    .dashboardTable, .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        display: block;
+        width: 95%;
+        height: auto;
+        font-size: 20px;
+    }
+    .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        width: 100% !important;
+    }
+    .dashboardTable tbody tr td{
+        text-align: end;
+        padding-right: 5%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .dashboardTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 3%;
     }
 
-    .dashproInfo {
+
+
+    .dashboardTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+
+    .dashServIddiv{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        
+    }
+    .dashproInfo{
         padding-bottom: 15px;
         padding-top: 15px;
     }
-
-    .dashPayment {
+    .dashPayment{
         padding-top: 15px;
         padding-bottom: 20px;
         padding-right: 50px;
     }
-
-    .payAmount {
+    .payAmount{
         font-size: 28px;
     }
-
-    .actiobBtns {
+    .actiobBtns{
         padding-top: 15px;
         padding-bottom: 15px;
         font-size: 18px;
     }
-}
+
+        
+    
+    }
+        

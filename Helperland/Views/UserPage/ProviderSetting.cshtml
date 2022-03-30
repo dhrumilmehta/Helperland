@@ -265,13 +265,18 @@
 
 
 <script>
+
     var currentYear = new Date().getFullYear()
     var option = "";
     for (var year = 1940; year <= currentYear; year++) {
+
         var option = document.createElement("option");
         option.text = year;
         option.value = year;
+
         document.getElementById("dobyear").appendChild(option)
+
     }
     document.getElementById("dobyear").value = currentYear;
 </script>
+

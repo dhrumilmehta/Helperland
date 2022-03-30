@@ -5,11 +5,11 @@ function Tab1Click() {
     $(".dashboard-table").show();
     $(".main-table").hide();
     $(".my-setting").hide();
-
+    
 }
 
 function Tab2Click() {
-
+    
     $("#dashboardBtn").removeClass("active");
     $("#historyBtn").addClass("active");
 
@@ -46,7 +46,7 @@ function Tab2Nav() {
 
 
 function MySetting() {
-
+    
     $("#dashboardBtn").removeClass("active");
     $("#historyBtn").removeClass("active");
     $("#MyDetails").addClass("active2")
@@ -61,7 +61,7 @@ function MySetting() {
     $("#tab3").hide();
 }
 
-function settingTab1() {
+function settingTab1(){
     $("#dashboardBtn").removeClass("active");
     $("#historyBtn").removeClass("active");
     $("#MyDetails").addClass("active2")
@@ -75,7 +75,7 @@ function settingTab1() {
     $("#tab2").hide();
     $("#tab3").hide();
 }
-function settingTab2() {
+function settingTab2(){
     $("#dashboardBtn").removeClass("active");
     $("#historyBtn").removeClass("active");
     $("#MyAddress").addClass("active2")
@@ -89,7 +89,7 @@ function settingTab2() {
     $("#tab1").hide();
     $("#tab3").hide();
 }
-function settingTab3() {
+function settingTab3(){
     $("#dashboardBtn").removeClass("active");
     $("#historyBtn").removeClass("active");
     $("#MyAddress").removeClass("active2")
@@ -403,19 +403,19 @@ $("#SaveDetails").on('click', function () {
     data.dateOfBirth = $("#dobday").val() + "-" + $("#dobmonth").val() + "-" + $("#dobyear").val();
 
     console.log(data.dateOfBirth);
-
-
+    
+    
     $.ajax({
-        type: 'POST',
-        url: '/UserPage/UpdateCustomer',
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        data: data,
+            type: 'POST',
+            url: '/UserPage/UpdateCustomer',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            data: data,
         success: function (result) {
 
             if (result.value == "true") {
                 window.location.reload();
                 alert("User Details Updated");
-
+                 
             }
             else {
 
@@ -423,10 +423,10 @@ $("#SaveDetails").on('click', function () {
             }
         },
         error: function () {
-            alert("error");
+                alert("error");
         }
     });
-
+    
 
 });
 
@@ -469,18 +469,21 @@ function getAddress() {
                         '<button id="deleteAddress" class="btn-danger rounded-pill deleteAddress" style="padding: 5px 15px; border: none;" data-value=' + result[i].addressId + '>Delete</button >' +
                         '</p></div></td >'
 
-
+                       
                     );
 
-                    /* $("#addressRows").attr('data-value', result[i].addressId);
-                     $("#addressTr").append(
-                         "<span>" + result[i].addressLine1 + ", " + result[i].addressLine2 + ', ' + result[i].city + ' - ' + result[i].postalCode + "</span>"
-                     );
-                     $("#phoneTr").append(
-                         "<span>" + result[i].mobile + "</span>"
-                     );
-                     $("#editAddress").attr('data-value', result[i].addressId);
-                     $("#deleteAddress").attr('data-value', result[i].addressId);*/
+                   /* $("#addressRows").attr('data-value', result[i].addressId);
+
+                    $("#addressTr").append(
+                        "<span>" + result[i].addressLine1 + ", " + result[i].addressLine2 + ', ' + result[i].city + ' - ' + result[i].postalCode + "</span>"
+                    );
+
+                    $("#phoneTr").append(
+                        "<span>" + result[i].mobile + "</span>"
+                    );
+
+                    $("#editAddress").attr('data-value', result[i].addressId);
+                    $("#deleteAddress").attr('data-value', result[i].addressId);*/
 
                 }
 
@@ -510,35 +513,35 @@ $("#addAddresssave").on('click', function () {
     data.city = document.getElementById("addAddressCity").value;
     data.mobile = document.getElementById("addAddressMobile").value;
     data.email = document.getElementById("detail-email").value;
+   
 
+    
+        $.ajax({
+            type: "POST",
+            url: "/UserPage/AddUserAddress",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            data: data,
+            success: function (result) {
+                if (result.value == "true") {
 
+                    
+                    document.getElementById("addAddresscancel").click();
+                    alert("Address Added Successfully!");
 
-    $.ajax({
-        type: "POST",
-        url: "/UserPage/AddUserAddress",
-        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-        data: data,
-        success: function (result) {
-            if (result.value == "true") {
+                    window.location.reload();
+                    getAddress();
+                }
+                else {
+                    alert("not saved");
+                }
 
-
-                document.getElementById("addAddresscancel").click();
-                alert("Address Added Successfully!");
-
-                window.location.reload();
-                getAddress();
+            },
+            error: function (error) {
+                alert(error);
             }
-            else {
-                alert("not saved");
-            }
 
-        },
-        error: function (error) {
-            alert(error);
-        }
-
-    });
-
+        });
+    
 });
 
 
@@ -624,40 +627,40 @@ $("#editAddressUpdate").on('click', function () {
 
 
 
+   
+   
+        $.ajax({
+            type: "POST",
+            url: "/UserPage/EditUserAddress",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            data: data,
+            success: function (result) {
+                if (result.value == "true") {
 
+                    alert("Address Changes !");
 
-    $.ajax({
-        type: "POST",
-        url: "/UserPage/EditUserAddress",
-        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-        data: data,
-        success: function (result) {
-            if (result.value == "true") {
+                    window.setTimeout(function () {
+                        $("#editAddressModal").modal("hide");
+                        document.getElementsByClassName("editAddresscancel").click();
+                    }, 500);
 
-                alert("Address Changes !");
+                    window.location.reload();
 
-                window.setTimeout(function () {
-                    $("#editAddressModal").modal("hide");
-                    document.getElementsByClassName("editAddresscancel").click();
-                }, 500);
+                    getAddress();
 
-                window.location.reload();
+                }
+                else {
+                    alert("not saved");
+                }
+                
 
-                getAddress();
-
+            },
+            error: function (error) {
+                alert(error);
             }
-            else {
-                alert("not saved");
-            }
 
-
-        },
-        error: function (error) {
-            alert(error);
-        }
-
-    });
-
+        });
+    
 
 });
 
@@ -716,25 +719,25 @@ $("#changePass").on('click', function () {
     data.confirmPassword = document.getElementById("cnfrm-password").value;
 
 
-
-    $.ajax({
-        type: "POST",
-        url: "/UserPage/ChangePassword",
-        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-        data: data,
-        success: function (result) {
-            if (result.value == "true") {
-                alert("Password Changed Successfully.");
+    
+        $.ajax({
+            type: "POST",
+            url: "/UserPage/ChangePassword",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            data: data,
+            success: function (result) {
+                if (result.value == "true") {
+                    alert("Password Changed Successfully.");
+                }
+                else {
+                    alert("Password is wrong! Please try again.");
+                }
+            },
+            error: function (error) {
+                alert("Something went wrong! Please try again leter.");
             }
-            else {
-                alert("Password is wrong! Please try again.");
-            }
-        },
-        error: function (error) {
-            alert("Something went wrong! Please try again leter.");
-        }
-    });
-
+        });
+    
 
 });
 

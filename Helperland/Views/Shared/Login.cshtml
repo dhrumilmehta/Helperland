@@ -64,9 +64,13 @@
 </div>
 
 <script>
+
     $(function () {
+
         $("#loginform").validate({
+
             rules: {
+
                 Email: {
                     required: true,
                     email: true
@@ -76,16 +80,22 @@
                     minlength: 5
                 }
             },
+
             messages: {
+
                 Password: {
                     required: "Please provide a password",
                     minlength: "Incorrect Password"
                 },
                 Email: "Please enter a valid email address"
             },
+
             submitHandler: function (form) {
                 form.submit();
             }
         });
     });
+
 </script>
+
+

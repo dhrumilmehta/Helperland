@@ -9,7 +9,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Threading.Tasks;
 
-namespace Help.Controllers
+namespace Helperland.Controllers
 {
     public class UserManage : Controller
     {
@@ -27,27 +27,27 @@ namespace Help.Controllers
         [HttpPost]
         public IActionResult Signup(User user)
         {
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
+            { 
+            if (_helperlandContext.Users.Where(x => x.Email == user.Email).Count() == 0 && _helperlandContext.Users.Where(x => x.Mobile == user.Mobile).Count() == 0)
             {
-                if (_helperlandContext.Users.Where(x => x.Email == user.Email).Count() == 0 && _helperlandContext.Users.Where(x => x.Mobile == user.Mobile).Count() == 0)
-                {
-                    user.UserTypeId = 1;
-                    user.CreatedDate = DateTime.Now;
-                    user.ModifiedDate = DateTime.Now;
-                    user.IsRegisteredUser = true;
-                    user.ModifiedBy = 123;
-                    user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
-                    user.IsApproved = true;
-                    user.IsActive = true;
+                user.UserTypeId = 1;
+                user.CreatedDate = DateTime.Now;
+                user.ModifiedDate = DateTime.Now;
+                user.IsRegisteredUser = true;
+                user.ModifiedBy = 123;
+                user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+                user.IsApproved = true;
+                user.IsActive = true;
 
-                    _helperlandContext.Users.Add(user);
-                    _helperlandContext.SaveChanges();
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ViewBag.signmessage = "User already exist. Try again";
-                }
+                _helperlandContext.Users.Add(user);
+                _helperlandContext.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.signmessage = "User already exist. Try again";
+            }
             }
             return View();
 
@@ -62,14 +62,14 @@ namespace Help.Controllers
         [HttpPost]
         public IActionResult Login(Login user)
         {
-
+             
             string password = _helperlandContext.Users.FirstOrDefault(x => x.Email == user.Email).Password;
             bool pass = BCrypt.Net.BCrypt.Verify(user.Password, password);
 
             if (_helperlandContext.Users.Where(x => x.Email == user.Email && pass).Count() > 0)
             {
                 var U = _helperlandContext.Users.FirstOrDefault(x => x.Email == user.Email);
-
+                
 
                 if (user.Remember == true)
                 {
@@ -82,7 +82,7 @@ namespace Help.Controllers
 
                 HttpContext.Session.SetInt32("userId", U.UserId);
                 TempData["UserName"] = U.FirstName;
-
+                
 
                 if (U.UserTypeId == 1)
                 {
@@ -121,8 +121,7 @@ namespace Help.Controllers
 
             }
 
-            else
-            {
+            else {
                 TempData["LoginWarn"] = "Check Credentials Again";
                 return RedirectToAction("Index", "Home");
             }
@@ -144,27 +143,27 @@ namespace Help.Controllers
         [HttpPost]
         public IActionResult BecomePro(User signup)
         {
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
+            { 
+
+            if (_helperlandContext.Users.Where(x => x.Email == signup.Email).Count() == 0 && _helperlandContext.Users.Where(x => x.Mobile == signup.Mobile).Count() == 0)
             {
+                signup.UserTypeId = 2;
+                signup.CreatedDate = DateTime.Now;
+                signup.ModifiedDate = DateTime.Now;
+                signup.IsRegisteredUser = true;
+                signup.ModifiedBy = 123;
+                signup.Password = BCrypt.Net.BCrypt.HashPassword(signup.Password);
+                signup.IsApproved = false;
+                signup.IsActive = false;
+                signup.UserProfilePicture = "cap.png";
 
-                if (_helperlandContext.Users.Where(x => x.Email == signup.Email).Count() == 0 && _helperlandContext.Users.Where(x => x.Mobile == signup.Mobile).Count() == 0)
-                {
-                    signup.UserTypeId = 2;
-                    signup.CreatedDate = DateTime.Now;
-                    signup.ModifiedDate = DateTime.Now;
-                    signup.IsRegisteredUser = true;
-                    signup.ModifiedBy = 123;
-                    signup.Password = BCrypt.Net.BCrypt.HashPassword(signup.Password);
-                    signup.IsApproved = false;
-                    signup.IsActive = false;
-                    signup.UserProfilePicture = "cap.png";
-
-                    _helperlandContext.Users.Add(signup);
-                    _helperlandContext.SaveChanges();
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
+                _helperlandContext.Users.Add(signup);
+                _helperlandContext.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
                     ViewBag.promessage = "User already exists";
                     return View();
                 }
@@ -173,7 +172,7 @@ namespace Help.Controllers
             {
                 return View();
             }
-
+            
         }
 
 
@@ -189,11 +188,11 @@ namespace Help.Controllers
             if (userrecord != null)
             {
                 User Id = _helperlandContext.Users.FirstOrDefault(x => x.Email == fgpass.Email);
-
+                
                 string to = fgpass.Email;
                 string subject = "Reset password";
                 string body = "<p>Reset your password by click below link " +
-                    "<a href='" + Url.Action("ResetPassword", "UserManage", new { userid = Id.UserId }, "http") + "'>Reset Password</a></p>";
+                    "<a href='" + Url.Action("ResetPassword", "UserManage", new { userid = Id.UserId}, "http") + "'>Reset Password</a></p>";
                 MailMessage msg = new MailMessage();
                 msg.To.Add(to);
                 msg.Subject = subject;
@@ -210,7 +209,7 @@ namespace Help.Controllers
                 setup.Send(msg);
 
                 TempData["TempPass"] = "To Reset Password check Email.";
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index","Home");
             }
             else
             {
@@ -234,16 +233,16 @@ namespace Help.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult ResetPassword(ResetPass user)
         {
-            if (ModelState.IsValid)
-            {
-                user.newPassword = BCrypt.Net.BCrypt.HashPassword(user.newPassword);
-                var newuser = new User() { UserId = user.userID, Password = user.newPassword, ModifiedDate = DateTime.Now };
-                _helperlandContext.Users.Attach(newuser);
-                _helperlandContext.Entry(newuser).Property(x => x.Password).IsModified = true;
-                _helperlandContext.SaveChanges();
+            if(ModelState.IsValid)
+            { 
+            user.newPassword = BCrypt.Net.BCrypt.HashPassword(user.newPassword);
+            var newuser = new User() { UserId = user.userID, Password = user.newPassword, ModifiedDate = DateTime.Now };
+            _helperlandContext.Users.Attach(newuser);
+            _helperlandContext.Entry(newuser).Property(x => x.Password).IsModified = true;
+            _helperlandContext.SaveChanges();
 
-                TempData["resetpass"] = "Password reset successfully";
-                return RedirectToAction("Index", "Home");
+            TempData["resetpass"] = "Password reset successfully";
+             return RedirectToAction("Index", "Home");
             }
 
             return View();
@@ -261,3 +260,4 @@ namespace Help.Controllers
 
     }
 }
+ 

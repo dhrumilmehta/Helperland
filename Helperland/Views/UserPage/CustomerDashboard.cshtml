@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Helperland.ViewModels.CustomerDashboard>;
+﻿@model IEnumerable<Helperland.ViewModels.CustomerDashboard>
+@using Helperland.Data
+@using Helperland.Models
+
 
 @{
     int ServiceDashboardCount = 0;
@@ -92,7 +95,7 @@
                             <td data-label="Actions">
                                 <div class="actiobBtns">
                                     <button class="rounded-pill customerReschedule" id="rescheduleBtn" value="@item.ServiceRequestId" data-bs-toggle="modal" data-bs-target="#rescheduleModal">Reschedule</button>
-                                    <button class="rounded-pill customerCancel" id="cancelBtn" value="@item.ServiceRequestId" data-bs-toggle="modal" data-bs-target="#cancelModal">Cancel</button>
+                                    <button class="rounded-pill customerCancel" id="cancelBtn" value="@item.ServiceRequestId"  data-bs-toggle="modal" data-bs-target="#cancelModal">Cancel</button>
                                 </div>
                             </td>
                         </tr>
@@ -199,7 +202,7 @@
                     <input id="RescheduledDate" class="resDate" type="date" />
                     <input id="RescheduledTime" class="resTime" type="time" />
                 </div>
-                <input type="hidden" id="updateRequestId" />
+                <input type="hidden" id="updateRequestId"  />
             </div>
             <div class="modal-footer justify-content-center">
                 <button id="RescheduleUpdateBtn" class="rounded-pill resupdateBtn" data-bs-dismiss="modal" type="submit">Update</button>
@@ -214,7 +217,7 @@
      aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog modal-dialog-centered canmodal-dialog">
         <div class="modal-content canmodal-content">
-
+        <form asp-action="CancelService" asp-controller="UserPage">
             <div class="modal-header">
                 <h5 class="modal-title" id="cancelModalLabel">Cancel Service Request</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -227,9 +230,11 @@
                 <input type="hidden" id="CancelRequestId" />
             </div>
             <div class="modal-footer justify-content-center">
-                <button id="cancelServBtn" class="rounded-pill cancelServBtn" type="button" data-bs-dismiss="modal">Cancel Now</button>
+                <button id="cancelServBtn" class="rounded-pill cancelServBtn" type="submit" data-bs-dismiss="modal">Cancel Now</button>
             </div>
+        </form>
         </div>
+        
     </div>
 </div>
 
@@ -302,6 +307,7 @@
 
 
 <script>
+
     function sortDashTable(n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = document.getElementById("DashboardTable");

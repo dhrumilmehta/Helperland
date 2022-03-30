@@ -49,24 +49,22 @@ namespace Helperland.Controllers
         [HttpPost]
         public IActionResult ValidPostalCode(Setupservice obj)
         {
-            if (ModelState.IsValid)
-            {
-                var list = _helperlandContext.Users.Where(x => (x.ZipCode == obj.ZipCode) && (x.UserTypeId == 2)).ToList();
+            if (ModelState.IsValid) { 
+            var list = _helperlandContext.Users.Where(x => (x.ZipCode == obj.ZipCode) && (x.UserTypeId == 2)).ToList();
 
-                if (list.Count() > 0)
-                {
-                    return Ok(Json("true"));
-                }
-                else
-                {
-                    TempData["wrongZipCode"] = "service provider is not avilable in this area.";
-                    return Ok(Json("false"));
-                }
+            if (list.Count() > 0)
+            {
+                return Ok(Json("true"));
+            }
+            else {
+                TempData["wrongZipCode"] = "service provider is not avilable in this area.";
+                return Ok(Json("false"));
+            }
             }
 
             else
             {
-                return Ok(Json("Invalid"));
+                return Ok(Json("Invalid")); 
             }
         }
 
@@ -107,9 +105,9 @@ namespace Helperland.Controllers
 
 
             string postalcode = obj.ZipCode;
-            // Console.WriteLine(obj.ZipCode);
+           // Console.WriteLine(obj.ZipCode);
             var table = _helperlandContext.UserAddresses.Where(x => x.UserId == Id && x.PostalCode == postalcode).ToList();
-            // Console.WriteLine(table.ToString());
+           // Console.WriteLine(table.ToString());
 
             foreach (var add in table)
             {
@@ -153,7 +151,7 @@ namespace Helperland.Controllers
             }
             /* Console.WriteLine("Inside Addnew address 2");
              Console.WriteLine(Id);*/
-
+            
             useradd.UserId = Id;
             useradd.IsDefault = false;
             useradd.IsDeleted = false;
@@ -168,10 +166,10 @@ namespace Helperland.Controllers
             {
                 return Ok(Json("true"));
             }
-
+            
             return Ok(Json("false"));
-
-
+            
+           
         }
 
 
@@ -298,5 +296,5 @@ namespace Helperland.Controllers
             return Ok(Json("false"));
         }
 
-    }
+    } 
 }

@@ -1,3 +1,4 @@
+
 function Tab1Click() {
     $("#tab1").addClass("active");
     $("#tab2").removeClass("active").addClass("tabs");
@@ -105,17 +106,17 @@ function Tab3Click() {
 //    if ($('#address'+i+'').is(':checked')) { alert("it's checked"); }
 //});
 function SaveAddressForm() {
+    
+        $("#tab4").addClass("active");
+        $("#tab3").addClass("active");
+        $("#tab2").addClass("active");
+        $("#tab1").addClass("active");
 
-    $("#tab4").addClass("active");
-    $("#tab3").addClass("active");
-    $("#tab2").addClass("active");
-    $("#tab1").addClass("active");
-
-    $("#tab-content1").hide();
-    $("#tab-content2").hide();
-    $("#tab-content3").hide();
-    $("#tab-content4").show();
-
+        $("#tab-content1").hide();
+        $("#tab-content2").hide();
+        $("#tab-content3").hide();
+        $("#tab-content4").show();
+    
 }
 
 
@@ -142,7 +143,7 @@ $(function () {
 $(document).ready(function () {
 
     let clickNum = 1;
-    $('#insideCabinetCheck').on("click", function () {
+    $('#insideCabinetCheck').on("click", function(){
         clickNum++;
 
         if (clickNum % 2 == 0) {
@@ -222,7 +223,7 @@ $(document).ready(function () {
 
 
 function addAddressdiv() {
-
+    
     $("#addAddressBtn").hide();
     $("#addNewaddressDiv").show();
 
@@ -240,7 +241,7 @@ function addAddressdiv() {
 
 function loadAddress() {
     var data = $("#form1").serialize();
-
+    
     $.ajax({
         type: 'get',
         url: '/ServiceManage/DetailsService',
@@ -257,15 +258,15 @@ function loadAddress() {
             }
             else {
                 for (let i = 0; i < result.length; i++) {
-                    var checked = "";
-                    if (i == 0) {
-                        checked = "checked";
-                    }
-                    address.append(' <div class="radiobutton">' +
-                        '<input class="addressbox" type="radio" id=" address' + i + ' " ' + checked + ' name="address" value="' + result[i].addressId + '" />' +
-                        '<label for=" address' + i + ' "><span><strong>Address: </strong></span>&nbsp;<span>' + result[i].addressLine1 + '</span>,&nbsp;<span>' + result[i].addressLine2 + '</span>&nbsp;<span>' + result[i].city + '</span>-&nbsp;<span>' + result[i].postalCode + '</span>' +
-                        '<br><span><strong>Phone Number: </strong></span> ' + result[i].mobile + ' <span></span></label></div>');
-                    checked = "";
+                var checked = "";
+                if (i == 0) {
+                    checked = "checked";
+                }
+                address.append(' <div class="radiobutton">' +
+                    '<input class="addressbox" type="radio" id=" address'+i+' " ' + checked + ' name="address" value="' + result[i].addressId + '" />' +
+                    '<label for=" address' + i + ' "><span><strong>Address: </strong></span>&nbsp;<span>' + result[i].addressLine1 + '</span>,&nbsp;<span>' + result[i].addressLine2 + '</span>&nbsp;<span>' + result[i].city + '</span>-&nbsp;<span>' + result[i].postalCode + '</span>' +
+                    '<br><span><strong>Phone Number: </strong></span> ' + result[i].mobile + ' <span></span></label></div>');
+                checked = "";
                 }
                 console.log(result);
             }
@@ -280,8 +281,11 @@ function loadAddress() {
 
 
 /*$(function () {
+
     $("#addressForm").validate({
+
         rules: {
+
             AddressLine1: {
                 required: true
             },
@@ -295,7 +299,9 @@ function loadAddress() {
                 required: true
             }
         },
+
         messages: {
+
             AddressLine1: "Enter Address",
             AddressLine2: "Enter Address",
             City: "Enter City",
@@ -307,36 +313,36 @@ function loadAddress() {
 
 function saveAddress() {
     //alert("In Address 1")
+    
+        var data = {};
+        data.AddressLine1 = document.getElementById("AddressLine1").value;
+        data.AddressLine2 = document.getElementById("AddressLine2").value;
+        data.PostalCode = document.getElementById("addAddressPostalCode").value;
+        data.City = document.getElementById("City").value;
+        data.Mobile = document.getElementById("Mobile").value;
+        //alert("In Address 2")
 
-    var data = {};
-    data.AddressLine1 = document.getElementById("AddressLine1").value;
-    data.AddressLine2 = document.getElementById("AddressLine2").value;
-    data.PostalCode = document.getElementById("addAddressPostalCode").value;
-    data.City = document.getElementById("City").value;
-    data.Mobile = document.getElementById("Mobile").value;
-    //alert("In Address 2")
 
-
-    $.ajax({
-        type: 'POST',
-        url: '/ServiceManage/AddNewAddress',
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        data: data,
-        success: function (result) {
-            if (result.value == "true") {
-                document.getElementById("addressCancelBtn").click();
-                loadAddress();
+        $.ajax({
+            type: 'POST',
+            url: '/ServiceManage/AddNewAddress',
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            data: data,
+            success: function (result) {
+                if (result.value == "true") {
+                    document.getElementById("addressCancelBtn").click();
+                    loadAddress();
+                }
+                else {
+                    alert('Sorry! Something went wrong please try again later.');
+                }
+            },
+            error: function () {
+                alert('Failed to receive the Data');
+                console.log('Failed ');
             }
-            else {
-                alert('Sorry! Something went wrong please try again later.');
-            }
-        },
-        error: function () {
-            alert('Failed to receive the Data');
-            console.log('Failed ');
-        }
-    });
-
+        });
+   
 }
 
 
@@ -405,7 +411,7 @@ function completeBookService() {
     data.serviceHours = document.getElementById("timeduration-input").value;
     data.extraHours = extrahour;
     var duration = parseFloat(document.getElementById("timeduration-input").value);
-    // var extra = parseFloat(extrahour);
+   // var extra = parseFloat(extrahour);
     // data.subTotal = (extrahour * 25) + ((document.getElementById("Duration").value) * 25);
     data.subTotal = (extrahour + duration) * 25;
     data.totalCost = data.subTotal; //Discount 0(out of scope)
@@ -501,11 +507,11 @@ function CreatePaySummary() {
     if (document.getElementById("interiorCheck").checked) {
         totalhour += 0.5;
     }
-
+    
     $(".hourval").html(totalhour + 'Hrs');
     $(".total_cost").text("$" + totalhour * 25);
 
-
+    
 }
 
 

@@ -1,34 +1,4 @@
-Skip to content
-Product
-Team
-Enterprise
-Explore
-Marketplace
-Pricing
-Search
-Sign in
-Sign up
-adi0967
-/
-Helperland
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Helperland/Help/wwwroot/css/become_pro.css
-@adi0967
-adi0967 Changes
-Latest commit c6dd88c 3 days ago
-History
-1 contributor
-496 lines (405 sloc) 7.32 KB
-
-* {
+*{
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
@@ -36,17 +6,18 @@ History
 
 body {
     overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
-}
+    font-family:'Roboto', sans-serif;
+  }
 
 
 
-
-header {
+  
+header{
     background-image: url('/Images/become-a-pro-banner.png');
-    color: #fff;
-    padding: 0.9% 1.1%;
+    color:#fff;
+    padding:0.9% 1.1%;
     height: auto;
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -57,60 +28,57 @@ header {
 
 
 
-.nav-link {
+.nav-link{
     font-size: 15px;
-    color: #fff;
+    color:#fff;
 }
 
-    .nav-link:hover {
-        color: #42adc2;
-        border: transparent;
-    }
-
-.button a:hover {
-    color: #1D7A8C !important;
+.nav-link:hover{
+    color:#42adc2;
+    border: transparent;
+}
+.button a:hover{
+    color:#1D7A8C !important;
     border: 1px solid white !important;
     background-color: white !important;
 }
-
-.login-button a:hover {
-    color: #1D7A8C !important;
+.login-button a:hover{
+    color:#1D7A8C !important;
     border: 1px solid white !important;
     border-radius: 50px !important;
     background-color: white !important;
 }
-
-.nav-item {
-    font-size: 17px;
-    padding-left: 12px;
+.nav-item{
+    font-size:17px;
+    padding-left:12px;
 }
 
-.button a {
+.button a{
+
     width: 110%;
-    height: auto;
+    height:auto;
     border: solid 1px;
     border-radius: 50px;
     text-align: center;
-}
+    }
 
-.login-button a {
+.login-button a{
+
     width: 150%;
-    height: auto;
+    height:auto;
     border: solid 1px;
     border-radius: 50px;
     text-align: center;
+   
 }
-
-.button {
+.button{
     padding-right: 20px;
 }
-
-.login-button {
+.login-button{
     padding-right: 35px;
 }
-
-.navbar-brand img {
-    max-width: 90%;
+.navbar-brand img{
+    max-width:90%;
     height: auto;
 }
 
@@ -122,90 +90,85 @@ header {
 
 
 header form {
-    max-width: 430px;
-    padding: 19px 34px;
-    background-color: #fff;
-    box-shadow: 0 0 16px #00000026;
-    border-radius: 4px;
+	max-width: 430px;
+	padding: 19px 34px;
+	background-color: #fff;
+	box-shadow: 0 0 16px #00000026;
+	border-radius: 4px;
     margin-top: 64px;
 }
 
 .form-title {
-    color: #4f4f4f;
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 24px;
+	color: #4f4f4f;
+	font-weight: bold;
+	font-size: 24px;
+	margin-bottom: 24px;
 }
 
 form .form-control {
-    border-radius: 4px;
-    margin-bottom: 15px;
-    padding: 13px 15px 14px 15px;
-    height: 46px;
+	border-radius: 4px;
+	margin-bottom: 15px;
+	padding: 13px 15px 14px 15px;
+	height: 46px;
     max-width: 359px;
 }
-
-form .input-group {
+form .input-group{
     max-width: 359px;
 }
 
 #country-code {
-    background: #f4f4f4;
-    outline: none;
-    border-right: transparent;
-    height: 46px;
+	background: #f4f4f4;
+	outline: none;
+	border-right: transparent;
+	height: 46px;
 }
 
-    #country-code::placeholder {
-        color: #4f4f4f;
-    }
+#country-code::placeholder {
+	color: #4f4f4f;
+}
 
 #phone {
-    border-left: transparent;
+	border-left: transparent;
 }
 
 form .form-control::placeholder {
-    color: #a0a0a0;
-    font-size: 16px;
+	color: #a0a0a0;
+	font-size: 16px;
 }
 
 form .form-check {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
-    form .form-check .form-check-input {
-        margin-right: 7px;
-    }
+form .form-check .form-check-input {
+	margin-right: 7px;
+}
 
-    form .form-check .form-check-label {
-        color: #4f4f4f;
-        font-size: 16px;
-    }
+form .form-check .form-check-label {
+	color: #4f4f4f;
+	font-size: 16px;
+}
 
-        form .form-check .form-check-label a {
-            color: #1fb6ff;
-            text-decoration: none;
-        }
-
+form .form-check .form-check-label a {
+	color: #1fb6ff;
+	text-decoration: none;
+}
 form .btn {
-    outline: none;
-    border: none;
-    background: #1d7a8c;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 13px 19px 14px 27px;
+	outline: none;
+	border: none;
+	background: #1d7a8c;
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 13px 19px 14px 27px;
 }
-
-    form .btn:hover {
-        color: #fff;
-    }
-
-.btn img {
+form .btn:hover{
+    color: #fff;
+}
+.btn img{
     padding-top: +2px;
 }
-
-.g-recaptcha {
+.g-recaptcha{
     margin-bottom: 30px;
     margin-top: 15px;
 }
@@ -215,105 +178,97 @@ form .btn {
     text-align: center;
     margin-top: 45px;
     margin-bottom: 30px;
+  }
+.down-arrow img:hover{
+    transform: scale(1.25);
 }
 
-    .down-arrow img:hover {
-        transform: scale(1.25);
-    }
 
 
-
-.how-it-works {
-    background-image: url('/Images/blog-left-bg.png'), url('/Images/blog-right-bg.png');
+.how-it-works{ 
+    background-image: url('/Images/blog-left-bg.png'), url('/Images/blog-right-bg.png') ;
     background-position: left,right;
-    background-repeat: repeat-y;
-    color: #4F4F4F;
+    background-repeat: repeat-y ;
+    color:#4F4F4F;
+    
 }
 
-.work-header {
+.work-header{
     color: #4F4F4F;
     font-size: 40px;
     font-weight: bold;
     margin-top: 60px;
     margin-bottom: 30px;
 }
-
-.work-card {
+.work-card{
     margin-top: 50px;
 }
-
-.work-card-image img {
+.work-card-image img{
     height: 250px;
     width: 250px;
     border-radius: 50%;
 }
-
-.work-card-header {
+.work-card-header{
     color: #4F4F4F;
     font-size: 30px;
     font-weight: bold;
 }
-
-.work-card-text {
+.work-card-text{
     font-size: 18px;
     color: #4F4F4F;
 }
-
-.readmore {
+.readmore{
     color: #4F4F4F;
     text-decoration: none;
     font-size: 18px;
 }
-
-    .readmore img {
-        margin-left: 10px;
-        padding-top: +5px;
-    }
-
+.readmore img{
+    margin-left: 10px;
+    padding-top: +5px;
+}
 
 
 
 
 
-.news_letter {
+
+.news_letter{
     margin-top: 75px;
     text-align: center;
 }
 
-.head_newsletter {
+.head_newsletter{
     margin-bottom: 16px;
     font-size: 18px;
     font-weight: 800;
     color: #353548;
+    
 }
-
-.newsetter {
+.newsetter{
     border-radius: 55px;
-    border: solid .3px #565656;
-    height: 40px;
-    width: 235px;
-    padding: 13px;
+    border:solid .3px #565656;
+    height:40px;
+    width:235px;
+    padding:13px;
     font-size: 13px;
 }
-
-.btn-submit {
-    background-color: #FF7B6D;
+.btn-submit{
+    background-color:#FF7B6D;
     border-radius: 50px;
-    border: none;
-    color: white;
+    border:none;
+    color:white;
     font-weight: normal;
     font-size: 15px;
-    width: 80px;
-    height: 40px;
-    margin-left: 5px;
+    width:80px;
+    height:40px;
+    margin-left:5px;}
+.btn-submit:hover{
+    background-color:white;
+    color:#FF7B6D;
+    font-weight: bold;
+    border: solid 2px #FF7B6D;
 }
 
-    .btn-submit:hover {
-        background-color: white;
-        color: #FF7B6D;
-        font-weight: bold;
-        border: solid 2px #FF7B6D;
-    }
 
 
 
@@ -322,197 +277,167 @@ form .btn {
 
 
 
-
-footer {
+footer{
     background-color: #111111;
     width: 100%;
     color: white;
     min-height: 195px;
     margin-top: 50px;
-}
-
-.footer-logo {
-    width: 120px;
-    height: 92px;
-}
-
+  }
+  .footer-logo{
+      width: 120px;
+      height: 92px;
+  }
 footer .container a {
     text-decoration: none;
     color: #F1F1F1;
     font-size: 14px;
-}
-
-.foot_menu {
+  }
+.foot_menu{
     padding-top: 20px;
     max-width: 1350px;
+  }
+.icons{
+padding-top: +15px;
 }
-
-.icons {
-    padding-top: +15px;
-}
-
 .fimg1 {
     width: 9px;
     height: 18px;
     margin-right: 20px;
-}
-
+  }
 .fimg2 {
     width: 20px;
     height: 20px;
-}
-
-.term_c {
+  }
+  
+.term_c{
     color: #9BA0A3;
     font-size: 14px;
+  }
+.term_c a{
+      text-decoration: none;
+      color: #9BA0A3;
+  }
+.foot_menulink{
+padding-top: +20px;
+margin-left: -25px;
 }
 
-    .term_c a {
-        text-decoration: none;
-        color: #9BA0A3;
-    }
-
-.foot_menulink {
-    padding-top: +20px;
-    margin-left: -25px;
-}
 
 
 
 
-
-@media screen and (max-width: 426px) {
-
-    .navbar-brand img {
-        width: 50%;
+@media screen and (max-width: 426px){
+    
+    .navbar-brand img{
+        width:50%;
         height: auto;
     }
-
-    .button {
+    .button{
         padding-right: 5px;
     }
-
-    .login-button {
+    .login-button{
         padding-right: 15px;
         padding-bottom: 10px;
     }
-
-    .dropdown {
+    .dropdown{
         padding-top: 10px;
         text-align: end;
     }
-
-    header form {
+    header form{
         max-width: 250px;
     }
-
     .form-title {
         font-size: 18px;
     }
-
     form .form-control::placeholder {
         font-size: 12px;
     }
-
     form .form-check .form-check-label {
         font-size: 12px;
     }
-
-    #country-code::placeholder {
+    #country-code::placeholder{
         font-size: 12px;
     }
-
-    #country-code {
+    #country-code{
         padding: 0%;
     }
-
-    .g-recaptcha {
-        transform: scale(0.75);
-        -webkit-transform: scale(0.75);
-        transform-origin: 0 0;
-        -webkit-transform-origin: 0 0;
+    .g-recaptcha{
+        transform:scale(0.75);
+        -webkit-transform:scale(0.75);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
         margin-left: 75px;
     }
 
 
 
-    .work-header {
+    .work-header{
         font-size: 36px;
         margin-bottom: 0px;
     }
-
-    .work-card {
+    .work-card{
         margin-top: 60px;
     }
-
-    .work-card-image img {
+    .work-card-image img{
         height: 150px;
         width: 150px;
         border-radius: 50%;
     }
-
-    .work-card-header {
+    .work-card-header{
         font-size: 26px;
     }
-
-    .work-card-text {
+    .work-card-text{
         font-size: 14px;
     }
-
-    .readmore {
+    .readmore{
         font-size: 14px;
     }
+    .readmore img{
+        width: 9%;
+        margin-left: 5px;
+        padding-bottom: +2px;
+    }
+    
 
-        .readmore img {
-            width: 9%;
-            margin-left: 5px;
-            padding-bottom: +2px;
-        }
 
-
-
-    .newsetter {
+    .newsetter{
         margin-bottom: 10px;
     }
-
-    .head_newsletter {
-        font-size: 16px;
+    .head_newsletter{
+        font-size: 16px; 
     }
-
-    .newsetter {
-        width: 200px;
+    .newsetter{
+        width:200px;
         font-size: 13px;
     }
-
-    .btn-submit {
+    .btn-submit{
         font-size: 14px;
-        width: 60px;
+        width:60px;
     }
 
 
-    .foot_menulink a {
+    .foot_menulink a{
         padding-top: +5px;
         padding-bottom: +5px;
     }
-
-    .fimg1 {
+    .fimg1{
         margin-left: +5px;
     }
 
-    .foot_menu {
+    .foot_menu{
         flex-direction: column;
     }
-
-    .foot_menulink {
+    .foot_menulink{
         flex-direction: column;
         margin-left: +5px;
+    
     }
-
-        .foot_menulink a {
-            padding-top: +5px;
-        }
-
-    .footer-logo {
+    .foot_menulink a{
+        padding-top: +5px;
+        
+    }
+    .footer-logo{
         width: 25%;
         height: auto;
     }
@@ -521,53 +446,51 @@ footer .container a {
 
 
 
-@media screen and (min-width:426px) and (max-width:769px) {
-
-    .navbar-brand img {
-        width: 75%;
+@media screen and (min-width:426px) and (max-width:769px){
+     
+    .navbar-brand img{
+        width:75%;
         height: auto;
     }
 
 
-    .button {
+    .button{
         padding-top: 0%;
         padding-right: 5px;
     }
 
-    .login-button {
+    .login-button{
         padding-right: 15px;
         padding-bottom: 10px;
     }
-
-    .dropdown {
+    .dropdown{
         padding-top: 10px;
         text-align: end;
     }
 
-    .work-card {
+    .work-card{
         padding-left: 20px;
         padding-right: 10px;
     }
 
-    .foot_menulink a {
+    .foot_menulink a{
         padding-top: +5px;
         padding-bottom: +5px;
     }
-
-    .fimg1 {
+    .fimg1{
         margin-left: +5px;
         margin-bottom: +5px;
     }
-
-    .footer-logo {
+    .footer-logo{
         width: 90px;
         height: auto;
     }
+
 }
 
 
-@media screen and (min-width:769px) and (max-width:1025px) {
-    .nav-link {
+@media screen and (min-width:769px) and (max-width:1025px){
+    .nav-link{
         font-size: 12px;
     }
 }

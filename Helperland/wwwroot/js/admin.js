@@ -156,8 +156,19 @@ function getadminservicereq() {
                 $("#ServReqTbody").append(html);
             }
 
+            //$('#AdminSRTable').paging({ limit: 5 });
 
-
+            $('#AdminSRTable').DataTable({
+                "paging": true,
+                "columnDefs": [
+                    { orderable: false, targets: 5 }
+                ],
+                "order": [[0, "desc"]],
+                "info": true,
+                "lengthChange": true,
+                "searching": false,
+                "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]]
+            });
 
         },
         error: function () {
@@ -169,10 +180,16 @@ function getadminservicereq() {
 
 
 $('#ServReqSubmit').click(function () {
+    if ($.fn.DataTable.isDataTable("#AdminSRTable")) {
+        $('#AdminSRTable').DataTable().clear().destroy();
+    }
     getadminservicereq();
 });
 
 $('#ServReqClear').click(function () {
+    if ($.fn.DataTable.isDataTable("#AdminSRTable")) {
+        $('#AdminSRTable').DataTable().clear().destroy();
+    }
     window.setTimeout(function () {
         getadminservicereq();
     }, 200);
@@ -463,7 +480,19 @@ function getAdminUserData() {
                 $("#AdminUserMngTbody").append(html);
             }
 
+            //$('#AdminUMTable').paging({ limit: 5 });
 
+            $('#AdminUMTable').DataTable({
+                "paging": true,
+                "columnDefs": [
+                    { orderable: false, targets: 6 }
+                ],
+                "order": [[0, "asc"]],
+                "info": true,
+                "lengthChange": true,
+                "searching": false,
+                "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]]
+            });
 
         },
         error: function () {
@@ -477,10 +506,16 @@ function getAdminUserData() {
 
 
 $('#UserMngSubmit').click(function () {
+    if ($.fn.DataTable.isDataTable("#AdminUMTable")) {
+        $('#AdminUMTable').DataTable().clear().destroy();
+    }
     getAdminUserData();
 });
 
 $('#UserMngClear').click(function () {
+    if ($.fn.DataTable.isDataTable("#AdminUMTable")) {
+        $('#AdminUMTable').DataTable().clear().destroy();
+    }
     window.setTimeout(function () {
         getAdminUserData();
     }, 200);
@@ -551,3 +586,4 @@ function getCityFromPostalCode(zip, Id) {
         }
     });
 }
+
