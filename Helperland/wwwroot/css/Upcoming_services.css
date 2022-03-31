@@ -1,0 +1,1470 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family:'Roboto', sans-serif;
+  }
+
+
+
+
+.navbar{
+    background-color: #646464;
+    height: 56px;
+    padding-left: 15px;
+    padding-right: 10px ;
+}
+.navbar-brand img{
+    height: 50px;
+}
+.nav-link{
+    font-size: 15px;
+    color:#fff;
+}
+.nav-link:hover{
+    color:rgb(52, 213, 175);
+    border: transparent;
+}
+.nav-item{
+    font-size:17px;
+    padding-left:40px;
+}
+.nav-options{
+    padding-top: 6px;
+}
+.user-name{
+    font-weight: bolder;
+}
+.vl-1{
+    border: 1px solid #E1E1E1;
+    height: 56px;
+    margin-left: 40px;
+}
+.vl-2{
+    border: 1px solid #E1E1E1;
+    height: 56px;
+    margin-left: 25px;
+}
+.notify{
+    display: flex;
+    justify-content: center;
+    margin-left: 25px;
+}
+.notify img{
+    padding-top: 12px;
+    
+}
+.user-icon{
+    padding-right:5px;
+}
+.dropdown-l{
+    padding-left: 20px !important;
+}
+.dropdown-toggle::after {
+    content: none !important;
+}
+.nav-btn{
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    color:#fff;
+    padding-top: +15px;
+}
+.nav-btn:hover{
+    color:rgb(52, 213, 175);
+    border: transparent;
+}
+.nav-divider{
+    padding-top: +10px;
+}
+.nav-divider hr{
+    color: white;
+    height: 2px;
+}
+
+
+
+
+
+
+.dropdown-s{
+    margin-left: 0%;
+    margin-right: +5px;
+
+}
+.dropdown-s img{
+    padding-top: +11px;
+}
+.response-icon img{
+    padding-top: +13px;
+    width: 100%;
+    height: auto;
+}
+.user-icon-1{
+    padding-right: 2px;
+    width: 70%;
+    height: auto;
+}
+
+
+
+
+
+
+
+.greet-header{
+    background-color: #F9F9F9;
+    border-bottom: 1px solid #e9e5e5;
+}
+.greet-header h2{
+    padding-top: 38px;
+    padding-bottom: 43px;
+    color: #4F4F4F;
+}
+.greet_user{
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+.service-content{
+    padding-top: 31px;
+    padding-bottom: 39px;
+    margin: auto;
+}
+.service-sidebar{
+    background-color: #1D7A8C;
+    height: auto ;
+    padding: 0%;
+}
+
+
+.sidebar-list{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E1E1E1 !important;
+    border: none;
+    text-align: start;
+    color: #FFFFFF;
+    font-size: 18px;
+    background-color: #1D7A8C; 
+    
+}
+.active, .sidebar-list:hover{
+    background-color: #146371;
+}
+
+
+
+.right-container{
+    margin-left: 32px;
+}
+
+table{
+    color: #646464;
+    border: solid 1px #CCCCCC;
+    margin-left: 32px;
+}
+thead{
+    text-align: center;
+    background-color: #F9F9F9;
+    height:50px;
+    border-bottom: solid 1px #CCCCCC ;
+    font-size: 16px;
+    font-weight: bolder;
+}
+tbody{
+    text-align: center;
+}
+tbody tr{
+    height:71px;
+    font-size: 16px;
+    border-bottom: solid 1px #CCCCCC;
+}
+
+.service-date{
+    font-weight: bold;
+}
+.cancel-button{
+    width: 80px;
+    height: 34px;
+    background-color: #FF6B6B;
+    color: #FFFFFF;
+    border: none;
+}
+.cancel-button:hover{
+    border: solid 1px  #FF6B6B;
+    color: #FF6B6B;
+    background-color: #FFFFFF;
+}
+.customer-detail, .US-CustDetail{
+    text-align: start !important;
+}
+
+
+.accept-button{
+    padding: 3px 7px;
+    background-color: #1D7A8C;
+    color: #F9F9F9;
+    border:solid 1px #1D7A8C;
+}
+.accept-button:hover{
+    background-color: #F9F9F9;
+    color: #1D7A8C;
+}
+.nsPaySpan{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+.NewServControls{
+    display: inline-flex;
+   padding-left: 32px;
+   column-gap: 30px;
+   padding-bottom: 15px;
+   color: #646464;
+}
+.NewServSelect label, .NewServCheckbox label{
+    font-weight: 600;
+}
+#PetsCheck{
+    width: 15px;
+    height: 15px;
+    margin-top: 4px;
+    color: #1D7A8C;
+}
+
+
+
+
+
+.newReqConflictBtn {
+    border: 1px solid #FF6B6B;
+    border-radius: 17px;
+    background-color: #FF6B6B;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px 12px;
+    margin: 8px 0;
+    text-decoration: none;
+}
+
+
+
+
+
+.ServHistoryControls{
+    display: flex;
+   padding-left: 32px;
+   padding-bottom: 15px;
+   color: #646464;
+   justify-content: space-between;
+}
+.ServHistorySelect label{
+    font-weight: 600;
+}
+.ExportBtn{
+    padding: 3px 7px;
+    background-color: #1D7A8C;
+    color: #F9F9F9;
+    border:solid 1px #1D7A8C;
+}
+
+
+
+
+
+
+
+.sp-avatar{
+    margin: auto;
+    margin-bottom: 20px !important;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: solid 1px #646464;
+    padding-top: 20px;
+}
+.sp-avatar img{
+    width: 60%;
+    height: auto;
+}
+.BlockcustName{
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #4F4F4F;
+}
+.BlockCustBtn{
+    padding: 3px 7px;
+    border: solid 1px  #FF6B6B;
+    color: #FFFFFF;
+    background-color: #FF6B6B;
+}
+.BlockCustBtn:hover{
+    color: #FF6B6B;
+    background-color: #FFFFFF;
+}
+
+/*Page Control*/
+.page-control{
+    display:flex;
+  justify-content:space-between;
+  margin-top: 30px;
+  text-align: center;
+  color: #646464;
+  font-size: 14px;
+  font-weight: bold;
+  
+}
+.page-control-left{
+    display: inline-flex;
+    column-gap: 10px;
+    padding-top: +5px;
+}
+.page-control-right{
+    display: inline-flex;
+    column-gap: 5px;
+}
+
+
+#entries{
+    width: 60px;
+    height: 30px;
+    margin-right: -3px;
+    margin-top: -3px !important;
+}
+
+
+
+
+.page-btn{
+    text-align: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: solid 1px gray;
+    padding-top: +5px;
+}
+.page-no{
+    text-decoration: none;
+    color: #646464;
+}
+.active-2, .page-no:hover{
+    background-color: #1D7A8C;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+.setting-tabs {
+    display: flex;
+}
+
+.setting-tab {
+    padding: 16px 20px;
+    border-bottom: solid 2px #d8d7d7;
+    color: #646464;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+    .setting-tab:hover {
+        color: #1D7A8C;
+        text-decoration: none;
+        border-bottom: solid 2px #1D7A8C;
+    }
+
+.active2 {
+    color: #1D7A8C;
+    border-bottom: solid 2px #1D7A8C;
+}
+
+
+
+.select-avtar .form-check-inline {
+    display: inline-block;
+    margin-right: 0rem;
+}
+
+
+
+
+
+
+
+.select-avtar .form-check {
+    min-height: 1.5rem;
+    padding-left: 1em;
+    margin-bottom: 0.125rem;
+}
+
+
+
+.form-label {
+    margin-bottom: 0.5rem;
+    margin-top: 0.7rem;
+}
+
+.select-avtar input[type="radio"] {
+    display: none;
+}
+
+.select-avtar [type=radio] + label {
+    cursor: pointer;
+}
+
+.select-avtar input[type="radio"]:checked + label {
+    border: 3px solid #146371;
+    border-radius: 50%;
+}
+
+
+.tabcontent {
+    margin-top: 35px;
+    padding-left: 25px;
+}
+
+/*Form 1*
+#tab1{
+    display: none;
+}*/
+
+
+.detail-inputs {
+    margin-top: 25px;
+    color: #646464;
+    font-weight: 600;
+}
+
+
+.form1-divide {
+    margin-top: 15px;
+    height: 2px;
+}
+
+
+
+.detail-saveBtn {
+    margin-top: 50px;
+}
+
+    .detail-saveBtn button {
+        background-color: #1D7A8C;
+        color: white;
+        border: solid 1px #1D7A8C;
+        padding: 5px 20px;
+    }
+
+
+
+
+/*Form 3*/
+
+#tab2 {
+    display: none;
+}
+
+.changepass-inputs {
+    margin-top: 25px;
+    color: #646464;
+    font-weight: 600;
+}
+
+.changepass-saveBtn {
+    margin-top: 50px;
+}
+
+    .changepass-saveBtn button {
+        background-color: #1D7A8C;
+        color: white;
+        border: solid 1px #1D7A8C;
+        padding: 5px 20px;
+    }
+
+
+
+
+footer{
+    background-color: #111111;
+    width: 100%;
+    color: white;
+    min-height: 195px;
+  }
+  .footer-logo{
+      width: 120px;
+      height: 92px;
+  }
+footer .container a {
+    text-decoration: none;
+    color: #F1F1F1;
+    font-size: 14px;
+  }
+.foot_menu{
+    padding-top: 20px;
+    max-width: 1350px;
+  }
+.icons{
+padding-top: +15px;
+}
+.fimg1 {
+    width: 9px;
+    height: 18px;
+    margin-right: 20px;
+  }
+.fimg2 {
+    width: 20px;
+    height: 20px;
+  }
+  
+.term_c{
+    color: #9BA0A3;
+    font-size: 14px;
+  }
+.term_c a{
+      text-decoration: none;
+      color: #9BA0A3;
+  }
+.foot_menulink{
+padding-top: +20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+ 
+@media screen and (max-width: 329px){
+    .navbar{
+        height: auto;
+    }
+    .navbar-brand img{
+        width: 75%;
+        height: auto;
+    }
+
+    .response-icon{
+        margin-right: 0%;
+    }
+    .response-icon img{
+        padding-top: +13px;
+        width: 85%;
+        height: auto;
+    }
+    .dropdown-s{
+        padding-left: 10%;
+        margin-right: -5px;
+        padding-top: +1px;
+    }
+    .user-icon-1{
+        padding-right: 2px;
+        width: 60%;
+        height: auto;
+    }
+    
+
+
+
+
+
+     
+    .UpcomingServiceTable{
+        border: none;
+        margin-left: 0%;
+    }
+    .UpcomingServiceTable thead{
+        display: none;
+    }
+    .UpcomingServiceTable, .UpcomingServiceTable tbody, .UpcomingServiceTable tr, .UpcomingServiceTable td{
+        display: block;
+        width: 90%;
+        height: auto;
+        font-size: 12px !important;
+    } 
+    .UpcomingServiceTable tbody, .UpcomingServiceTable tr, .UpcomingServiceTable td{
+        width: 100% !important;
+    }
+    .UpcomingServiceTable tbody tr td{
+        text-align: end;
+        padding-right: 2%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .UpcomingServiceTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 0%;
+    }
+
+
+
+    .UpcomingServiceTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+    .US-ServId{
+        padding: 15px;
+    }
+    
+    .US-ServDate{
+        padding-top: 15px;
+    }
+
+    .US-CustDetail{
+        text-align: right !important;
+        padding-top: 10px;
+    }
+    .detailContent2::before{
+        content: "\a";
+        white-space: pre;
+    }
+
+    .US-Dist{
+        padding: 10px;
+    }
+
+    .usTableCancelbtn{
+        text-align: center !important;
+        padding: 10px;
+    }
+
+
+
+
+    
+    .NewServTable{
+        border: none;
+        margin-left: 0%;
+    }
+    .NewServTable thead{
+        display: none;
+    }
+    .NewServTable, .NewServTable tbody, .NewServTable tr, .NewServTable td{
+        display: block;
+        width: 90%;
+        height: auto;
+        font-size: 12px !important;
+    } 
+    .NewServTable tbody, .NewServTable tr, .NewServTable td{
+        width: 100% !important;
+    }
+    .NewServTable tbody tr td{
+        text-align: end;
+        padding-right: 2%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .NewServTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 1%;
+    }
+
+
+
+    .NewServTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+    .NS-ServId{
+        padding: 15px;
+    }
+    .NS-Payment{
+        padding: 10px;
+    }
+    .nsPaySpan{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .NS-ServDateSpan{
+        padding: 5px;
+    }
+    .nsTableAcceptbtn{
+        text-align: center !important;
+        padding: 7px;
+    }
+    .NS-TimeConf{
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+    
+    .NewServControls{
+        display: inline-flex;
+       padding-left: 5px;
+       column-gap: 5px;
+       padding-bottom: 15px;
+       color: #646464;
+    }
+    .NewServSelect label, .NewServCheckbox label{
+        font-weight: 600;
+    }
+    #PetsCheck{
+        width: 15px;
+        height: 15px;
+        margin-right: 2px;
+    }
+    .NewServCheckbox{
+        display: inline-flex;
+    }
+    
+
+
+
+
+
+
+
+
+    .ServHistoryTable{
+        border: none;
+        margin-left: 0%;
+    }
+    .ServHistoryTable thead{
+        display: none;
+    }
+    .ServHistoryTable, .ServHistoryTable tbody, .ServHistoryTable tr, .ServHistoryTable td{
+        display: block;
+        width: 90%;
+        height: auto;
+        font-size: 12px !important;
+    } 
+    .ServHistoryTable tbody, .ServHistoryTable tr, .ServHistoryTable td{
+        width: 100% !important;
+    }
+    .ServHistoryTable tbody tr td{
+        text-align: end;
+        padding-right: 2%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .ServHistoryTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 0%;
+    }
+
+
+
+    .ServHistoryTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+    .ServHistoryControls{
+        display: block;
+       padding-left: 0px;
+       font-size: 12px;
+    }
+    .ExportBtn{
+        margin-top: 5px;
+    }
+    .SH-ServId, .SH-ServDate, .SH-CustDetail{
+        padding: 10px ;
+    }
+
+
+
+
+
+    .BlockCust{
+        margin-left: 0%;
+    }
+    .BlockCustCard{
+        padding-top: 20px;
+    }
+}
+
+@media screen and (min-width: 330px) and (max-width: 426px){
+    .navbar{
+        height: auto;
+    }
+    .navbar-brand img{
+        width: 75%;
+        height: auto;
+    }
+
+
+    .foot_menulink a{
+        padding-top: +5px;
+        padding-bottom: +5px;
+    }
+    .fimg1{
+        margin-left: +5px;
+    }
+
+    .foot_menu{
+        flex-direction: column;
+    }
+    .foot_menulink{
+        flex-direction: column;
+    
+    }
+    .foot_menulink a{
+        padding-top: +5px;
+        
+    }
+    .footer-logo{
+        width: 25%;
+        height: auto;
+    }
+    
+
+    
+
+     
+    .UpcomingServiceTable{
+        border: none;
+        margin-left: 0%;
+    }
+    .UpcomingServiceTable thead{
+        display: none;
+    }
+    .UpcomingServiceTable, .UpcomingServiceTable tbody, .UpcomingServiceTable tr, .UpcomingServiceTable td{
+        display: block;
+        width: 90%;
+        height: auto;
+        font-size: 12px !important;
+    } 
+    .UpcomingServiceTable tbody, .UpcomingServiceTable tr, .UpcomingServiceTable td{
+        width: 100% !important;
+    }
+    .UpcomingServiceTable tbody tr td{
+        text-align: end;
+        padding-right: 2%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .UpcomingServiceTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 0%;
+    }
+
+
+
+    .UpcomingServiceTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+    .US-ServId{
+        padding: 15px;
+    }
+    
+    .US-ServDate{
+        padding-top: 15px;
+    }
+
+    .US-CustDetail{
+        text-align: right !important;
+        padding-top: 10px;
+    }
+    .detailContent2::before{
+        content: "\a";
+        white-space: pre;
+    }
+
+    .US-Dist{
+        padding: 10px;
+    }
+
+    .usTableCancelbtn{
+        text-align: center !important;
+        padding: 10px;
+    }
+
+
+
+
+
+
+
+    
+    .NewServTable{
+        border: none;
+        margin-left: 0%;
+    }
+    .NewServTable thead{
+        display: none;
+    }
+    .NewServTable, .NewServTable tbody, .NewServTable tr, .NewServTable td{
+        display: block;
+        width: 90%;
+        height: auto;
+        font-size: 14px !important;
+    } 
+    .NewServTable tbody, .NewServTable tr, .NewServTable td{
+        width: 100% !important;
+    }
+    .NewServTable tbody tr td{
+        text-align: end;
+        padding-right: 2%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .NewServTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 1%;
+    }
+
+
+
+    .NewServTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+    .NS-ServId{
+        padding: 15px;
+    }
+    .NS-Payment{
+        padding: 10px;
+    }
+    .nsPaySpan{
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .NS-ServDateSpan{
+        padding: 5px;
+    }
+    .nsTableAcceptbtn{
+        text-align: center !important;
+        padding: 7px;
+    }
+    .NS-TimeConf{
+        padding-top: 5px;
+        padding-bottom: 30px;
+    }
+    .NewServControls{
+        display: inline-flex;
+       padding-left: 5px;
+       column-gap: 20px;
+       padding-bottom: 15px;
+       color: #646464;
+    }
+    .NewServSelect label, .NewServCheckbox label{
+        font-weight: 600;
+    }
+    #PetsCheck{
+        width: 15px;
+        height: 15px;
+        margin-right: 2px;
+        
+    }
+    .NewServCheckbox{
+        display: inline-flex;
+    }
+
+
+
+
+
+    
+
+    .ServHistoryTable{
+        border: none;
+        margin-left: 0%;
+    }
+    .ServHistoryTable thead{
+        display: none;
+    }
+    .ServHistoryTable, .ServHistoryTable tbody, .ServHistoryTable tr, .ServHistoryTable td{
+        display: block;
+        width: 90%;
+        height: auto;
+        font-size: 12px !important;
+    } 
+    .ServHistoryTable tbody, .ServHistoryTable tr, .ServHistoryTable td{
+        width: 100% !important;
+    }
+    .ServHistoryTable tbody tr td{
+        text-align: end;
+        padding-right: 2%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .ServHistoryTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 0%;
+    }
+
+
+
+    .ServHistoryTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+    .ServHistoryControls{
+        display: block;
+       padding-left: 0px;
+       font-size: 12px;
+    }
+    .ExportBtn{
+        margin-top: 5px;
+    }
+    .SH-ServId, .SH-ServDate, .SH-CustDetail{
+        padding: 10px ;
+    }
+    
+
+
+
+    .BlockCust{
+        margin-left: 0%;
+    }
+    .BlockCustCard{
+        padding-top: 20px;
+    }
+    
+}
+@media screen and (min-width: 427px) and (max-width: 769px){
+    .navbar{
+        height: auto;
+    }
+    .navbar-collapse{
+        padding-top: +5px;
+    }
+
+    .foot_menulink a{
+        padding-top: +5px;
+        padding-bottom: +5px;
+    }
+    .fimg1{
+        margin-left: +5px;
+        margin-bottom: +5px;
+    }
+    .footer-logo{
+        width: 90px;
+        height: auto;
+    }
+
+
+    
+
+     
+    .UpcomingServiceTable{
+        border: none;
+        margin-left: 0%;
+    }
+    .UpcomingServiceTable thead{
+        display: none;
+    }
+    .UpcomingServiceTable, .UpcomingServiceTable tbody, .UpcomingServiceTable tr, .UpcomingServiceTable td{
+        display: block;
+        width: 95%;
+        height: auto;
+        font-size: 18px !important;
+    } 
+    .UpcomingServiceTable tbody, .UpcomingServiceTable tr, .UpcomingServiceTable td{
+        width: 100% !important;
+    }
+    .UpcomingServiceTable tbody tr td{
+        text-align: end;
+        padding-right: 2%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .UpcomingServiceTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 0%;
+    }
+
+
+
+    .UpcomingServiceTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+    .US-ServId{
+        padding: 15px;
+    }
+    
+    .US-ServDate{
+        padding-top: 15px;
+    }
+
+    .US-CustDetail{
+        text-align: right !important;
+        padding-top: 10px;
+    }
+    .detailContent2::before{
+        content: "\a";
+        white-space: pre;
+    }
+
+    .US-Dist{
+        padding: 10px;
+    }
+
+    .usTableCancelbtn{
+        text-align: center !important;
+        padding: 10px;
+    }
+
+
+
+
+
+    
+
+    
+    .NewServTable{
+        border: none;
+        margin-left: 2%;
+    }
+    .NewServTable thead{
+        display: none;
+    }
+    .NewServTable, .NewServTable tbody, .NewServTable tr, .NewServTable td{
+        display: block;
+        width: 90%;
+        height: auto;
+        font-size: 16px !important;
+    } 
+    .NewServTable tbody, .NewServTable tr, .NewServTable td{
+        width: 100% !important;
+    }
+    .NewServTable tbody tr td{
+        text-align: end;
+        padding-right: 2%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .NewServTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 0%;
+    }
+
+
+
+    .NewServTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+    .NS-ServId{
+        padding: 15px;
+    }
+    .NS-Payment{
+        padding: 10px;
+    }
+    .nsPaySpan{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .NS-ServDateSpan{
+        padding: 5px;
+    }
+    .nsTableAcceptbtn{
+        text-align: center !important;
+        padding: 7px;
+    }
+    .NS-TimeConf{
+        padding-top: 5px;
+        padding-bottom: 30px;
+    }
+
+
+
+    
+
+    .ServHistoryTable{
+        border: none;
+        margin-left: 0%;
+    }
+    .ServHistoryTable thead{
+        display: none;
+    }
+    .ServHistoryTable, .ServHistoryTable tbody, .ServHistoryTable tr, .ServHistoryTable td{
+        display: block;
+        width: 95%;
+        height: auto;
+        font-size: 16px !important;
+    } 
+    .ServHistoryTable tbody, .ServHistoryTable tr, .ServHistoryTable td{
+        width: 100% !important;
+    }
+    .ServHistoryTable tbody tr td{
+        text-align: end;
+        padding-right: 2%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .ServHistoryTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 0%;
+    }
+
+
+
+    .ServHistoryTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+    .ServHistoryControls{
+        display: block;
+       padding-left: 0px;
+       font-size: 18px;
+    }
+    .ExportBtn{
+        margin-top: 5px;
+    }
+    .SH-ServId, .SH-ServDate, .SH-CustDetail{
+        padding: 10px ;
+    }
+    
+    .BlockCust{
+        margin-left: 0%;
+    }
+    .BlockCustCard{
+        padding-top: 20px;
+    }
+    }
+    
+    @media screen and (min-width: 770px) and (max-width: 991px){
+        .navbar{
+            height: auto;
+        }
+        .navbar-collapse{
+            padding-top: +5px;
+        }
+    
+
+        
+     
+    .UpcomingServiceTable{
+        border: none;
+        margin-left: 0%;
+    }
+    .UpcomingServiceTable thead{
+        display: none;
+    }
+    .UpcomingServiceTable, .UpcomingServiceTable tbody, .UpcomingServiceTable tr, .UpcomingServiceTable td{
+        display: block;
+        width: 100%;
+        height: auto;
+        font-size: 18px !important;
+    } 
+    .UpcomingServiceTable tbody, .UpcomingServiceTable tr, .UpcomingServiceTable td{
+        width: 100% !important;
+    }
+    .UpcomingServiceTable tbody tr td{
+        text-align: end;
+        padding-right: 2%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .UpcomingServiceTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 0%;
+    }
+
+
+
+    .UpcomingServiceTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+    .US-ServId{
+        padding: 15px;
+    }
+    
+    .US-ServDate{
+        padding-top: 15px;
+    }
+
+    .US-CustDetail{
+        text-align: right !important;
+        padding-top: 10px;
+    }
+    .detailContent2::before{
+        content: "\a";
+        white-space: pre;
+    }
+
+    .US-Dist{
+        padding: 10px;
+    }
+
+    .usTableCancelbtn{
+        text-align: center !important;
+        padding: 10px;
+    }
+
+
+
+    
+    
+    .NewServTable{
+        border: none;
+        margin-left: 0%;
+    }
+    .NewServTable thead{
+        display: none;
+    }
+    .NewServTable, .NewServTable tbody, .NewServTable tr, .NewServTable td{
+        display: block;
+        width: 100%;
+        height: auto;
+        font-size: 16px !important;
+    } 
+    .NewServTable tbody, .NewServTable tr, .NewServTable td{
+        width: 100% !important;
+    }
+    .NewServTable tbody tr td{
+        text-align: end;
+        padding-right: 2%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .NewServTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 0%;
+    }
+
+
+
+    .NewServTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+    .NS-ServId{
+        padding: 15px;
+    }
+    .NS-Payment{
+        padding: 10px;
+    }
+    .nsPaySpan{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .NS-ServDateSpan{
+        padding: 5px;
+    }
+    .nsTableAcceptbtn{
+        text-align: center !important;
+        padding: 7px;
+    }
+    .NS-TimeConf{
+        padding-top: 5px;
+        padding-bottom: 30px;
+    }
+
+
+
+
+
+    
+    .ServHistoryTable{
+        border: none;
+        margin-left: 0%;
+    }
+    .ServHistoryTable thead{
+        display: none;
+    }
+    .ServHistoryTable, .ServHistoryTable tbody, .ServHistoryTable tr, .ServHistoryTable td{
+        display: block;
+        width: 100%;
+        height: auto;
+        font-size: 16px !important;
+    } 
+    .ServHistoryTable tbody, .ServHistoryTable tr, .ServHistoryTable td{
+        width: 100% !important;
+    }
+    .ServHistoryTable tbody tr td{
+        text-align: end;
+        padding-right: 2%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .ServHistoryTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 0%;
+    }
+
+
+
+    .ServHistoryTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+    .ServHistoryControls{
+        display: block;
+       padding-left: 0px;
+       font-size: 18px;
+    }
+    .ExportBtn{
+        margin-top: 5px;
+    }
+    .SH-ServId, .SH-ServDate, .SH-CustDetail{
+        padding: 10px ;
+    }
+}
+        

@@ -1,0 +1,115 @@
+﻿<div class="col-lg-7 col-md-10 ServHistory right-container" style="display: none;">
+
+    <div class="ServHistoryControls">
+        <div class="ServHistorySelect">
+            <label for="PayStatus" style="margin-right: 10px;">Payment Status</label>
+            <select id="PayStatus">
+                <option value="0">All</option>
+                <option value="1">Completed</option>
+                <option value="2">Pending</option>
+            </select>
+        </div>
+        <div class="ServHistory-export">
+            <input class="ExportBtn rounded-pill" type="button" value="Export" onclick="exportexcel()" id="btnExport">
+        </div>
+    </div>
+    <table class="ServHistoryTable" id="ServHistoryTable">
+        <thead>
+            <tr>
+                <th class="col-md-2">
+                    Service ID
+                </th>
+                <th class="col-md-2">
+                    Service Date
+                </th>
+                <th class="col-md-3 SHcustomer-detail">
+                    Customer details
+                </th>
+
+            </tr>
+        </thead>
+        <tbody id="ServiceHistoryTbody">
+
+            <tr>
+                <td data-label="Service ID" class="SH-ServId">
+                    <span>323436</span>
+                </td>
+                <td data-label="Service Date" class="SH-ServDate">
+                    <div class="SH-ServDateSpan">
+                        <p>
+                            <img src="~/Images/calendar2.png"> <span class="service-date">09/04/2018</span>
+                        </p>
+                        <p>
+                            <img src="~/Images/layer-14.png">16:00 - 20:00
+                        </p>
+                    </div>
+                </td>
+                <td class="SH-CustDetail" data-label="Customer details">
+                    <p>
+                        David Bough
+                    </p>
+                    <p>
+                        <img src="~/Images/layer-15.png" style="padding-bottom: 3px;">&nbsp;<span class="detailContent2">Musterstrabe 5,12345 Bonn</span>
+                    </p>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td data-label="Service ID" class="SH-ServId">
+                    <span>323446</span>
+                </td>
+                <td data-label="Service Date" class="SH-ServDate">
+                    <div class="SH-ServDateSpan">
+                        <p>
+                            <img src="~/Images/calendar2.png"> <span class="service-date">10/04/2020</span>
+                        </p>
+                        <p>
+                            <img src="~/Images/layer-14.png">16:00 - 20:00
+                        </p>
+                    </div>
+                </td>
+                <td class="SH-CustDetail" data-label="Customer details">
+                    <p>
+                        David Bough
+                    </p>
+                    <p>
+                        <img src="~/Images/layer-15.png" style="padding-bottom: 3px;">&nbsp;<span class="detailContent2">Musterstrabe 5,12345 Bonn</span>
+                    </p>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td data-label="Service ID" class="SH-ServId">
+                    <span>523436</span>
+                </td>
+                <td data-label="Service Date" class="SH-ServDate">
+                    <div class="SH-ServDateSpan">
+                        <p>
+                            <img src="~/Images/calendar2.png"> <span class="service-date">09/04/2018</span>
+                        </p>
+                        <p>
+                            <img src="~/Images/layer-14.png">16:00 - 20:00
+                        </p>
+                    </div>
+                </td>
+                <td class="SH-CustDetail" data-label="Customer details">
+                    <p>
+                        David Bough
+                    </p>
+                    <p>
+                        <img src="~/Images/layer-15.png" style="padding-bottom: 3px;">&nbsp;<span class="detailContent2">Musterstrabe 5,12345 Bonn</span>
+                    </p>
+                </td>
+
+            </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</div>

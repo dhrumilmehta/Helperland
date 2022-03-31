@@ -1,0 +1,347 @@
+﻿@model IEnumerable<Helperland.ViewModels.CustomerDashboard>
+@using Helperland.Data
+@using Helperland.Models
+
+
+@{
+    int ServiceDashboardCount = 0;
+}
+
+<div class="col-md-7 dashboard-table">
+    <div class="service-heading">
+        <div class="heading dashHeading">
+            <p>Current Service Requests</p>
+        </div>
+        <div class="newRequest">
+            <a class="rounded-pill newrequestBtn" asp-action="BookService" asp-controller="ServiceManage">Add New Request</a>
+        </div>
+    </div>
+
+
+    <table class="dashboardTable" id="DashboardTable">
+
+        <thead>
+            <tr>
+                <th class="col-md-1"  style="cursor:pointer" onclick="sortDashTable(0)">
+                    Service ID
+                </th>
+                <th class="col-md-1"  style="cursor:pointer" onclick="sortDashTable(1)">
+                    Service Date
+                </th>
+                <th class="col-md-2"  style="cursor:pointer" onclick="sortDashTable(2)">
+                    Service Provider
+                </th>
+                <th class="col-md-1"  style="cursor:pointer" onclick="sortDashTable(3)">
+                    Payment
+                </th>
+                <th class="col-md-2" style="cursor:pointer">
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model.Count() > 0)
+            {
+
+                @foreach (var item in Model)
+                {
+
+                    @if (item.Status == 1 || item.Status == 2)
+                    {
+
+                        ServiceDashboardCount = ServiceDashboardCount + 1;
+                        <tr data-value="@item.ServiceRequestId">
+                            <td class="dashServId" data-label="Service ID">
+                                <div class="dashServIddiv">
+                                    @item.ServiceRequestId
+                                </div>
+                            </td>
+                            <td class="dashservDate" data-label="Service Date">
+                                <div class="dashdateDiv">
+                                <p>
+                                    <img src="~/Images/calendar2.png">&nbsp;<span class="dashDate">@item.Date</span>
+                                </p>
+                                <p style="padding-left: 5px;">
+                                    <img src="~/Images/layer-14.png">&nbsp;<span>@item.StartTime - @item.EndTime</span>
+                                </p>
+                                </div>
+                            </td>
+                            <td data-label="Service Provider">
+                                <div class="dashproInfo">
+                                    <div class="dashCapicon">
+                                        <img src="~/Images/forma-1-copy-19.png">
+                                    </div>
+                                    <div class="dashProname">
+                                        <p>Lyum Watson</p>
+                                        <p>
+                                            <img src="~/Images/star1.png">
+                                            <img src="~/Images/star1.png">
+                                            <img src="~/Images/star1.png">
+                                            <img src="~/Images/star1.png">
+                                            <img src="~/Images/star2.png">
+                                            <span>4</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-label="Payment">
+                                <div class="dashPayment">
+
+                                    <span class="payAmount">€ <span>@item.TotalCost</span></span>
+
+                                </div>
+                            </td>
+                            <td data-label="Actions">
+                                <div class="actiobBtns">
+                                    <button class="rounded-pill customerReschedule" id="rescheduleBtn" value="@item.ServiceRequestId" data-bs-toggle="modal" data-bs-target="#rescheduleModal">Reschedule</button>
+                                    <button class="rounded-pill customerCancel" id="cancelBtn" value="@item.ServiceRequestId"  data-bs-toggle="modal" data-bs-target="#cancelModal">Cancel</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    }
+                }
+            }
+        </tbody>
+    </table>
+
+
+
+    <div class="page-control">
+        <div class="page-control-left">
+            <p>Show</p>
+            <select name="entries" id="entries">
+
+                @if (ServiceDashboardCount > 0)
+                {
+                    @for (int i = ServiceDashboardCount; i > 0; i--)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                }
+                <!--option value="10">10</!--option>
+                <option value="10">9</option>
+                <option value="10">8</option>
+                <option value="10">7</option>
+                <option value="10">6</option>
+                <option value="10">5</option>
+                <option value="10">4</option>
+                <option value="10">3</option-->
+            </select>
+            <p>entries</p>
+            <p>Total Records: <span>@ServiceDashboardCount</span></p>
+        </div>
+
+        <div class="page-control-right" id="pg-right">
+
+            <a href=# class="page-btn"><img src="~/Images/first-page.png" alt="first page"></a>
+
+
+            <a href=# class="page-btn"><img src="~/Images/polygon-1-copy-5.png" alt="previous page"></a>
+
+
+            <a href=# class="page-btn page-no active-2">
+                <p>1</p>
+            </a>
+
+
+            <a href=# class="page-btn page-no">
+                <p>2</p>
+            </a>
+
+
+            <a href=# class="page-btn page-no">
+                <p>3</p>
+            </a>
+
+
+            <a href=# class="page-btn page-no">
+                <p>4</p>
+            </a>
+
+
+            <a href=# class="page-btn">
+                <img src="~/Images/polygon-1-copy-5.png" alt="next  page"
+                     style="transform: rotate(180deg);">
+            </a>
+
+
+            <a href=# class="page-btn">
+                <img src="~/Images/first-page.png" alt="last page"
+                     style="transform: rotate(180deg);">
+            </a>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--Reschedule & Cancel Modals-->
+<!-- Reschedule Modal -->
+<div class="modal fade" id="rescheduleModal" tabindex="-1" aria-labelledby="rescheduleModalLabel"
+     aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered resmodal-dialog">
+        <div class="modal-content resmodal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="rescheduleModalLabel">Reschedule Service Request</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body resmodal-body">
+                <span>Select Date & Time</span>
+                <div class="resInputs">
+                    <input id="RescheduledDate" class="resDate" type="date" />
+                    <input id="RescheduledTime" class="resTime" type="time" />
+                </div>
+                <input type="hidden" id="updateRequestId"  />
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button id="RescheduleUpdateBtn" class="rounded-pill resupdateBtn" data-bs-dismiss="modal" type="submit">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cancel Modal -->
+
+<div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel"
+     aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered canmodal-dialog">
+        <div class="modal-content canmodal-content">
+        <form asp-action="CancelService" asp-controller="UserPage">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cancelModalLabel">Cancel Service Request</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body canmodal-body">
+                <span>Why do you want to cancel service?</span>
+                <div class="canInputs">
+                    <textarea id="canText" cols="30" rows="5"></textarea>
+                </div>
+                <input type="hidden" id="CancelRequestId" />
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button id="cancelServBtn" class="rounded-pill cancelServBtn" type="submit" data-bs-dismiss="modal">Cancel Now</button>
+            </div>
+        </form>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+<!--All Details Model-->
+
+<button id="serviceReqdetailsbtn" data-bs-toggle="modal" data-bs-target="#detailsModelServiceRequest" class="d-none">details</button>
+
+
+<div class="modal" tabindex="-1" id="detailsModelServiceRequest">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-start">
+            <div class="modal-header">
+                <h5 class="modal-title">Service Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body float-start">
+                <h4 id="serviceDetailDateTime">05/10/2021 08:00 - 11:30</h4>
+                <p>Duration: <span id="serviceDetailDuration"></span> </p>
+                <hr>
+                <p>Service id: <span id="serviceDetailId"></span></p>
+                <div class="row"> <p class="col-2 d-inline">Extras: </p> <div class="col-10 d-inline" id="serviceDetailExtra"></div></div>
+
+                <p>Net Amount: <span id="serviceDetailAmount">8750 &euro;</span> </p>
+                <p id="serviceDetailStatus"></p>
+                <hr>
+                <p>Service Address:<span id="serviceDetailAddress"></span></p>
+                <p>Billing Address: <span>same as cleaninng address</span></p>
+                <p>phone:<span id="serviceDetailPhone"></span></p>
+                <p>Email:<span id="serviceDetailEmail"> </span></p>
+                <hr>
+
+                <p>Comments <span id="serviceDetailComment"></span></p>
+                <!--only show in dashboard status =1 & 2-->
+                <span id="customerdashboardbtn">
+                    <hr>
+
+
+
+                    <div class="text-center  d-flex justify-content-around">
+                        <button class="customerReschedule" data-bs-toggle="modal" data-bs-target="#rescheduleModelServiceRequest">Reschedule</button>
+                        <button class="customerCancel" data-bs-toggle="modal" data-bs-target="#deleteModelServiceRequest">Cancel</button>
+                    </div>
+
+                </span>
+                <!--only show in service history  status =3 -->
+                <span id="customerServiceHistorybtn">
+                    <hr>
+
+
+
+                    <div class="text-center  d-flex justify-content-around">
+                        <button class="rate">Rate </button>
+                    </div>
+
+                </span>
+
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<script>
+
+    function sortDashTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("DashboardTable");
+        switching = true;
+        dir = "asc";
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount++;
+            } else {
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+</script>

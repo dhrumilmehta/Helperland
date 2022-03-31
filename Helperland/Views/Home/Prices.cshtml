@@ -1,0 +1,369 @@
+﻿@{
+    ViewData["Title"] = "Prices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+    <link rel="stylesheet"  href="~/CSS/prices.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Prices</title>
+
+</head>
+
+<body>
+
+
+    <!--Navigation Bar-->
+    <nav class="navbar  navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-action="Index">
+                <img src="~/Images/logo-large.png" alt="Helperland">
+            </a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation" style="color: #81b6c1;font-size:20px;">
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  ms-auto  mb-lg-0 align-items-end">
+                    <li class="nav-item nav-btn-itmes">
+                        <a class="btn rounded-pill nav-btn" type="button">Book Now</a>
+                    </li>
+                    <li class="nav-item nav-btn-itmes">
+                        <a class="btn rounded-pill nav-btn price-btn" asp-action="Prices" type="button">
+                            Prices & services
+                        </a>
+                    </li>
+                    <li class="nav-item nav-link-items"><a class="nav-link" href="#">Warranty</a></li>
+                    <li class="nav-item nav-link-items"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item nav-link-items"><a class="nav-link" asp-action="Contact">Contact</a></li>
+                    <li class="nav-item nav-btn-itmes">
+                        <a class="btn rounded-pill nav-btn" type="button" data-bs-target="#login-modal" data-bs-toggle="modal" href="#">Login</a>
+                    </li>
+                    <li class="nav-item nav-btn-itmes">
+                        <a class="btn rounded-pill nav-btn" type="button" asp-action="BecomePro">Become a Helper</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    @await Html.PartialAsync("Login")
+    @await Html.PartialAsync("ForgetPassword")
+
+    <div class="header_banner">
+        <img src="~/Images/group-18.png" alt="">
+    </div>
+
+
+
+
+    <div class="faq_heading">
+        <p>Prices</p>
+    </div>
+
+    <div class="container-fluid sep_contain">
+        <hr class="sep-hr1" width="62px" height="1px">
+        <img class="separator" src="~/Images/separator.png" alt="">
+        <hr class="sep-hr1" width="62px" height="1px">
+    </div>
+
+
+    <div class="card text-center main-card">
+        <p class="card-title main-card-title">One Time</p>
+        <p class="card-text card-price"><span class="rate">€ 20</span><span class="price-unit">/hr</span>.</p>
+        <div class="card-text feat-list">
+            <ul>
+                <li><img src="~/Images/forma-1_5.png" alt="">Lower Prices</li>
+                <li><img src="~/Images/forma-1_5.png" alt="">Easy online & secure payment</li>
+                <li><img src="~/Images/forma-1_5.png" alt="">Easy amendment</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+    <div class="sep-hr2">
+        <hr>
+    </div>
+
+    <div class="xt-service_heading">
+        <p>Extra services</p>
+    </div>
+
+    <div class="container-fluid sep_contain">
+        <hr class="sep-hr1" width="62px" height="1px">
+        <img class="separator" src="~/Images/separator.png" alt="">
+        <hr class="sep-hr1" width="62px" height="1px">
+    </div>
+
+
+    <div class="services d-flex flex-wrap align-items-center justify-content-center">
+        <div class="service">
+            <div class="serviceImage rounded-circle d-flex align-items-center justify-content-center">
+                <img src="~/Images/3.png" alt="">
+            </div>
+            <div class="serviceText text-center">Inside Cabinets</div>
+            <div class="serviceTime text-center">30 minutes</div>
+        </div>
+        <div class="service">
+            <div class="serviceImage rounded-circle d-flex align-items-center justify-content-center">
+                <img src="~/Images/5.png" alt="">
+            </div>
+            <div class="serviceText text-center">Inside Fridge</div>
+            <div class="serviceTime text-center">30 minutes</div>
+        </div>
+        <div class="service">
+            <div class="serviceImage rounded-circle d-flex align-items-center justify-content-center">
+                <img src="~/Images/4.png" alt="">
+            </div>
+            <div class="serviceText text-center">Inside Oven</div>
+            <div class="serviceTime text-center">30 minutes</div>
+        </div>
+        <div class="service">
+            <div class="serviceImage rounded-circle d-flex align-items-center justify-content-center">
+                <img src="~/Images/2.png" alt="">
+            </div>
+            <div class="serviceText text-center">Laundry Wash & Dry</div>
+            <div class="serviceTime text-center">30 minutes</div>
+        </div>
+        <div class="service">
+            <div class="serviceImage rounded-circle d-flex align-items-center justify-content-center">
+                <img src="~/Images/1.png" alt="">
+            </div>
+            <div class="serviceText text-center">Interior Windows</div>
+            <div class="serviceTime text-center">30 minutes</div>
+        </div>
+
+    </div>
+
+
+
+    <section class="cleaning-service">
+        <div class="cleaning-heading">
+            <p>What we include in cleaning</p>
+        </div>
+
+        <div class="container-fluid sep_contain">
+            <hr class="sep-hr1" width="62px" height="1px">
+            <img class="separator" src="~/Images/separator.png" alt="">
+            <hr class="sep-hr1" width="62px" height="1px">
+        </div>
+
+
+
+        <div class="row justify-content-center cleaning-card">
+            <div class="d-flex col-lg-3 col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/Images/group-18_3.png" alt="">
+
+                    <div class="card-body">
+                        <p class="card-text clean-card-title">Bedroom and Living Room</p>
+                        <ul class="clean-card-list">
+
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>Dust all accessible surfaces</span>
+                            </li>
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>
+                                    Wipe down all mirrors and glass
+                                    fixtures
+                                </span>
+                            </li>
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>Clean all floor surfaces</span>
+                            </li>
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>
+                                    Take out garbage and
+                                    recycling
+                                </span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex col-lg-3 col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/Images/group-18_4.png" alt="">
+
+                    <div class="card-body">
+                        <p class="card-text clean-card-title">Bathrooms</p>
+                        <ul class="container-fluid clean-card-list">
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>
+                                    Wash and sanitize the toilet,
+                                    shower,tub, sink
+                                </span>
+                            </li>
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>
+                                    Dust all accessible
+                                    surfaces
+                                </span>
+                            </li>
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>
+                                    Wipe down all mirrors and glass
+                                    fixtures
+                                </span>
+                            </li>
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>Clean all floor surfaces </span>
+                            </li>
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>
+                                    Take out garbage and
+                                    recycling
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex col-lg-3 col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/Images/group-18_2.png" alt="">
+
+                    <div class="card-body">
+                        <p class="card-text clean-card-title">Kitchen</p>
+                        <ul class="clean-card-list">
+
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>Dust all accessible surfaces</span>
+                            </li>
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>
+                                    Empty sink and load up
+                                    dishwasher
+                                </span>
+                            </li>
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>
+                                    Wipe down all mirrors and glass
+                                    fixtures
+                                </span>
+                            </li>
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>Clean all floor surfaces</span>
+                            </li>
+                            <li>
+                                <img src="~/Images/right-arrow-grey.png" alt=""><span>
+                                    Take out garbage and
+                                    recycling
+                                </span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <section class="why-helperland">
+
+        <div class="helperland-heading">
+            <p>Why Helperland</p>
+        </div>
+
+        <div class="container-fluid sep_contain">
+            <hr class="sep-hr1" width="62px" height="1px">
+            <img class="separator" src="~/Images/separator.png" alt="">
+            <hr class="sep-hr1" width="62px" height="1px">
+        </div>
+
+
+
+        <div class="whyDescription d-flex justify-content-center text-center">
+            <div>
+                <div class="whyDescriptionItem">
+                    <div class="whyDescriptionItemHeader text-center text-lg-end">
+                        Experienced and vetted professionals
+                    </div>
+                    <div class="whyDescriptionItemText text-center text-lg-end">
+                        dominate the industry in scale and scope with an adaptable, extensive network that consistently
+                        delivers exceptional
+                        results.
+                    </div>
+
+                    <div class="whyDescriptionItemHeader text-center text-lg-end">Dedicated customer service</div>
+                    <div class="whyDescriptionItemText text-center text-lg-end">
+                        to our customers and are guided in all we do by their needs. The team is always happy to support
+                        you and offer all the
+                        information. you need.
+                    </div>
+                </div>
+            </div>
+            <div class="align-self-center"><img src="~/Images/the-best-img-1.png" alt=""></div>
+
+
+            <div>
+                <div class="whyDescriptionItem">
+                    <div class="whyDescriptionItemHeader text-center text-lg-start">Every cleaning is insured</div>
+                    <div class="whyDescriptionItemText text-center text-sm-center text-md-start">
+                        and seek to provide exceptional service and engage in proactive behavior. We'd be happy to clean
+                        your homes.
+                    </div>
+
+                    <div class="whyDescriptionItemHeader text-center text-lg-start">Secure online payment</div>
+                    <div class="whyDescriptionItemText text-center text-lg-start">
+                        Payment is processed securely online. Customers pay safely online and manage the booking.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid news_letter">
+            <div class="up-arrow">
+                <a href="#"><img src="~/Images/ahead-arrow.png" alt=""></a>
+            </div>
+
+            <div>
+                <p class="head_newsletter">GET OUR NEWSLETTER</p>
+                <form action="#" method="post">
+                    <input class="newsetter" type="email" name="email" placeholder="YOUR EMAIL"> <input type="submit"
+                                                                                                        class="btn-submit" name="submit" value="Submit">
+                </form>
+            </div>
+
+            <div class="chat">
+                <a href="#"><img src="~/Images/layer-598.png" alt=""></a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+﻿<div class="col-lg-7 col-md-10 provider-setting right-container" style="display: none;">
+
+    <div class="container-fluid setting-tabs">
+
+        <a class="setting-tab container-fluid text-center" id="MyDetails" href="#" onclick="settingTab1()">
+            My Details
+        </a>
+        <a class="setting-tab  container-fluid text-center" id="change-pass" href="#" onclick="settingTab2()">
+            Change Password
+        </a>
+
+
+
+    </div>
+
+    <div class="tabcontent" id="tab1">
+
+        <div class="ActivityStatus">
+            <h5>Active Status: <span class="ActivityIndicator" style="color:green">Active</span></h5>
+        </div>
+        <div class="Details-header" style="margin-top: 20px;">
+            <h6 style="font-size: 18px;">Basic Details</h6>
+        </div>
+        <hr class="form1-divide">
+        <form class="row g-3" id="form1" method="post">
+            <div class="row detail-info">
+                <div class="col-md-4 detail-inputs">
+                    <label for="detail-fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="detail-fname">
+                </div>
+                <div class="col-md-4 detail-inputs">
+                    <label for="detail-lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="detail-lname">
+                </div>
+                <div class="col-md-4 detail-inputs">
+                    <label for="detail-email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="detail-email" disabled style="cursor:not-allowed">
+                </div>
+                <div class="col-md-4 detail-inputs">
+                    <label for="detail-mobile" class="form-label">Mobile Number</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">+91</span>
+                        <input type="text" class="form-control" id="detail-mobile"
+                               aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="col-md-4 detail-inputs">
+                    <label for="detail-dob" class="form-label">Date Of Birth</label>
+
+                    <div id="detail-dob" style="display:flex">
+
+
+                        <select style="width: 70%;margin-right: 10px;" class="form-select" id="dobday"
+                                name="dateofbirth">
+
+                            <option selected value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+
+
+                        <select class="form-select" id="dobmonth" name="monthofbirth"
+                                style="width: 70%;margin-right:10px;">
+
+                            <option selected value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+
+
+                        <select class="form-select" id="dobyear" value=""></select>
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-4 detail-inputs">
+                    <label for="Nationality" class="form-label">Nationality</label>
+                    <select id="Nationality" class="form-select">
+                        <option selected value="0">Select</option>
+                        <option value="1">Indian</option>
+                        <option value="2">Ukranian</option>
+                        <option value="3">Germany</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 detail-inputs">
+                    <label for="pro-gender" class="form-label">Gender</label>
+                    <div id="pro-gender">
+                        <input type="radio" name="Gender" id="gender-male" value="1">
+                        <label for="gender-male" style="margin-right: 20px;">Male</label>
+                        <input type="radio" name="Gender" id="gender-female" value="2">
+                        <label for="gender-female" style="margin-right: 20px;">Female</label>
+                        <input type="radio" name="Gender" id="gender-others" value="3" checked="checked">
+                        <label for="gender-others">Prefer not to say</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="select-avtar">
+                <p style="padding-left: 5px;font-size: 16px;font-weight: 600; color: #646464;">Select Avatar</p>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="avtar" id="avtar1"
+                               value="avatar-car.png" checked>
+                        <label class="form-check-label" for="avtar1">
+                            <img src="/Images/avatar-car.png"
+                                 alt="..">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="avtar" id="avtar2"
+                               value="avatar-female.png">
+                        <label class="form-check-label" for="avtar2">
+                            <img src="/Images/avatar-female.png"
+                                 alt="..">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="avtar" id="avtar3" value="cap.png">
+                        <label class="form-check-label" for="avtar3">
+                            <img src="/Images/avatar-hat.png"
+                                 alt="..">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="avtar" id="avtar4"
+                               value="avatar-iron.png">
+                        <label class="form-check-label" for="avtar4">
+                            <img src="/Images/avatar-iron.png"
+                                 alt="..">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="avtar" id="avtar5"
+                               value="avatar-male.png">
+                        <label class="form-check-label" for="avtar5">
+                            <img src="/Images/avatar-male.png"
+                                 alt="..">
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="avtar" id="avtar6"
+                               value="avatar-ship.png">
+                        <label class="form-check-label" for="avtar6">
+                            <img src="/Images/avatar-ship.png"
+                                 alt="..">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Details-header" style="margin-top: 30px;">
+                <h6 style="font-size: 18px;">My Address</h6>
+            </div>
+            <hr class="form1-divide">
+
+            <div class="row detail-info">
+                <div class="col-md-4 detail-inputs">
+                    <label for="detail-streetname" class="form-label">Street Name</label>
+                    <input type="text" class="form-control" id="detail-streetname">
+                </div>
+                <div class="col-md-4 detail-inputs">
+                    <label for="detail-Houseno" class="form-label">House Number</label>
+                    <input type="text" class="form-control" id="detail-Houseno">
+                </div>
+                <div class="col-md-4 detail-inputs">
+                    <label for="detail-zipcode" class="form-label">Postal Code</label>
+                    <input type="text" class="form-control" id="detail-zipcode">
+                </div>
+                <div class="col-md-4 detail-inputs">
+                    <label for="detail-city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="detail-city" disabled style="cursor:not-allowed;">
+                </div>
+            </div>
+
+
+
+            <div class="col-12 detail-saveBtn">
+                <button type="button" id="DetailsSubmit" class="rounded-pill">Save</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+
+
+
+
+    <div class="tabcontent" id="tab2">
+
+        <form class="row g-3" id="form2" method="post">
+            <div class="row">
+                <div class="col-md-5 changepass-inputs">
+                    <label for="old-password" class="form-label">Old Password</label>
+                    <input type="password" class="form-control" id="old-password">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 changepass-inputs">
+                    <label for="new-password" class="form-label">New Password</label>
+                    <input type="password" class="form-control" id="new-password">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 changepass-inputs">
+                    <label for="cnfrm-password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="cnfrm-password">
+                </div>
+            </div>
+
+
+            <div class="col-12 changepass-saveBtn">
+                <button type="button" class="rounded-pill" id="ChangePassword">Save</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+
+<script>
+
+    var currentYear = new Date().getFullYear()
+    var option = "";
+    for (var year = 1940; year <= currentYear; year++) {
+
+        var option = document.createElement("option");
+        option.text = year;
+        option.value = year;
+
+        document.getElementById("dobyear").appendChild(option)
+
+    }
+    document.getElementById("dobyear").value = currentYear;
+</script>
+

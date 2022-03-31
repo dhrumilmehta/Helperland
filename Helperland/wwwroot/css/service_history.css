@@ -1,0 +1,1530 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family:'Roboto', sans-serif;
+  }
+
+
+
+
+
+
+
+
+.navbar{
+    background-color: #646464;
+    height: 56px;
+    padding-left: 15px;
+    padding-right: 10px ;
+}
+.navbar-brand img{
+    height: 50px;
+}
+.nav-link{
+    font-size: 15px;
+    color:#fff;
+}
+.nav-link:hover{
+    color:#90cfdc;
+    border: transparent;
+}
+.nav-item{
+    font-size: 15px;
+    color:#fff;
+    padding-left:30px;
+}
+.nav-options{
+    padding-top: 6px;
+}
+.book-btn{
+    color: white;
+    background-color: #29626D;
+    border: solid 1px white;
+    margin-top: +1px;
+}
+.book-btn:hover{
+    color: #29626D;
+    border: solid 1px #29626D;
+    background-color: white;
+}
+.price-link{
+    padding-left: 28px !important;
+}
+.user-name{
+    font-weight: bolder;
+}
+.vl-1{
+    border: 1px solid #E1E1E1;
+    height: 56px;
+    margin-left: 30px;
+}
+.vl-2{
+    border: 1px solid #E1E1E1;
+    height: 56px;
+    margin-left: 20px;
+}
+.notify{
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+}
+.notify img{
+    padding-top: 12px;
+    
+}
+.user-icon{
+    padding-right:5px;
+}
+.dropdown-l{
+    padding-left: 20px !important;
+}
+.dropdown-toggle::after {
+    content: none !important;
+}
+
+.nav-btn{
+    text-decoration: none;
+    font-size: 15px;
+    color:#fff;
+}
+.nav-btn:hover{
+    color:#90cfdc;
+    cursor: pointer;
+}
+.nav-divider{
+    padding-top: +10px;
+}
+.nav-divider hr{
+    color: white;
+    height: 2px;
+}
+.navBtnli{
+    margin-top: 15px;
+}
+
+
+
+
+
+
+.dropdown-s{
+    margin-left: 0%;
+    margin-right: +5px;
+
+}
+.dropdown-s img{
+    padding-top: +11px;
+}
+.response-icon img{
+    padding-top: +13px;
+    width: 100%;
+    height: auto;
+}
+.user-icon-1{
+    padding-right: 2px;
+    width: 70%;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+.greet-header{
+    background-color: #F9F9F9;
+    border-bottom: 1px solid #e9e5e5;
+}
+.greet-header h2{
+    padding-top: 38px;
+    padding-bottom: 43px;
+    color: #4F4F4F;
+}
+.greet_user{
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+.service-content{
+    padding-top: 31px;
+    padding-bottom: 39px;
+    margin: auto;
+}
+.service-sidebar{
+    background-color: #1D7A8C;
+    max-height: 1032px ;
+    padding: 0%;
+}
+
+
+.sidebar-list{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E1E1E1 !important;
+    border: none;
+    text-align: start;
+    color: #FFFFFF;
+    font-size: 18px;
+    background-color: #1D7A8C;  
+}
+.active, .sidebar-list:hover{
+    background-color: #146371;
+    
+}
+
+
+
+/*Service History Table*/
+.main-table{
+    padding-left: 32px;
+    display: none;
+}
+
+
+
+.service-heading{
+    display:flex;
+  justify-content:space-between;
+}
+.heading p{
+    color: #646464;
+    font-size: 22px;
+    font-weight: 800;
+}
+.export input{
+    width: 80px;
+    height: 30px;
+    background-color: #1D7A8C;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+}
+
+
+table{
+    color: #646464;
+    border: solid 1px #CCCCCC;
+    overflow: auto;
+}
+thead{
+    text-align: center;
+    background-color: #F9F9F9;
+    height:50px;
+    border-bottom: solid 1px #CCCCCC ;
+    font-size: 16px;
+    font-weight: bolder;
+}
+tbody{
+    text-align: center;
+}
+tbody tr{
+    height:71px;
+    font-size: 16px;
+    border-bottom: solid 1px #CCCCCC ;
+}
+
+.servDate{
+    font-weight: bold;
+}
+.service-date p{
+    margin-bottom: 2%;
+}
+
+.pro_info{
+    display: inline-flex;
+    text-align: left;
+}
+.cap-icon{
+    width: 50px;
+    height: 50px;
+    border: solid 1px #646464;
+    border-radius: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+}
+.cap-icon img{
+    width: 30px;
+    height: 25px;
+    margin-left: +9px;
+}
+
+.pro-name{
+    margin-left: +10px;
+}
+.pro-name p{
+    margin-bottom: 0%;
+    color: #646464;
+}
+.service-cost{
+    color: #1D7A8C;
+    font-size: 20px;
+    font-weight: 700;
+}
+.status{
+    width: 100px;
+    color: white;
+    height: auto;
+    margin: auto;
+}
+.completed{
+    background-color: rgb(67, 167, 67);
+}
+.cancelled {
+    background-color: #d4433d !important;
+}
+.rate-button{
+    width: 80px;
+    height: 30px;
+    background-color: rgb(118, 159, 201);
+    color: white;
+    border: none;
+}
+
+/***************************************************/
+
+
+
+/*Dashboard Table*/
+
+.dashboard-table{
+    padding-left: 32px;
+
+}
+
+.newrequestBtn{
+    padding: 5px 10px;
+    background-color: #1D7A8C;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    text-decoration: none;
+}
+.newrequestBtn:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+.dashServIddiv{
+    font-weight: 600;
+}
+.dashdateDiv{
+    padding-top: 5px;
+}
+.dashDate{
+    font-weight: 700;
+}
+
+.payAmount{
+    color: #1D7A8C;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+
+.dashproInfo{
+    display: inline-flex;
+    text-align: left;
+}
+.dashCapicon{
+    width: 50px;
+    height: 50px;
+    border: solid 1px #646464;
+    border-radius: 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+}
+.dashCapicon img{
+    width: 30px;
+    height: 25px;
+    margin-left: +9px;
+}
+
+.dashProname{
+    margin-left: +10px;
+}
+.dashProname p{
+    margin-bottom: 0%;
+    color: #646464;
+}
+
+
+
+#rescheduleBtn{
+    padding: 5px 10px;
+    margin-right: +2px;
+    background-color: #1D7A8C;
+    color: white;
+    border: solid 1px #1D7A8C;
+}
+#cancelBtn{
+    padding: 5px 8px;
+    background-color: #e64242;
+    color: white;
+    border: solid 1px #e64242;
+}
+
+#rescheduleBtn:hover{
+    background-color: #fff;
+    color: #1D7A8C;
+}
+#cancelBtn:hover{
+    background-color: #fff;
+    color: #e64242;
+}
+
+/***************************************************/
+
+
+
+/*Page Control*/
+.page-control{
+    display:flex;
+  justify-content:space-between;
+  margin-top: 10px;
+  text-align: center;
+  color: #646464;
+  font-size: 14px;
+  font-weight: bold;
+  
+}
+.page-control-left{
+    display: inline-flex;
+    column-gap: 10px;
+    padding-top: +5px;
+}
+.page-control-right{
+    display: inline-flex;
+    column-gap: 5px;
+}
+
+
+#entries{
+    width: 60px;
+    height: 30px;
+    margin-right: -3px;
+    margin-top: -3px !important;
+}
+
+
+
+
+.page-btn{
+    text-align: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: solid 1px gray;
+    padding-top: +5px;
+}
+.page-no{
+    text-decoration: none;
+    color: #646464;
+}
+.active-2, .page-no:hover{
+    background-color: #1D7A8C;
+    color: white;
+}
+
+
+
+
+
+
+/*Reschedule Modal*/
+.resmodal-content{
+    padding-left: 5px;
+}
+#rescheduleModalLabel{
+    color: #646464;
+    font-weight: 600;
+}
+.resmodal-body{
+    color: #464545;
+    font-weight: 500;
+}
+.resInputs{
+    margin-top: 10px;
+}
+.resInputs input{
+    padding: 8px;
+    color: #646464;
+    border: solid 1px #a7a6a6;
+}
+.resDate{
+    width: 50%;
+    margin-right: 10px;
+}
+.resTime{
+    width: 40%;
+}
+.resupdateBtn{
+    width: 45%;
+    padding: 5px;
+    background-color: #1D7A8C;
+    color: white;
+    border: solid 1px #1D7A8C;
+}
+.resupdateBtn:hover{
+    background-color: #fff;
+    color: #1D7A8C;
+}
+
+
+/*Cancel Modal*/
+
+.canmodal-content{
+    padding-left: 5px;
+}
+#cancelModalLabel{
+    color: #646464;
+    font-weight: 600;
+}
+.canmodal-body{
+    color: #464545;
+    font-weight: 500;
+}
+.canInputs{
+    margin-top: 10px;
+}
+.canInputs textarea{
+    padding: 5px;
+    width: 99%;
+}
+
+.cancelServBtn{
+    width: 45%;
+    padding: 5px;
+    background-color: #1D7A8C;
+    color: white;
+    border: solid 1px #1D7A8C;
+}
+.cancelServBtn:hover{
+    background-color: #fff;
+    color: #1D7A8C;
+}
+
+
+
+
+
+
+/****My Settings***/
+.my-setting{
+    padding-left: 32px;
+    display: none;
+}
+
+
+.setting-tabs{
+    display: flex;
+}
+.setting-tab{
+    padding: 16px 40px;
+    padding-left: 80px !important;
+    border-bottom:solid 2px #d8d7d7;
+
+    color: #646464;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.setting-tab:hover{
+    color: #1D7A8C;
+    text-decoration: none;
+    border-bottom:solid 2px #1D7A8C;
+}
+.active2{
+    color: #1D7A8C;
+    border-bottom:solid 2px #1D7A8C;
+}
+
+
+
+.tabcontent{
+    margin-top: 35px;
+    padding-left: 10px;
+}
+
+
+/*Form 1*/
+#tab1{
+    display: none;
+}
+
+
+.detail-inputs{
+    margin-top: 25px;
+    color: #646464;
+    font-weight: 600;
+}
+
+
+.form1-divide{
+    margin-top: 50px;
+    height: 2px;
+}
+
+.detail-selectlang{
+    color: #646464;
+    font-weight: 600;
+}
+#detail-lang option{
+    color: #646464;
+}
+
+
+
+.detail-saveBtn{
+    margin-top: 50px;
+}
+.detail-saveBtn button{
+    background-color: #1D7A8C;
+    color: white;
+    border: solid 1px #1D7A8C;
+    padding: 5px 20px;
+}
+
+
+/*Form 2*/
+.addressTable tr th, .addressTable tr td{
+    padding-left: 20px;
+}
+
+.addressdetaildiv{
+    padding-top: 10px;
+}
+
+.addAddressBtn{
+    margin-top: 50px;
+}
+.addAddressBtn button{
+    background-color: #1D7A8C;
+    color: white;
+    border: solid 1px #1D7A8C;
+    padding: 5px 20px;
+}
+
+/*Form 3*/
+
+#tab3{
+    display: none;
+}
+
+.changepass-inputs{
+    margin-top: 25px;
+    color: #646464;
+    font-weight: 600;
+}
+
+.changepass-saveBtn{
+    margin-top: 50px;
+}
+.changepass-saveBtn button{
+    background-color: #1D7A8C;
+    color: white;
+    border: solid 1px #1D7A8C;
+    padding: 5px 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background-color: #111111;
+    width: 100%;
+    color: white;
+    min-height: 195px;
+    margin-bottom: 0%;
+  }
+  .footer-logo{
+      width: 120px;
+      height: 92px;
+  }
+footer .container a {
+    text-decoration: none;
+    color: #F1F1F1;
+    font-size: 14px;
+  }
+.foot_menu{
+    padding-top: 20px;
+    max-width: 1350px;
+  }
+.icons{
+padding-top: +15px;
+}
+.fimg1 {
+    width: 9px;
+    height: 18px;
+    margin-right: 20px;
+  }
+.fimg2 {
+    width: 20px;
+    height: 20px;
+  }
+  
+.term_c{
+    color: #9BA0A3;
+    font-size: 14px;
+  }
+.term_c a{
+      text-decoration: none;
+      color: #9BA0A3;
+  }
+.foot_menulink{
+padding-top: +20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+ 
+@media screen and (max-width: 329px){
+    .navbar{
+        height: auto;
+    }
+    .navbar-brand img{
+        width: 75%;
+        height: auto;
+    }
+    .foot_menulink a{
+        padding-top: +5px;
+        padding-bottom: +5px;
+    }
+    .fimg1{
+        margin-left: +5px;
+    }
+
+    .foot_menu{
+        flex-direction: column;
+    }
+    .foot_menulink{
+        flex-direction: column;
+    
+    }
+    .foot_menulink a{
+        padding-top: +5px;
+        
+    }
+    .footer-logo{
+        width: 25%;
+        height: auto;
+    }
+
+    .response-icon{
+        margin-right: 0%;
+    }
+    .response-icon img{
+        padding-top: +14px;
+        width: 85%;
+        height: auto;
+    }
+    .dropdown-s{
+        padding-left: 10%;
+        margin-right: -10px;
+        padding-top: +2px;
+    }
+    .user-icon-1{
+        padding-right: 2px;
+        width: 60%;
+        height: auto;
+    }
+
+
+
+    
+    .historyTable{
+        border: none;
+    }
+    .historyTable thead{
+        display: none;
+    }
+    .historyTable, .historyTable tbody, .historyTable tr, .historyTable td{
+        display: block;
+        width: 100%;
+        height: auto;
+        font-size: 12px !important;
+    } 
+    .historyTable tbody, .historyTable tr, .historyTable td{
+        width: 100% !important;
+    }
+    .historyTable tbody tr td{
+        text-align: end;
+        padding-right: 1%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .historyTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 1%;
+        padding-top: 6%;
+    }
+
+
+
+    .historyTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+
+    .servicedatediv{
+        padding-top: 7px;
+        
+    }
+    .pro_info{
+        padding-bottom: 12px;
+        padding-top: 12px;
+    }
+    .service-costdiv{
+        padding-top: 15px;
+        padding-bottom: 14px;
+        padding-right: 20px !important;
+    }
+    .statusmain{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .status{
+        width: 25%;
+        margin-right: 0;
+        text-align: center;
+    }
+    .ratediv{
+        padding-top: 15px;
+        padding-bottom: 10px;
+        padding-right: 7px;
+    }
+
+    .service-cost{
+        color: #646464;
+        font-weight: 500;
+        font-size: 12px !important;
+        
+    }
+    
+    .rate-button{
+        width: 22%;
+        font-size: 12px  !important;
+    } 
+    .cap-icon{
+      display: none;
+    }
+
+
+
+
+
+
+    
+
+
+
+    .dashboardTable{
+        border: none;
+    }
+    .dashboardTable thead{
+        display: none;
+    }
+    .dashboardTable, .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        display: block;
+        width: 95%;
+        height: auto;
+        font-size: 10px;
+    }
+    .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        width: 100% !important;
+    }
+    .dashboardTable tbody tr td{
+        text-align: end;
+        padding-right: 5%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .dashboardTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 3%;
+    }
+
+
+
+    .dashboardTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+
+    .dashServIddiv{
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        
+    }
+    .dashproInfo{
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+    .dashPayment{
+        padding-top: 15px;
+        padding-bottom: 20px;
+        padding-right: 35px;
+    }
+    .payAmount{
+        font-size: 12px;
+    }
+    .actiobBtns{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 8px;
+    }
+
+    .dashCapicon{
+        display: none;
+    }
+
+    .dashHeading p{
+        font-size: 16px;
+    }
+    .newrequestBtn{
+        font-size: 10px;
+    }
+
+
+
+
+    #rescheduleModalLabel{
+        font-size: 16px;
+    }
+    .resmodal-body{
+        font-size: 14px;
+    }
+
+    #cancelModalLabel{
+        font-size: 18px;
+    }
+    .canmodal-body{
+        font-size: 16px;
+    }
+    .canInputs textarea{
+        width: 98%;
+    }
+
+
+}
+
+@media screen and (min-width: 330px) and (max-width: 426px){
+    .navbar{
+        height: auto;
+    }
+    .navbar-brand img{
+        width: 75%;
+        height: auto;
+    }
+    .foot_menulink a{
+        padding-top: +5px;
+        padding-bottom: +5px;
+    }
+    .fimg1{
+        margin-left: +5px;
+    }
+
+    .foot_menu{
+        flex-direction: column;
+    }
+    .foot_menulink{
+        flex-direction: column;
+    
+    }
+    .foot_menulink a{
+        padding-top: +5px;
+        
+    }
+    .footer-logo{
+        width: 25%;
+        height: auto;
+    }
+
+
+
+    
+    .historyTable{
+        border: none;
+    }
+    .historyTable thead{
+        display: none;
+    }
+    .historyTable, .historyTable tbody, .historyTable tr, .historyTable td{
+        display: block;
+        width: 100%;
+        height: auto;
+        font-size: 16px;
+    }
+    .historyTable tbody, .historyTable tr, .historyTable td{
+        width: 100% !important;
+    }
+    .historyTable tbody tr td{
+        text-align: end;
+        padding-right: 3%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .historyTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 5%;
+    }
+    .historyTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+
+    .servicedatediv{
+        padding-top: 7px;
+        
+    }
+    .pro_info{
+        padding-bottom: 12px;
+        padding-top: 12px;
+    }
+    .service-costdiv{
+        padding-top: 15px;
+        padding-bottom: 14px;
+        padding-right: 30px;
+    }
+    .statusmain{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .status{
+        width: 25%;
+        margin-right: 0;
+        text-align: center;
+    }
+    .ratediv{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 7px;
+    }
+
+    .service-cost{
+        color: #646464;
+        font-weight: 500;
+        font-size: 16px !important;
+        
+    }
+    .rate-button{
+        width: 22%;
+        font-size: 16px !important;
+    }
+    .cap-icon{
+      display: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .dashboardTable{
+        border: none;
+    }
+    .dashboardTable thead{
+        display: none;
+    }
+    .dashboardTable, .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        display: block;
+        width: 95%;
+        height: auto;
+        font-size: 14px;
+    }
+    .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        width: 100% !important;
+    }
+    .dashboardTable tbody tr td{
+        text-align: end;
+        padding-right: 5%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .dashboardTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 3%;
+    }
+
+
+
+    .dashboardTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+
+    .dashServIddiv{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 30px;
+        
+    }
+    .dashproInfo{
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+    .dashPayment{
+        padding-top: 15px;
+        padding-bottom: 20px;
+        padding-right: 35px;
+    }
+    .payAmount{
+        font-size: 18px;
+    }
+    .actiobBtns{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 12px;
+    }
+
+    .dashCapicon{
+        display: none;
+    }
+
+    .dashHeading p{
+        font-size: 16px;
+    }
+    .newrequestBtn{
+        font-size: 12px;
+    }
+
+
+    .my-setting {
+        display: block;
+    }
+
+    .setting-tabs {
+        margin-left: 0%;
+    }
+
+    .setting-tab {
+        padding: 5px 10px;
+        padding-left: 0% !important;
+    }
+    
+}
+@media screen and (min-width: 427px) and (max-width: 769px){
+    .navbar{
+        height: auto;
+    }
+    .navbar-collapse{
+        padding-top: +5px;
+    }
+
+    .foot_menulink a{
+        padding-top: +5px;
+        padding-bottom: +5px;
+    }
+    .fimg1{
+        margin-left: +5px;
+        margin-bottom: +5px;
+    }
+    .footer-logo{
+        width: 90px;
+        height: auto;
+    }
+
+
+
+    .historyTable{
+        border: none;
+    }
+    .historyTable thead{
+        display: none;
+    }
+    .historyTable, .historyTable tbody, .historyTable tr, .historyTable td{
+        display: block;
+        width: 95%;
+        height: auto;
+        font-size: 20px;
+    }
+    .historyTable tbody, .historyTable tr, .historyTable td{
+        width: 100% !important;
+    }
+    .historyTable tbody tr td{
+        text-align: end;
+        padding-right: 5%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .historyTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 3%;
+    }
+
+
+
+    .historyTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+
+    .servicedatediv{
+        padding-top: 7px;
+        
+    }
+    .pro_info{
+        padding-bottom: 12px;
+        padding-top: 12px;
+    }
+    .service-costdiv{
+        padding-top: 15px;
+        padding-bottom: 14px;
+        padding-right: 50px;
+    }
+    .statusmain{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .status{
+        width: 25%;
+        margin-right: 0;
+        text-align: center;
+    }
+    .ratediv{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 7px;
+    }
+
+    .service-cost{
+        color: #646464;
+        font-weight: 500;
+        font-size: 20px !important;
+        
+    }
+    .rate-button{
+        width: 22%;
+        font-size: 18px !important;
+    }
+
+
+
+
+
+
+    .my-setting {
+        width: 100%;
+    }
+
+
+
+
+
+
+
+    .dashboardTable{
+        border: none;
+    }
+    .dashboardTable thead{
+        display: none;
+    }
+    .dashboardTable, .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        display: block;
+        width: 95%;
+        height: auto;
+        font-size: 18px;
+    }
+    .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        width: 100% !important;
+    }
+    .dashboardTable tbody tr td{
+        text-align: end;
+        padding-right: 5%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .dashboardTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 3%;
+    }
+
+
+
+    .dashboardTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+
+    .dashServIddiv{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 35px;
+        
+    }
+    .dashproInfo{
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+    .dashPayment{
+        padding-top: 15px;
+        padding-bottom: 20px;
+        padding-right: 50px;
+    }
+    .payAmount{
+        font-size: 24px;
+    }
+    .actiobBtns{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 16px;
+    }
+
+
+
+
+
+
+
+    
+    
+    }
+    
+    @media screen and (min-width: 770px) and (max-width: 991px){
+        .navbar{
+            height: auto;
+        }
+        .navbar-collapse{
+            padding-top: +5px;
+        }
+
+        .main-table{
+            width: 95%;
+        }
+        
+    .historyTable{
+        border: none;
+    }
+    .historyTable thead{
+        display: none;
+    }
+    .historyTable, .historyTable tbody, .historyTable tr, .historyTable td{
+        display: block;
+        width: 100%;
+        height: auto;
+        font-size: 20px;
+    }
+    .historyTable tbody, .historyTable tr, .historyTable td{
+        width: 100% !important;
+    }
+    .historyTable tbody tr td{
+        text-align: end;
+        padding-right: 5%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .historyTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 3%;
+    }
+
+
+
+    .historyTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+
+    .servicedatediv{
+        padding-top: 7px;
+        
+    }
+    .pro_info{
+        padding-bottom: 12px;
+        padding-top: 12px;
+    }
+    .service-costdiv{
+        padding-top: 15px;
+        padding-bottom: 14px;
+        padding-right: 50px;
+    }
+    .statusmain{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .status{
+        width: 20%;
+        margin-right: 0;
+        text-align: center;
+    }
+    .ratediv{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 7px;
+    }
+
+    .service-cost{
+        color: #646464;
+        font-weight: 500;
+        font-size: 20px !important;
+        
+    }
+    
+    .rate-button{
+        width: 15%;
+        font-size: 18px !important;
+    }
+    
+
+
+
+
+
+
+
+    .dashboard-table{
+        width: 95%;
+    }
+    
+    .dashboardTable{
+        border: none;
+    }
+    .dashboardTable thead{
+        display: none;
+    }
+    .dashboardTable, .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        display: block;
+        width: 95%;
+        height: auto;
+        font-size: 20px;
+    }
+    .dashboardTable tbody, .dashboardTable tr, .dashboardTable td{
+        width: 100% !important;
+    }
+    .dashboardTable tbody tr td{
+        text-align: end;
+        padding-right: 5%;
+        position: relative;
+        border-bottom: solid 1px #9BA0A3;
+    }
+    .dashboardTable td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 3%;
+        padding-top: 3%;
+    }
+
+
+
+    .dashboardTable tr{
+        border: solid 1px #9BA0A3;
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+
+
+    .dashServIddiv{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        
+    }
+    .dashproInfo{
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+    .dashPayment{
+        padding-top: 15px;
+        padding-bottom: 20px;
+        padding-right: 50px;
+    }
+    .payAmount{
+        font-size: 28px;
+    }
+    .actiobBtns{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 18px;
+    }
+
+        
+    
+    }
+        
